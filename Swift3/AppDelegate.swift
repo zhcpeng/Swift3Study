@@ -12,12 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var navigationController : UINavigationController?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
+        
+//        let vc = ViewController.init(nibName: "ViewController", bundle:nil)
+        let vc = ViewController()
+        self.navigationController = UINavigationController(rootViewController : vc)
+        self.window?.rootViewController = self.navigationController
+        
         self.window!.makeKeyAndVisible()
         return true
     }

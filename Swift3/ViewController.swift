@@ -14,6 +14,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,Int64(2.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+            let vc = RootListController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {

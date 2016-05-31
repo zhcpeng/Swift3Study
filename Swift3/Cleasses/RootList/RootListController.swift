@@ -9,9 +9,15 @@
 import UIKit
 
 class RootListController: UITableViewController {
+    
+    var itemList : NSMutableArray!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        itemList = NSMutableArray()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,24 +34,27 @@ class RootListController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return itemList.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = itemList[indexPath.row] as? String
 
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let vc = SwiftClassFromString(itemList[indexPath.row] as! String)
+        self.navigationController?.pushViewController(vc!, animated: true);
+    }
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
