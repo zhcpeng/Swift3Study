@@ -17,6 +17,8 @@ class RootListController: UITableViewController {
         
         itemList = NSMutableArray()
         
+//        var imageView = UIImageView.init(frame: CGRectMake(0, 0, 200, 200))
+//        imageView.sd_setImageWithURL(NSURL.init(string: ""))
         
 
         // Uncomment the following line to preserve selection between presentations

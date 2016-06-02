@@ -8,19 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		4AB62912EC0BE71C81A9E3CD /* Pods_Swift3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9956F811B9179BE7014C5D /* Pods_Swift3.framework */; };
+		AD314B231CFE7D56003593F7 /* SwiftGlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD314B221CFE7D56003593F7 /* SwiftGlobalFunction.swift */; };
+		AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9127951CFE73A00093F219 /* TaskInfoTool.m */; };
 		ADE789FD1CF7F3D300573D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE789FC1CF7F3D300573D7F /* AppDelegate.swift */; };
 		ADE789FF1CF7F3D300573D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE789FE1CF7F3D300573D7F /* Assets.xcassets */; };
 		ADE78A021CF7F3D300573D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE78A001CF7F3D300573D7F /* LaunchScreen.storyboard */; };
 		ADE78A0B1CF7FB2000573D7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE78A091CF7FB2000573D7F /* ViewController.swift */; };
 		ADE78A0C1CF7FB2000573D7F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE78A0A1CF7FB2000573D7F /* ViewController.xib */; };
 		ADE78A111CF7FC0C00573D7F /* RootListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE78A101CF7FC0C00573D7F /* RootListController.swift */; };
-		ADE78A131CF821E800573D7F /* SwiftGlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE78A121CF821E800573D7F /* SwiftGlobalFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A6B42CE9D23BED5E7FA744D /* Pods-Swift3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift3/Pods-Swift3.debug.xcconfig"; sourceTree = "<group>"; };
 		3E9956F811B9179BE7014C5D /* Pods_Swift3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8168AB51746051386FA7D1DB /* Pods-Swift3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift3/Pods-Swift3.release.xcconfig"; sourceTree = "<group>"; };
+		AD314B211CFE7D56003593F7 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		AD314B221CFE7D56003593F7 /* SwiftGlobalFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGlobalFunction.swift; sourceTree = "<group>"; };
+		AD6545781CFEC5460070A3AC /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
+		AD9127941CFE73A00093F219 /* TaskInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskInfoTool.h; sourceTree = "<group>"; };
+		AD9127951CFE73A00093F219 /* TaskInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskInfoTool.m; sourceTree = "<group>"; };
 		ADE789F91CF7F3D300573D7F /* Swift3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE789FC1CF7F3D300573D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADE789FE1CF7F3D300573D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -29,7 +35,6 @@
 		ADE78A091CF7FB2000573D7F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ADE78A0A1CF7FB2000573D7F /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		ADE78A101CF7FC0C00573D7F /* RootListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootListController.swift; sourceTree = "<group>"; };
-		ADE78A121CF821E800573D7F /* SwiftGlobalFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGlobalFunction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AD314B201CFE7D56003593F7 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				AD314B211CFE7D56003593F7 /* Swift-Bridging-Header.h */,
+				AD314B221CFE7D56003593F7 /* SwiftGlobalFunction.swift */,
+				AD6545781CFEC5460070A3AC /* Playground.playground */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		AD9127931CFE73A00093F219 /* TaskInfoTool */ = {
+			isa = PBXGroup;
+			children = (
+				AD9127941CFE73A00093F219 /* TaskInfoTool.h */,
+				AD9127951CFE73A00093F219 /* TaskInfoTool.m */,
+			);
+			path = TaskInfoTool;
+			sourceTree = "<group>";
+		};
 		ADE789F01CF7F3D300573D7F = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +109,7 @@
 				ADE789FC1CF7F3D300573D7F /* AppDelegate.swift */,
 				ADE78A091CF7FB2000573D7F /* ViewController.swift */,
 				ADE78A0A1CF7FB2000573D7F /* ViewController.xib */,
-				ADE78A121CF821E800573D7F /* SwiftGlobalFunction.swift */,
+				AD314B201CFE7D56003593F7 /* Public */,
 				ADE78A0E1CF7FBF000573D7F /* Cleasses */,
 				ADE789FE1CF7F3D300573D7F /* Assets.xcassets */,
 				ADE78A001CF7F3D300573D7F /* LaunchScreen.storyboard */,
@@ -97,6 +121,7 @@
 		ADE78A0E1CF7FBF000573D7F /* Cleasses */ = {
 			isa = PBXGroup;
 			children = (
+				AD9127931CFE73A00093F219 /* TaskInfoTool */,
 				ADE78A0F1CF7FBF000573D7F /* RootList */,
 			);
 			path = Cleasses;
@@ -232,8 +257,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADE78A131CF821E800573D7F /* SwiftGlobalFunction.swift in Sources */,
+				AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */,
 				ADE78A0B1CF7FB2000573D7F /* ViewController.swift in Sources */,
+				AD314B231CFE7D56003593F7 /* SwiftGlobalFunction.swift in Sources */,
 				ADE78A111CF7FC0C00573D7F /* RootListController.swift in Sources */,
 				ADE789FD1CF7F3D300573D7F /* AppDelegate.swift in Sources */,
 			);
@@ -345,6 +371,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhcpeng.Swift3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift3/Public/Swift-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -357,6 +384,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhcpeng.Swift3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift3/Public/Swift-Bridging-Header.h";
 			};
 			name = Release;
 		};

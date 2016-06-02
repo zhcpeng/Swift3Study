@@ -8,7 +8,10 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
+    
+    private lazy var imageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +22,20 @@ class ViewController: UIViewController {
             let vc = RootListController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        
+        
+        self.view.addSubview(imageView)
+        imageView.snp_makeConstraints { make in
+            make.width.height.equalTo(50)
+            make.center.equalTo(self.view)
+        }
+//        imageView.sd_setImageWithURL(NSURL.init(string: ""))
+//        imageView.sd_setImageWithURL(<#T##url: NSURL!##NSURL!#>, placeholderImage: <#T##UIImage!#>, options: <#T##SDWebImageOptions#>)
+        
+//        imageView.snp_makeConstraints { (make) in
+//            
+//        }
+        
     }
 
     override func didReceiveMemoryWarning() {

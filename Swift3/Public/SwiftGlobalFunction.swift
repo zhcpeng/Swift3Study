@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SnapKit
 //import SwiftyJSON
 
 let IS_IOS7 = (UIDevice.currentDevice().systemVersion as NSString).doubleValue >= 7.0
