@@ -17,6 +17,10 @@ class RootListController: UITableViewController {
         
         itemList = NSMutableArray()
         
+        itemList.addObject("TableViewController")
+        
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        
 //        var imageView = UIImageView.init(frame: CGRectMake(0, 0, 200, 200))
 //        imageView.sd_setImageWithURL(NSURL.init(string: ""))
         

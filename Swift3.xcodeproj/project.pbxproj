@@ -10,6 +10,12 @@
 		4AB62912EC0BE71C81A9E3CD /* Pods_Swift3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9956F811B9179BE7014C5D /* Pods_Swift3.framework */; };
 		AD314B231CFE7D56003593F7 /* SwiftGlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD314B221CFE7D56003593F7 /* SwiftGlobalFunction.swift */; };
 		AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9127951CFE73A00093F219 /* TaskInfoTool.m */; };
+		ADA7D1981D003CA500F840E3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D1971D003CA500F840E3 /* CollectionViewController.swift */; };
+		ADA7D19A1D003CB600F840E3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D1991D003CB600F840E3 /* CollectionViewCell.swift */; };
+		ADA7D19C1D003EA800F840E3 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D19B1D003EA800F840E3 /* CollectionModel.swift */; };
+		ADA7D19F1D00569A00F840E3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D19E1D00569A00F840E3 /* TableViewController.swift */; };
+		ADA7D1A11D0056AD00F840E3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D1A01D0056AD00F840E3 /* TableViewCell.swift */; };
+		ADA7D1A31D0056BD00F840E3 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D1A21D0056BD00F840E3 /* TableViewModel.swift */; };
 		ADE789FD1CF7F3D300573D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE789FC1CF7F3D300573D7F /* AppDelegate.swift */; };
 		ADE789FF1CF7F3D300573D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE789FE1CF7F3D300573D7F /* Assets.xcassets */; };
 		ADE78A021CF7F3D300573D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE78A001CF7F3D300573D7F /* LaunchScreen.storyboard */; };
@@ -27,6 +33,12 @@
 		AD6545781CFEC5460070A3AC /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 		AD9127941CFE73A00093F219 /* TaskInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskInfoTool.h; sourceTree = "<group>"; };
 		AD9127951CFE73A00093F219 /* TaskInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskInfoTool.m; sourceTree = "<group>"; };
+		ADA7D1971D003CA500F840E3 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		ADA7D1991D003CB600F840E3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		ADA7D19B1D003EA800F840E3 /* CollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
+		ADA7D19E1D00569A00F840E3 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		ADA7D1A01D0056AD00F840E3 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		ADA7D1A21D0056BD00F840E3 /* TableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		ADE789F91CF7F3D300573D7F /* Swift3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE789FC1CF7F3D300573D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADE789FE1CF7F3D300573D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +97,26 @@
 			path = TaskInfoTool;
 			sourceTree = "<group>";
 		};
+		ADA7D1961D003C9000F840E3 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				ADA7D1971D003CA500F840E3 /* CollectionViewController.swift */,
+				ADA7D1991D003CB600F840E3 /* CollectionViewCell.swift */,
+				ADA7D19B1D003EA800F840E3 /* CollectionModel.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		ADA7D19D1D00568600F840E3 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				ADA7D19E1D00569A00F840E3 /* TableViewController.swift */,
+				ADA7D1A01D0056AD00F840E3 /* TableViewCell.swift */,
+				ADA7D1A21D0056BD00F840E3 /* TableViewModel.swift */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
 		ADE789F01CF7F3D300573D7F = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +153,8 @@
 		ADE78A0E1CF7FBF000573D7F /* Cleasses */ = {
 			isa = PBXGroup;
 			children = (
+				ADA7D19D1D00568600F840E3 /* UITableView */,
+				ADA7D1961D003C9000F840E3 /* UICollectionView */,
 				AD9127931CFE73A00093F219 /* TaskInfoTool */,
 				ADE78A0F1CF7FBF000573D7F /* RootList */,
 			);
@@ -257,10 +291,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA7D1981D003CA500F840E3 /* CollectionViewController.swift in Sources */,
 				AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */,
+				ADA7D1A31D0056BD00F840E3 /* TableViewModel.swift in Sources */,
 				ADE78A0B1CF7FB2000573D7F /* ViewController.swift in Sources */,
+				ADA7D19A1D003CB600F840E3 /* CollectionViewCell.swift in Sources */,
 				AD314B231CFE7D56003593F7 /* SwiftGlobalFunction.swift in Sources */,
+				ADA7D1A11D0056AD00F840E3 /* TableViewCell.swift in Sources */,
+				ADA7D19C1D003EA800F840E3 /* CollectionModel.swift in Sources */,
 				ADE78A111CF7FC0C00573D7F /* RootListController.swift in Sources */,
+				ADA7D19F1D00569A00F840E3 /* TableViewController.swift in Sources */,
 				ADE789FD1CF7F3D300573D7F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

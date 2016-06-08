@@ -8,7 +8,8 @@
 
 import UIKit
 import SnapKit
-//import SwiftyJSON
+import Alamofire
+import SwiftyJSON
 
 let IS_IOS7 = (UIDevice.currentDevice().systemVersion as NSString).doubleValue >= 7.0
 let IS_IOS8 = (UIDevice.currentDevice().systemVersion as NSString).doubleValue >= 8.0

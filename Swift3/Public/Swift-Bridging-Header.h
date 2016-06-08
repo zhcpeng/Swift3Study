@@ -6,8 +6,10 @@
 //#import "NSObject+SetValues.h"
 
 #pragma mark SDWebImage
-//不用引入
+
 #import <SDWebImage/UIImageView+WebCache.h>
+
+#import <YYModel/YYModel.h>
 
 //#pragma mark UILabel+VerticalAlign
 //#import "UILabel+VerticalAlign.h"
