@@ -9,8 +9,7 @@
 import UIKit
 
 class TableViewModel: NSObject {
-//    var imageUrl : String?
-//    var title : String?
+    /// name
     var brand_name : String?
     var channel : String?
     var preHeat : String?
@@ -23,7 +22,13 @@ class TableViewModel: NSObject {
     var warehouse : String?
     var pms_activetips : String?
     var sell_time_to : String?
-    var mobile_image_one : String?
+    var mobile_image_one : String?{
+        didSet{
+            if let url = mobile_image_one where url.containsString("upcb") {
+                mobile_image_one = "http://pic1.vip.com/upload/brand/" + url
+            }
+        }
+    }
 }
 
 /*

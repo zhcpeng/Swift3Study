@@ -14,7 +14,7 @@ class TableViewController: UIViewController {
     
     var itemList = Array<TableViewModel>()
     
-
+    /** 列表 */
     private lazy var listTableView : UITableView = {
         let tableView = UITableView.init(frame: self.view.bounds)
         tableView.delegate = self
@@ -37,10 +37,10 @@ class TableViewController: UIViewController {
         
     }
     
+    /** 获取数据 */
     func getData() {
         let url = "http://mapi-shop.appvipshop.com/vips-mobile/router.do?api_key=04e0dd9c76902b1bfc5c7b3bb4b1db92&api_sign=ae1bbba9a1efb1d0b4fea6b7eaeb87b0&app_name=shop_ipad&app_version=2.9&child_menu_id=592&client_type=ipad&format=json&mars_cid=915eb66871a0efddde8fb8a325957c75d6cd78b8&menu_id=1&service=mobile.brand.sellingsoon.get&timestamp=1436926538&user_id=3333955&ver=2.0&warehouse=VIP_BJ"
-        Alamofire.request(.GET, url)
-            .responseJSON { response in
+        Alamofire.request(.GET, url).responseJSON { response in
                 
                 do{
                     let dictionary = try NSJSONSerialization.JSONObjectWithData(response.data!, options: NSJSONReadingOptions())
@@ -50,11 +50,6 @@ class TableViewController: UIViewController {
                             for json in msg{
                                 if let dict = json as? Dictionary<String, AnyObject>{
                                     if let model = TableViewModel.yy_modelWithDictionary(dict){
-                                        if let url = model.mobile_image_one {
-                                            if url.containsString("upcb"){
-                                                model.mobile_image_one = "http://pic1.vip.com/upload/brand/" + url
-                                            }
-                                        }
                                         self.itemList.append(model)
                                     }
                                 }
