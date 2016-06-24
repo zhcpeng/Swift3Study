@@ -124,5 +124,25 @@ extension TableViewController : UITableViewDelegate , UITableViewDataSource{
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.dequeueReusableCellWithIdentifier(kTableViewCellIdentifier, forIndexPath: indexPath) as! TableViewCell
+//        let titel = cell.titleLabel.text
+//        
+//        let image = cell.imageMain
+//        let image2 = cell.imageView?.image
+        
+        
+//        let imageInfo   = GSImageInfo(image: UIImage.init(named: "5.jpg")!, imageMode: .AspectFit)
+//        let transitionInfo = GSTransitionInfo(fromView: cell.contentView)
+//        let imageViewer = GSImageViewerController(imageInfo: imageInfo, transitionInfo: transitionInfo)
+//        presentViewController(imageViewer, animated: true, completion: nil)
+//        if let image = cell.imageMain {
+//            let imageInfo   = GSImageInfo(image: image, imageMode: .AspectFit)
+//            let transitionInfo = GSTransitionInfo(fromView: cell.imageView!)
+//            let imageViewer = GSImageViewerController(imageInfo: imageInfo, transitionInfo: transitionInfo)
+//            presentViewController(imageViewer, animated: true, completion: nil)
+//        }
+    }
+    
     
 }

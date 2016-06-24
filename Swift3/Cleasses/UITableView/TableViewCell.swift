@@ -12,12 +12,14 @@ let kTableViewCellIdentifier = "kTableViewCellIdentifier"
 
 class TableViewCell: UITableViewCell {
     
-    private lazy var imgView: UIImageView = {
+    var imageMain: UIImage?
+    
+    lazy var imgView: UIImageView = {
         let imageView = UIImageView()
         return imageView
     }()
     
-    private lazy var titleLabel : UILabel = {
+    lazy var titleLabel : UILabel = {
         let titleLabel = UILabel()
         titleLabel.textColor = kUIColor(0x555500)
         titleLabel.numberOfLines = 1
@@ -27,7 +29,10 @@ class TableViewCell: UITableViewCell {
 
     var model : TableViewModel? {
         didSet {
-            imgView.sd_setImageWithURL(NSURL.init(string:(model?.mobile_image_one)!))
+//            imgView.sd_setImageWithURL(NSURL.init(string:(model?.mobile_image_one)!))
+            imgView.sd_setImageWithURL(NSURL.init(string:(model?.mobile_image_one)!)) { (image, error, _, _) in
+                self.imageMain = image
+            }
             titleLabel.text = model?.brand_name!
         }
     }
