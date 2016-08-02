@@ -10,14 +10,24 @@ import UIKit
 
 class RootListController: UITableViewController {
     
-    var itemList : NSMutableArray!
+//    var itemList : NSMutableArray!
+    var itemList = Array<String>()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        itemList = NSMutableArray()
+//        itemList = NSMutableArray()
         
-        itemList.addObject("TableViewController")
+//        itemList.addObject("TableViewController")
+//        itemList.addObject("CanMoveTableViewController")
+        
+        itemList.append("TableViewController")
+        itemList.append("CanMoveTableViewController")
+        itemList.append("ScrollViewController")
+        itemList.append("GradientColorViewController")
+        itemList.append("UIImageViewCategory")
+        itemList.append("SingleLineViewController")
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         
@@ -50,13 +60,13 @@ class RootListController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
-        cell.textLabel?.text = itemList[indexPath.row] as? String
+        cell.textLabel?.text = itemList[indexPath.row]
 
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let vc = SwiftClassFromString(itemList[indexPath.row] as! String)
+        let vc = SwiftClassFromString(itemList[indexPath.row])
         self.navigationController?.pushViewController(vc!, animated: true);
     }
     

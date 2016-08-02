@@ -12,10 +12,9 @@ let kTableViewCellIdentifier = "kTableViewCellIdentifier"
 
 class TableViewCell: UITableViewCell {
     
-    var imageMain: UIImage?
-    
     lazy var imgView: UIImageView = {
         let imageView = UIImageView()
+//        imageView.contentMode = .ScaleAspectFit
         return imageView
     }()
     
@@ -29,10 +28,8 @@ class TableViewCell: UITableViewCell {
 
     var model : TableViewModel? {
         didSet {
-//            imgView.sd_setImageWithURL(NSURL.init(string:(model?.mobile_image_one)!))
-            imgView.sd_setImageWithURL(NSURL.init(string:(model?.mobile_image_one)!)) { (image, error, _, _) in
-                self.imageMain = image
-            }
+            imgView.sd_setImageWithURL(NSURL.init(string:(model?.mobile_image_one)!))
+//            imgView.sd_setImageWithURL(NSURL.init(string:(model?.mobile_image_one)!), placeholderImage: UIImage.init(named: "001.jpg"))
             titleLabel.text = model?.brand_name!
         }
     }
@@ -45,8 +42,8 @@ class TableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addSubview(imgView)
-        addSubview(titleLabel)
+        self.contentView.addSubview(imgView)
+        self.contentView.addSubview(titleLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,16 +54,19 @@ class TableViewCell: UITableViewCell {
         super.layoutSubviews()
         
         imgView.snp_makeConstraints { (make) in
-            make.top.equalTo(self.snp_top).offset(4)
-            make.left.equalTo(self.snp_left).offset(8)
-            make.right.equalTo(self.snp_right).offset(-8)
+            make.top.equalTo(self.contentView.snp_top).offset(4)
+            make.left.equalTo(self.contentView.snp_left).offset(8)
+            make.right.equalTo(self.contentView.snp_right).offset(-8)
+            make.height.equalTo(imgView.snp_width).multipliedBy(0.48)
+//            make.width.equalTo(kScreenWidth - 18)
+//            make.height.equalTo((kScreenWidth - 16) * 0.48)
         }
         
         titleLabel.snp_makeConstraints { (make) in
-            make.left.equalTo(self.snp_left).offset(8)
-            make.right.equalTo(self.snp_right).offset(8)
+            make.left.equalTo(self.contentView.snp_left).offset(8)
+            make.right.equalTo(self.contentView.snp_right).offset(8)
             make.top.equalTo(imgView.snp_bottom).offset(4)
-            make.bottom.equalTo(self.snp_bottom).offset(-4)
+            make.bottom.equalTo(self.contentView.snp_bottom).offset(-4)
         }
     }
 

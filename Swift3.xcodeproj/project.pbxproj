@@ -8,15 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		4AB62912EC0BE71C81A9E3CD /* Pods_Swift3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9956F811B9179BE7014C5D /* Pods_Swift3.framework */; };
+		AD05A1471D26582300955761 /* CanMoveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A1461D26582300955761 /* CanMoveTableViewController.swift */; };
 		AD0AC45B1D17C2EB00E5246C /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0AC4581D17C2EB00E5246C /* RAC.swift */; };
 		AD0AC45C1D17C2EB00E5246C /* RACObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0AC4591D17C2EB00E5246C /* RACObserve.swift */; };
 		AD0AC45D1D17C2EB00E5246C /* RACSignal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0AC45A1D17C2EB00E5246C /* RACSignal+Extensions.swift */; };
+		AD0D4FCA1D20FF4700AC9EE2 /* ChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0D4FC91D20FF4700AC9EE2 /* ChannelView.swift */; };
 		AD15CFEA1D17D3E200462311 /* RACListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD15CFE91D17D3E200462311 /* RACListModel.swift */; };
 		AD15CFEC1D17D3F000462311 /* RACListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD15CFEB1D17D3F000462311 /* RACListViewModel.swift */; };
 		AD15CFF41D17D4B900462311 /* RACListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD15CFF31D17D4B900462311 /* RACListViewController.swift */; };
 		AD15CFF61D17D4D500462311 /* RACListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD15CFF51D17D4D500462311 /* RACListViewCell.swift */; };
+		AD2180201D2CB674004E67E6 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21801F1D2CB674004E67E6 /* ScrollViewController.swift */; };
 		AD269FAF1D18EBBA00B8480D /* iOS8NewClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD269FAE1D18EBBA00B8480D /* iOS8NewClasses.swift */; };
+		AD2863161D3C829700E5428F /* UIImageView+XCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2863151D3C829700E5428F /* UIImageView+XCR.swift */; };
+		AD2863181D3C832300E5428F /* UIImageViewCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2863171D3C832300E5428F /* UIImageViewCategory.swift */; };
 		AD314B231CFE7D56003593F7 /* SwiftGlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD314B221CFE7D56003593F7 /* SwiftGlobalFunction.swift */; };
+		AD8E3B351D48B73800A8C43F /* AVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E3B341D48B73800A8C43F /* AVPlayerViewController.swift */; };
 		AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9127951CFE73A00093F219 /* TaskInfoTool.m */; };
 		ADA7D1981D003CA500F840E3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D1971D003CA500F840E3 /* CollectionViewController.swift */; };
 		ADA7D19A1D003CB600F840E3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D1991D003CB600F840E3 /* CollectionViewCell.swift */; };
@@ -32,6 +38,11 @@
 		ADE78A111CF7FC0C00573D7F /* RootListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE78A101CF7FC0C00573D7F /* RootListController.swift */; };
 		ADEA7D791D1CD2E100A19448 /* GSImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEA7D781D1CD2E100A19448 /* GSImageViewerController.swift */; };
 		ADEA7D7B1D1CD74200A19448 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADEA7D7A1D1CD74200A19448 /* 5.jpg */; };
+		ADEBC0461D2F48A000E12074 /* XCRGradientColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBC0451D2F48A000E12074 /* XCRGradientColorView.swift */; };
+		ADEBC04A1D2F4DD400E12074 /* GradientColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBC0481D2F4DD400E12074 /* GradientColorViewController.swift */; };
+		ADEBC04B1D2F4DD400E12074 /* GradientColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADEBC0491D2F4DD400E12074 /* GradientColorViewController.xib */; };
+		ADEBC04D1D2F4DEC00E12074 /* 15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADEBC04C1D2F4DEC00E12074 /* 15.jpg */; };
+		ADF02C681D476FF500B51E95 /* SingleLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF02C671D476FF500B51E95 /* SingleLineViewController.swift */; };
 		ADFAD8C81D0F98B400817EB9 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFAD8C71D0F98B400817EB9 /* Common.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,17 +50,23 @@
 		0A6B42CE9D23BED5E7FA744D /* Pods-Swift3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift3/Pods-Swift3.debug.xcconfig"; sourceTree = "<group>"; };
 		3E9956F811B9179BE7014C5D /* Pods_Swift3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8168AB51746051386FA7D1DB /* Pods-Swift3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift3/Pods-Swift3.release.xcconfig"; sourceTree = "<group>"; };
+		AD05A1461D26582300955761 /* CanMoveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanMoveTableViewController.swift; sourceTree = "<group>"; };
 		AD0AC4581D17C2EB00E5246C /* RAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAC.swift; sourceTree = "<group>"; };
 		AD0AC4591D17C2EB00E5246C /* RACObserve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACObserve.swift; sourceTree = "<group>"; };
 		AD0AC45A1D17C2EB00E5246C /* RACSignal+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RACSignal+Extensions.swift"; sourceTree = "<group>"; };
+		AD0D4FC91D20FF4700AC9EE2 /* ChannelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelView.swift; sourceTree = "<group>"; };
 		AD15CFE91D17D3E200462311 /* RACListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACListModel.swift; sourceTree = "<group>"; };
 		AD15CFEB1D17D3F000462311 /* RACListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACListViewModel.swift; sourceTree = "<group>"; };
 		AD15CFF31D17D4B900462311 /* RACListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACListViewController.swift; sourceTree = "<group>"; };
 		AD15CFF51D17D4D500462311 /* RACListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACListViewCell.swift; sourceTree = "<group>"; };
+		AD21801F1D2CB674004E67E6 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		AD269FAE1D18EBBA00B8480D /* iOS8NewClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOS8NewClasses.swift; sourceTree = "<group>"; };
+		AD2863151D3C829700E5428F /* UIImageView+XCR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+XCR.swift"; sourceTree = "<group>"; };
+		AD2863171D3C832300E5428F /* UIImageViewCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewCategory.swift; sourceTree = "<group>"; };
 		AD314B211CFE7D56003593F7 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		AD314B221CFE7D56003593F7 /* SwiftGlobalFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGlobalFunction.swift; sourceTree = "<group>"; };
 		AD6545781CFEC5460070A3AC /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
+		AD8E3B341D48B73800A8C43F /* AVPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerViewController.swift; sourceTree = "<group>"; };
 		AD9127941CFE73A00093F219 /* TaskInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskInfoTool.h; sourceTree = "<group>"; };
 		AD9127951CFE73A00093F219 /* TaskInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskInfoTool.m; sourceTree = "<group>"; };
 		ADA7D1971D003CA500F840E3 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +85,11 @@
 		ADE78A101CF7FC0C00573D7F /* RootListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootListController.swift; sourceTree = "<group>"; };
 		ADEA7D781D1CD2E100A19448 /* GSImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSImageViewerController.swift; sourceTree = "<group>"; };
 		ADEA7D7A1D1CD74200A19448 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		ADEBC0451D2F48A000E12074 /* XCRGradientColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCRGradientColorView.swift; sourceTree = "<group>"; };
+		ADEBC0481D2F4DD400E12074 /* GradientColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColorViewController.swift; sourceTree = "<group>"; };
+		ADEBC0491D2F4DD400E12074 /* GradientColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradientColorViewController.xib; sourceTree = "<group>"; };
+		ADEBC04C1D2F4DEC00E12074 /* 15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15.jpg; sourceTree = "<group>"; };
+		ADF02C671D476FF500B51E95 /* SingleLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleLineViewController.swift; sourceTree = "<group>"; };
 		ADFAD8C71D0F98B400817EB9 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +122,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AD05A1451D26580D00955761 /* UITableViewCanMove */ = {
+			isa = PBXGroup;
+			children = (
+				AD05A1461D26582300955761 /* CanMoveTableViewController.swift */,
+			);
+			path = UITableViewCanMove;
+			sourceTree = "<group>";
+		};
 		AD0AC4571D17C2EB00E5246C /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +138,22 @@
 				AD0AC45A1D17C2EB00E5246C /* RACSignal+Extensions.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		AD0D4FC51D20FE1800AC9EE2 /* ChannelView */ = {
+			isa = PBXGroup;
+			children = (
+				AD0D4FC61D20FE3500AC9EE2 /* View */,
+			);
+			path = ChannelView;
+			sourceTree = "<group>";
+		};
+		AD0D4FC61D20FE3500AC9EE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD0D4FC91D20FF4700AC9EE2 /* ChannelView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AD15CFE81D17D3CD00462311 /* RACListController */ = {
@@ -121,12 +167,30 @@
 			path = RACListController;
 			sourceTree = "<group>";
 		};
+		AD21801E1D2CB656004E67E6 /* UIScrlloView */ = {
+			isa = PBXGroup;
+			children = (
+				AD21801F1D2CB674004E67E6 /* ScrollViewController.swift */,
+				ADEBC0451D2F48A000E12074 /* XCRGradientColorView.swift */,
+			);
+			path = UIScrlloView;
+			sourceTree = "<group>";
+		};
 		AD269FAD1D18EB7A00B8480D /* iOS8Class */ = {
 			isa = PBXGroup;
 			children = (
 				AD269FAE1D18EBBA00B8480D /* iOS8NewClasses.swift */,
 			);
 			path = iOS8Class;
+			sourceTree = "<group>";
+		};
+		AD2863141D3C81D600E5428F /* UIImageViewCatgary */ = {
+			isa = PBXGroup;
+			children = (
+				AD2863151D3C829700E5428F /* UIImageView+XCR.swift */,
+				AD2863171D3C832300E5428F /* UIImageViewCategory.swift */,
+			);
+			path = UIImageViewCatgary;
 			sourceTree = "<group>";
 		};
 		AD314B201CFE7D56003593F7 /* Public */ = {
@@ -140,6 +204,14 @@
 				AD6545781CFEC5460070A3AC /* Playground.playground */,
 			);
 			path = Public;
+			sourceTree = "<group>";
+		};
+		AD8E3B331D48B71C00A8C43F /* AVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				AD8E3B341D48B73800A8C43F /* AVPlayerViewController.swift */,
+			);
+			path = AVPlayer;
 			sourceTree = "<group>";
 		};
 		AD9127931CFE73A00093F219 /* TaskInfoTool */ = {
@@ -208,6 +280,13 @@
 		ADE78A0E1CF7FBF000573D7F /* Cleasses */ = {
 			isa = PBXGroup;
 			children = (
+				AD8E3B331D48B71C00A8C43F /* AVPlayer */,
+				ADF02C661D476FD400B51E95 /* SingleLine */,
+				AD2863141D3C81D600E5428F /* UIImageViewCatgary */,
+				ADEBC0471D2F4DC600E12074 /* GradientColorView */,
+				AD21801E1D2CB656004E67E6 /* UIScrlloView */,
+				AD05A1451D26580D00955761 /* UITableViewCanMove */,
+				AD0D4FC51D20FE1800AC9EE2 /* ChannelView */,
 				AD269FAD1D18EB7A00B8480D /* iOS8Class */,
 				AD15CFE81D17D3CD00462311 /* RACListController */,
 				ADA7D19D1D00568600F840E3 /* UITableView */,
@@ -232,6 +311,24 @@
 				ADEA7D781D1CD2E100A19448 /* GSImageViewerController.swift */,
 			);
 			path = GSImageViewerController;
+			sourceTree = "<group>";
+		};
+		ADEBC0471D2F4DC600E12074 /* GradientColorView */ = {
+			isa = PBXGroup;
+			children = (
+				ADEBC0481D2F4DD400E12074 /* GradientColorViewController.swift */,
+				ADEBC0491D2F4DD400E12074 /* GradientColorViewController.xib */,
+				ADEBC04C1D2F4DEC00E12074 /* 15.jpg */,
+			);
+			path = GradientColorView;
+			sourceTree = "<group>";
+		};
+		ADF02C661D476FD400B51E95 /* SingleLine */ = {
+			isa = PBXGroup;
+			children = (
+				ADF02C671D476FF500B51E95 /* SingleLineViewController.swift */,
+			);
+			path = SingleLine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,8 +394,10 @@
 			files = (
 				ADE789FF1CF7F3D300573D7F /* Assets.xcassets in Resources */,
 				ADEA7D7B1D1CD74200A19448 /* 5.jpg in Resources */,
+				ADEBC04B1D2F4DD400E12074 /* GradientColorViewController.xib in Resources */,
 				ADE78A0C1CF7FB2000573D7F /* ViewController.xib in Resources */,
 				ADE78A021CF7F3D300573D7F /* LaunchScreen.storyboard in Resources */,
+				ADEBC04D1D2F4DEC00E12074 /* 15.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,22 +457,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD15CFF61D17D4D500462311 /* RACListViewCell.swift in Sources */,
+				AD2863161D3C829700E5428F /* UIImageView+XCR.swift in Sources */,
 				AD15CFEA1D17D3E200462311 /* RACListModel.swift in Sources */,
 				AD269FAF1D18EBBA00B8480D /* iOS8NewClasses.swift in Sources */,
+				ADF02C681D476FF500B51E95 /* SingleLineViewController.swift in Sources */,
+				AD05A1471D26582300955761 /* CanMoveTableViewController.swift in Sources */,
 				ADA7D1981D003CA500F840E3 /* CollectionViewController.swift in Sources */,
 				AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */,
 				ADA7D1A31D0056BD00F840E3 /* TableViewModel.swift in Sources */,
 				AD15CFEC1D17D3F000462311 /* RACListViewModel.swift in Sources */,
+				AD8E3B351D48B73800A8C43F /* AVPlayerViewController.swift in Sources */,
 				ADEA7D791D1CD2E100A19448 /* GSImageViewerController.swift in Sources */,
 				ADE78A0B1CF7FB2000573D7F /* ViewController.swift in Sources */,
+				ADEBC04A1D2F4DD400E12074 /* GradientColorViewController.swift in Sources */,
 				AD0AC45B1D17C2EB00E5246C /* RAC.swift in Sources */,
 				AD15CFF41D17D4B900462311 /* RACListViewController.swift in Sources */,
+				AD2863181D3C832300E5428F /* UIImageViewCategory.swift in Sources */,
 				AD0AC45C1D17C2EB00E5246C /* RACObserve.swift in Sources */,
+				ADEBC0461D2F48A000E12074 /* XCRGradientColorView.swift in Sources */,
 				ADFAD8C81D0F98B400817EB9 /* Common.swift in Sources */,
 				ADA7D19A1D003CB600F840E3 /* CollectionViewCell.swift in Sources */,
+				AD0D4FCA1D20FF4700AC9EE2 /* ChannelView.swift in Sources */,
 				AD314B231CFE7D56003593F7 /* SwiftGlobalFunction.swift in Sources */,
 				ADA7D1A11D0056AD00F840E3 /* TableViewCell.swift in Sources */,
 				ADA7D19C1D003EA800F840E3 /* CollectionModel.swift in Sources */,
+				AD2180201D2CB674004E67E6 /* ScrollViewController.swift in Sources */,
 				ADE78A111CF7FC0C00573D7F /* RootListController.swift in Sources */,
 				ADA7D19F1D00569A00F840E3 /* TableViewController.swift in Sources */,
 				ADE789FD1CF7F3D300573D7F /* AppDelegate.swift in Sources */,
@@ -484,7 +592,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Swift3/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhcpeng.Swift3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,7 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Swift3/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhcpeng.Swift3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
