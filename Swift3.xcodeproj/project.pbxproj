@@ -22,6 +22,7 @@
 		AD2863161D3C829700E5428F /* UIImageView+XCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2863151D3C829700E5428F /* UIImageView+XCR.swift */; };
 		AD2863181D3C832300E5428F /* UIImageViewCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2863171D3C832300E5428F /* UIImageViewCategory.swift */; };
 		AD314B231CFE7D56003593F7 /* SwiftGlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD314B221CFE7D56003593F7 /* SwiftGlobalFunction.swift */; };
+		AD5088461D61A0BD0023824B /* YYLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5088451D61A0BD0023824B /* YYLabelViewController.swift */; };
 		AD8E3B351D48B73800A8C43F /* AVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E3B341D48B73800A8C43F /* AVPlayerViewController.swift */; };
 		AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9127951CFE73A00093F219 /* TaskInfoTool.m */; };
 		ADA7D1981D003CA500F840E3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D1971D003CA500F840E3 /* CollectionViewController.swift */; };
@@ -65,6 +66,7 @@
 		AD2863171D3C832300E5428F /* UIImageViewCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewCategory.swift; sourceTree = "<group>"; };
 		AD314B211CFE7D56003593F7 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		AD314B221CFE7D56003593F7 /* SwiftGlobalFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGlobalFunction.swift; sourceTree = "<group>"; };
+		AD5088451D61A0BD0023824B /* YYLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYLabelViewController.swift; sourceTree = "<group>"; };
 		AD6545781CFEC5460070A3AC /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 		AD8E3B341D48B73800A8C43F /* AVPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerViewController.swift; sourceTree = "<group>"; };
 		AD9127941CFE73A00093F219 /* TaskInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskInfoTool.h; sourceTree = "<group>"; };
@@ -206,6 +208,14 @@
 			path = Public;
 			sourceTree = "<group>";
 		};
+		AD5088441D61A0B00023824B /* YYLabel */ = {
+			isa = PBXGroup;
+			children = (
+				AD5088451D61A0BD0023824B /* YYLabelViewController.swift */,
+			);
+			path = YYLabel;
+			sourceTree = "<group>";
+		};
 		AD8E3B331D48B71C00A8C43F /* AVPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +290,7 @@
 		ADE78A0E1CF7FBF000573D7F /* Cleasses */ = {
 			isa = PBXGroup;
 			children = (
+				AD5088441D61A0B00023824B /* YYLabel */,
 				AD8E3B331D48B71C00A8C43F /* AVPlayer */,
 				ADF02C661D476FD400B51E95 /* SingleLine */,
 				AD2863141D3C81D600E5428F /* UIImageViewCatgary */,
@@ -338,12 +349,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADE78A061CF7F3D300573D7F /* Build configuration list for PBXNativeTarget "Swift3" */;
 			buildPhases = (
-				A8F25C9D1577083F01B95102 /* 📦 Check Pods Manifest.lock */,
+				A8F25C9D1577083F01B95102 /* [CP] Check Pods Manifest.lock */,
 				ADE789F51CF7F3D300573D7F /* Sources */,
 				ADE789F61CF7F3D300573D7F /* Frameworks */,
 				ADE789F71CF7F3D300573D7F /* Resources */,
-				D0010DA1CD2CF5B014D07E20 /* 📦 Embed Pods Frameworks */,
-				81E7DD092570023A2B43C048 /* 📦 Copy Pods Resources */,
+				D0010DA1CD2CF5B014D07E20 /* [CP] Embed Pods Frameworks */,
+				81E7DD092570023A2B43C048 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -404,14 +415,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		81E7DD092570023A2B43C048 /* 📦 Copy Pods Resources */ = {
+		81E7DD092570023A2B43C048 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,14 +430,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift3/Pods-Swift3-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A8F25C9D1577083F01B95102 /* 📦 Check Pods Manifest.lock */ = {
+		A8F25C9D1577083F01B95102 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,14 +445,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D0010DA1CD2CF5B014D07E20 /* 📦 Embed Pods Frameworks */ = {
+		D0010DA1CD2CF5B014D07E20 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +469,7 @@
 			files = (
 				AD15CFF61D17D4D500462311 /* RACListViewCell.swift in Sources */,
 				AD2863161D3C829700E5428F /* UIImageView+XCR.swift in Sources */,
+				AD5088461D61A0BD0023824B /* YYLabelViewController.swift in Sources */,
 				AD15CFEA1D17D3E200462311 /* RACListModel.swift in Sources */,
 				AD269FAF1D18EBBA00B8480D /* iOS8NewClasses.swift in Sources */,
 				ADF02C681D476FF500B51E95 /* SingleLineViewController.swift in Sources */,
