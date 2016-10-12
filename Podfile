@@ -6,10 +6,12 @@ use_frameworks!
 pod 'Alamofire', '~> 3.0'
 pod 'SDWebImage', '~>3.7'
 pod 'ReactiveCocoa'
-pod 'SnapKit'
+pod 'SnapKit','~>0.22.0'
 pod 'YYModel'
-pod 'SwiftyJSON'
+pod 'SwiftyJSON','2.4.0'
 pod 'YYText'
 pod 'RTLabel'
+pod 'iCarousel'
+#pod 'ImageViewer'
 
 end

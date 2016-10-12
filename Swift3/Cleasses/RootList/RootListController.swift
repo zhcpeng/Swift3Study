@@ -24,6 +24,8 @@ class RootListController: UITableViewController {
 		itemList.append("YYLabelViewController")
         itemList.append("AssetsLibraryViewController")
         itemList.append("PHPhotosAlbumViewController")
+        itemList.append("OrientationViewController")
+        
 
 		self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
 	}

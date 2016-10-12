@@ -8,50 +8,92 @@
 
 import UIKit
 
-
 class ViewController: UIViewController {
-    
-    private lazy var imageView = UIImageView()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,Int64(2.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
-            let vc = RootListController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        
-        
-        self.view.addSubview(imageView)
-        imageView.snp_makeConstraints { make in
-            make.width.height.equalTo(50)
-            make.center.equalTo(self.view)
-        }
-//        imageView.sd_setImageWithURL(NSURL.init(string: ""))
-//        imageView.sd_setImageWithURL(<#T##url: NSURL!##NSURL!#>, placeholderImage: <#T##UIImage!#>, options: <#T##SDWebImageOptions#>)
-        
-//        imageView.snp_makeConstraints { (make) in
-//            
-//        }
-        
-    }
+		// Do any additional setup after loading the view.
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+			let vc = RootListController()
+			self.navigationController?.pushViewController(vc, animated: true)
+		}
 
-    /*
-    // MARK: - Navigation
+//		let str = "预00算222.2元"
+//		let x = (str.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: "0123456789.").invertedSet) as NSArray).componentsJoinedByString("")
+//		print(x)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+		// print(formatterString(str))
+        
+//        let i = INT_MAX
+//        
+//		 let xx = DBL_MAX
+//		 let ss = String(xx)
+//		 print(ss.characters.count)
+
+//		let xxx = "000001111122"
+//		let sss = delZero(xxx)
+
+//        let d :NSString = "00011001100"
+//        let xxxx = d.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "0").invertedSet)
+        
+        
+//        let ss : NSString = "18.49"
+//        let xx = ss.doubleValue
+//        NSDecimalNumber
+        
+//        let sss = "18.49"
+//        let num = NSDecimalNumber.init(string: sss)
+//        let f = num.floatValue * 10000
+//        let x = Int(f)
+        
+//        let xxxx = sizeof(Double)
+        // 8
+        
+        
+        
+//        let f :Float = 10.99
+//        print(f)
+//        
+//        let f1 : Float = 10.49
+//        print(f1)
+//        
+//        let f2 : Float = 10.88
+//        print(f2)
+        
+	}
+
+//	private func delZero(str: String) -> String {
+//		var string = str
+//		if string.hasPrefix("0") {
+//			string = string.substringWithRange(Range(string.startIndex.successor()..<string.endIndex))
+//			string = delZero(string)
+//		}
+//		return string
+//	}
+
+	// private func formatterString(str: String) -> String {
+	// let scanner = NSScanner(string: str)
+	// //		scanner.scanUpToCharactersFromSet(NSCharacterSet.decimalDigitCharacterSet(), intoString: nil)
+	// scanner.scanUpToCharactersFromSet(NSCharacterSet(charactersInString: "0123456789.").invertedSet, intoString: nil)
+	// var number = 0
+	// scanner.scanInteger(&number)
+	// return String(number)
+	// }
+
+	// /// 过滤非数字
+	// private func formatterString(str: String) -> String {
+	// let scanner = NSScanner(string: str)
+	// scanner.scanUpToCharactersFromSet(NSCharacterSet.decimalDigitCharacterSet(), intoString: nil)
+	// var number = 0
+	// scanner.scanInteger(&number)
+	// return String(number)
+	// }
+
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
 
 }

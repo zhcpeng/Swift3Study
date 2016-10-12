@@ -14,12 +14,21 @@ class PHPhotosCollectionViewController: UIViewController, UICollectionViewDelega
 
 	var fetchResult: PHFetchResult?
 
-	private lazy var imageManager: PHCachingImageManager = PHCachingImageManager()
-
+	// private lazy var imageCachingManager: PHCachingImageManager = PHCachingImageManager()
+	// private lazy var assetList : [PHAsset] = []
+	private lazy var imageManager: PHImageManager = PHImageManager.defaultManager()
 	private let kPodding: CGFloat = 5
 	private lazy var width: CGFloat = (kScreenWidth - self.kPodding * 3) / 4
 	private let scale = UIScreen.mainScreen().scale
 	private lazy var AssetGridThumbnailSize: CGSize = CGSize.init(width: self.width * self.scale, height: self.width * self.scale)
+	private lazy var imageRequestOptions: PHImageRequestOptions = {
+		let imageRequestOptions = PHImageRequestOptions()
+		imageRequestOptions.synchronous = true
+		imageRequestOptions.resizeMode = .Fast
+		imageRequestOptions.deliveryMode = .Opportunistic
+
+		return imageRequestOptions
+	}()
 
 	private lazy var collectionView: UICollectionView = {
 		let layout = UICollectionViewFlowLayout()
@@ -44,11 +53,38 @@ class PHPhotosCollectionViewController: UIViewController, UICollectionViewDelega
 			make.edges.equalTo(self.view)
 		}
 
-		// let assset = fetchResult?[0] as! PHAsset
-		// self.imageManager.requestImageForAsset(assset, targetSize: CGSize(width: 10000,height: 10000), contentMode: .AspectFill, options: nil) { (result, info) in
-		// print(result)
+		/// 缓存图片，发现效率也不是那么高
+		// if let result = fetchResult {
+		// result.enumerateObjectsUsingBlock({ (asset, index, stop) in
+		// if let asset = asset as? PHAsset {
+		// self.assetList.append(asset)
 		// }
+		// })
+		// }
+		// self.imageCachingManager.startCachingImagesForAssets(self.assetList, targetSize: AssetGridThumbnailSize, contentMode: .AspectFill, options: self.imageRequestOptions)
+        
+        
+        NSNotificationCenter.defaultCenter().rac_addObserverForName(UIDeviceOrientationDidChangeNotification, object: nil).subscribeNext { [weak self](_) in
+            self?.rotate()
+        }
+
 	}
+
+	deinit {
+		// self.imageCachingManager.stopCachingImagesForAllAssets()
+	}
+    
+    private func rotate() {
+        UIView.animateWithDuration(0.2, delay: 0, options: .CurveLinear, animations: {
+            //			self.imageView.transform = rotationTransform()
+            //            self.imageView.bounds = rotationAdjustedBounds()
+            self.view.transform = rotationTransform()
+            self.view.bounds = rotationAdjustedBounds()
+            self.view.setNeedsLayout()
+        }) { (_) in
+            //            print(self.imageView.frame)
+        }
+    }
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
@@ -65,7 +101,7 @@ class PHPhotosCollectionViewController: UIViewController, UICollectionViewDelega
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PHPhotosCollectionViewCell.identifier, forIndexPath: indexPath) as! PHPhotosCollectionViewCell
 		cell.representedAssetIdentifier = assset.localIdentifier
 
-		self.imageManager.requestImageForAsset(assset, targetSize: AssetGridThumbnailSize, contentMode: .AspectFill, options: nil) { (result, info) in
+		self.imageManager.requestImageForAsset(assset, targetSize: AssetGridThumbnailSize, contentMode: .AspectFill, options: self.imageRequestOptions) { (result, info) in
 			if cell.representedAssetIdentifier == assset.localIdentifier {
 				cell.thumbnailImage = result
 				// print(assset.localIdentifier)
@@ -77,5 +113,9 @@ class PHPhotosCollectionViewController: UIViewController, UICollectionViewDelega
 
 	func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
 		print("点击了 \(indexPath.item / 4 + 1) 行 \(indexPath.item % 4 + 1) 列")
+		let vc = PHPhotosScanViewController()
+		vc.selectedIndex = indexPath.item
+		vc.fetchResult = fetchResult
+		self.navigationController?.pushViewController(vc, animated: true)
 	}
 }

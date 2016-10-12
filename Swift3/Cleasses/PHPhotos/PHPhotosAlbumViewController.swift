@@ -37,9 +37,14 @@ class PHPhotosAlbumViewController: UIViewController, UITableViewDelegate, UITabl
 
 		PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
 
-		PHPhotoLibrary.requestAuthorization({ (status) in
-			print(status)
-		})
+//        PHPhotoLibrary.requestAuthorization({ (status) in
+//            switch status {
+//            case .Authorized:
+//                print("允许访问")
+//            default:
+//                print("拒绝访问")
+//            }
+//        })
 
 		self.view.addSubview(tableView)
 		tableView.snp_makeConstraints { (make) in

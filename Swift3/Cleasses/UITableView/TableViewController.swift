@@ -22,7 +22,7 @@ class TableViewController: UIViewController {
 		tableView.dataSource = self
 		tableView.separatorStyle = .None
 		tableView.estimatedRowHeight = 200
-		// tableView.rowHeight = UITableViewAutomaticDimension
+		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: kTableViewCellIdentifier)
 		tableView.contentInset = UIEdgeInsetsMake(4, 0, 4, 0)
 
