@@ -32,6 +32,8 @@
 		AD5088461D61A0BD0023824B /* YYLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5088451D61A0BD0023824B /* YYLabelViewController.swift */; };
 		AD8E3B351D48B73800A8C43F /* AVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E3B341D48B73800A8C43F /* AVPlayerViewController.swift */; };
 		AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9127951CFE73A00093F219 /* TaskInfoTool.m */; };
+		AD9DD6C71DADE644003F2634 /* CallPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD6C51DADE644003F2634 /* CallPhoneViewController.swift */; };
+		AD9DD6C81DADE644003F2634 /* CallPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD6C61DADE644003F2634 /* CallPhoneViewController.xib */; };
 		ADA7D1981D003CA500F840E3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D1971D003CA500F840E3 /* CollectionViewController.swift */; };
 		ADA7D19A1D003CB600F840E3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D1991D003CB600F840E3 /* CollectionViewCell.swift */; };
 		ADA7D19C1D003EA800F840E3 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D19B1D003EA800F840E3 /* CollectionModel.swift */; };
@@ -88,6 +90,8 @@
 		AD8E3B341D48B73800A8C43F /* AVPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerViewController.swift; sourceTree = "<group>"; };
 		AD9127941CFE73A00093F219 /* TaskInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskInfoTool.h; sourceTree = "<group>"; };
 		AD9127951CFE73A00093F219 /* TaskInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskInfoTool.m; sourceTree = "<group>"; };
+		AD9DD6C51DADE644003F2634 /* CallPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallPhoneViewController.swift; sourceTree = "<group>"; };
+		AD9DD6C61DADE644003F2634 /* CallPhoneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallPhoneViewController.xib; sourceTree = "<group>"; };
 		ADA7D1971D003CA500F840E3 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		ADA7D1991D003CB600F840E3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		ADA7D19B1D003EA800F840E3 /* CollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
@@ -272,6 +276,15 @@
 			path = TaskInfoTool;
 			sourceTree = "<group>";
 		};
+		AD9DD6C41DADE607003F2634 /* Call */ = {
+			isa = PBXGroup;
+			children = (
+				AD9DD6C51DADE644003F2634 /* CallPhoneViewController.swift */,
+				AD9DD6C61DADE644003F2634 /* CallPhoneViewController.xib */,
+			);
+			path = Call;
+			sourceTree = "<group>";
+		};
 		ADA7D1961D003C9000F840E3 /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +342,7 @@
 		ADE78A0E1CF7FBF000573D7F /* Cleasses */ = {
 			isa = PBXGroup;
 			children = (
+				AD9DD6C41DADE607003F2634 /* Call */,
 				AD1A86C71D7FA788000F8743 /* Orientation */,
 				ADEE4B8D1D6DA4F100342B8B /* PHPhotos */,
 				AD1C6C3E1D6C55800026281D /* AssetsLibrary */,
@@ -458,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADE789FF1CF7F3D300573D7F /* Assets.xcassets in Resources */,
+				AD9DD6C81DADE644003F2634 /* CallPhoneViewController.xib in Resources */,
 				ADEA7D7B1D1CD74200A19448 /* 5.jpg in Resources */,
 				AD1A86CF1D7FB2B9000F8743 /* 05.jpg in Resources */,
 				ADEBC04B1D2F4DD400E12074 /* GradientColorViewController.xib in Resources */,
@@ -560,6 +575,7 @@
 				ADE78A111CF7FC0C00573D7F /* RootListController.swift in Sources */,
 				ADA7D19F1D00569A00F840E3 /* TableViewController.swift in Sources */,
 				AD1A86CB1D7FA946000F8743 /* UtilityFunctions.swift in Sources */,
+				AD9DD6C71DADE644003F2634 /* CallPhoneViewController.swift in Sources */,
 				ADE789FD1CF7F3D300573D7F /* AppDelegate.swift in Sources */,
 				AD0AC45D1D17C2EB00E5246C /* RACSignal+Extensions.swift in Sources */,
 			);
