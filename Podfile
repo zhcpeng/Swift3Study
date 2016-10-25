@@ -13,5 +13,7 @@ pod 'YYText'
 pod 'RTLabel'
 pod 'iCarousel'
 #pod 'ImageViewer'
+pod 'MWPhotoBrowser'
+pod 'Kingfisher', '2.6.0'
 
 end
