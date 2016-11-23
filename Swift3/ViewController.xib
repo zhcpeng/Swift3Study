@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift2.2开始，创建时间2016年5月" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ha0-p1-aAI">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift2.2开始，创建时间2016年5月" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ha0-p1-aAI">
                     <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Kju-kf-VAm"/>
@@ -24,31 +24,28 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2px-Yx-q2b">
-                    <rect key="frame" x="0.0" y="211" width="320" height="44"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4X9-rF-FkL">
-                            <rect key="frame" x="110" y="0.0" width="100" height="44"/>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <inset key="titleEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="41" minY="30" maxX="-31" maxY="0.0"/>
-                            <state key="normal" title="全部图片" image="discover_narbar_button_h"/>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0h6-fw-QhX">
+                    <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="6Fo-90-avd"/>
+                    </constraints>
+                    <connections>
+                        <action selector="btnAction:" destination="-1" eventType="touchUpInside" id="9fG-KV-GTB"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.19404472174447784" green="0.864370334373052" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="0h6-fw-QhX" secondAttribute="trailing" id="4aZ-eF-woj"/>
                 <constraint firstItem="ha0-p1-aAI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BSH-39-R35"/>
                 <constraint firstAttribute="bottom" secondItem="ha0-p1-aAI" secondAttribute="bottom" id="LC5-M1-UMn"/>
+                <constraint firstAttribute="bottom" secondItem="0h6-fw-QhX" secondAttribute="bottom" id="fIJ-ib-FmA"/>
+                <constraint firstItem="0h6-fw-QhX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lUP-mt-0ef"/>
+                <constraint firstAttribute="bottom" secondItem="0h6-fw-QhX" secondAttribute="bottom" id="vlX-Mb-0oa"/>
                 <constraint firstAttribute="trailing" secondItem="ha0-p1-aAI" secondAttribute="trailing" id="zR9-VR-Pi4"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="216" y="397"/>
         </view>
     </objects>
-    <resources>
-        <image name="discover_narbar_button_h" width="9" height="4"/>
-    </resources>
 </document>

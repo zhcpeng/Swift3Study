@@ -32,6 +32,7 @@
 		AD2A4FD41DBF3268004705F1 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD2A4FD11DBF3268004705F1 /* 1.jpg */; };
 		AD2A4FD51DBF3268004705F1 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD2A4FD21DBF3268004705F1 /* 2.jpg */; };
 		AD2A7E3A1DBA030C0074BBC8 /* PhotoBrowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2A7E391DBA030C0074BBC8 /* PhotoBrowerViewController.swift */; };
+		AD2B68471DDAA9400030F665 /* ScrollTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B68461DDAA9400030F665 /* ScrollTextViewController.swift */; };
 		AD314B231CFE7D56003593F7 /* SwiftGlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD314B221CFE7D56003593F7 /* SwiftGlobalFunction.swift */; };
 		AD5088461D61A0BD0023824B /* YYLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5088451D61A0BD0023824B /* YYLabelViewController.swift */; };
 		AD5C29001DBF070D00A68052 /* XCRPhotosBrowserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5C28FF1DBF070D00A68052 /* XCRPhotosBrowserCollectionViewCell.swift */; };
@@ -92,6 +93,7 @@
 		AD2A4FD11DBF3268004705F1 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		AD2A4FD21DBF3268004705F1 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		AD2A7E391DBA030C0074BBC8 /* PhotoBrowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowerViewController.swift; sourceTree = "<group>"; };
+		AD2B68461DDAA9400030F665 /* ScrollTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTextViewController.swift; sourceTree = "<group>"; };
 		AD314B211CFE7D56003593F7 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		AD314B221CFE7D56003593F7 /* SwiftGlobalFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGlobalFunction.swift; sourceTree = "<group>"; };
 		AD5088451D61A0BD0023824B /* YYLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYLabelViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +262,14 @@
 			path = PhotoBrower;
 			sourceTree = "<group>";
 		};
+		AD2B68451DDAA9290030F665 /* ScrollViewText */ = {
+			isa = PBXGroup;
+			children = (
+				AD2B68461DDAA9400030F665 /* ScrollTextViewController.swift */,
+			);
+			path = ScrollViewText;
+			sourceTree = "<group>";
+		};
 		AD314B201CFE7D56003593F7 /* Public */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +374,7 @@
 		ADE78A0E1CF7FBF000573D7F /* Cleasses */ = {
 			isa = PBXGroup;
 			children = (
+				AD2B68451DDAA9290030F665 /* ScrollViewText */,
 				AD2A7E381DBA02E30074BBC8 /* PhotoBrower */,
 				AD9DD6C41DADE607003F2634 /* Call */,
 				AD1A86C71D7FA788000F8743 /* Orientation */,
@@ -446,6 +457,7 @@
 				ADE789F71CF7F3D300573D7F /* Resources */,
 				D0010DA1CD2CF5B014D07E20 /* [CP] Embed Pods Frameworks */,
 				81E7DD092570023A2B43C048 /* [CP] Copy Pods Resources */,
+				ADC40A6D1DC9D95F00A289E5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -542,6 +554,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		ADC40A6D1DC9D95F00A289E5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\nTAGS=\"#WARNING:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"\nfi";
+		};
 		D0010DA1CD2CF5B014D07E20 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -577,6 +602,7 @@
 				ADA7D1981D003CA500F840E3 /* CollectionViewController.swift in Sources */,
 				AD1D77701D6E8FD4001B0154 /* PHPhotosCollectionViewCell.swift in Sources */,
 				AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */,
+				AD2B68471DDAA9400030F665 /* ScrollTextViewController.swift in Sources */,
 				AD1C6C401D6C55900026281D /* AssetsLibraryViewController.swift in Sources */,
 				ADA7D1A31D0056BD00F840E3 /* TableViewModel.swift in Sources */,
 				AD15CFEC1D17D3F000462311 /* RACListViewModel.swift in Sources */,

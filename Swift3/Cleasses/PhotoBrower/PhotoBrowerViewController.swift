@@ -56,19 +56,14 @@ class PhotoBrowerViewController: UIViewController, UIScrollViewDelegate {
 	override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
 		rotating = true
 	}
-	// override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-	//// rotating = true
-	// }
 
 	override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
 		rotating = false
 	}
-
 	func scrollViewDidScroll(scrollView: UIScrollView) {
 		if performingLayout || rotating {
 			return
 		}
-
 		let visibleBounds = scrollView.bounds
 		var index = Int(floor(CGRectGetMidX(visibleBounds) / CGRectGetWidth(visibleBounds)))
 		if index < 0 { index = 0 }

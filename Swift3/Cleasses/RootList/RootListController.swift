@@ -27,6 +27,7 @@ class RootListController: UITableViewController {
         itemList.append("OrientationViewController")
         itemList.append("CallPhoneViewController")
         itemList.append("PhotoBrowerViewController")
+        itemList.append("ScrollTextViewController")
 
 		self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
 	}

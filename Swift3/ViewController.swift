@@ -91,6 +91,9 @@ class ViewController: UIViewController {
 	// return String(number)
 	// }
 
+    @IBAction func btnAction(sender: UIButton) {
+        self.navigationController?.pushViewController(RootListController(), animated: true)
+    }
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
