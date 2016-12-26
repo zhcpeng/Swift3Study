@@ -13,6 +13,7 @@
 		AD0AC45C1D17C2EB00E5246C /* RACObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0AC4591D17C2EB00E5246C /* RACObserve.swift */; };
 		AD0AC45D1D17C2EB00E5246C /* RACSignal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0AC45A1D17C2EB00E5246C /* RACSignal+Extensions.swift */; };
 		AD0D4FCA1D20FF4700AC9EE2 /* ChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0D4FC91D20FF4700AC9EE2 /* ChannelView.swift */; };
+		AD0EBC721DE5206E0079E8A2 /* SectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0EBC711DE5206E0079E8A2 /* SectionTableViewController.swift */; };
 		AD15CFEA1D17D3E200462311 /* RACListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD15CFE91D17D3E200462311 /* RACListModel.swift */; };
 		AD15CFEC1D17D3F000462311 /* RACListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD15CFEB1D17D3F000462311 /* RACListViewModel.swift */; };
 		AD15CFF41D17D4B900462311 /* RACListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD15CFF31D17D4B900462311 /* RACListViewController.swift */; };
@@ -74,6 +75,7 @@
 		AD0AC4591D17C2EB00E5246C /* RACObserve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACObserve.swift; sourceTree = "<group>"; };
 		AD0AC45A1D17C2EB00E5246C /* RACSignal+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RACSignal+Extensions.swift"; sourceTree = "<group>"; };
 		AD0D4FC91D20FF4700AC9EE2 /* ChannelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelView.swift; sourceTree = "<group>"; };
+		AD0EBC711DE5206E0079E8A2 /* SectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTableViewController.swift; sourceTree = "<group>"; };
 		AD15CFE91D17D3E200462311 /* RACListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACListModel.swift; sourceTree = "<group>"; };
 		AD15CFEB1D17D3F000462311 /* RACListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACListViewModel.swift; sourceTree = "<group>"; };
 		AD15CFF31D17D4B900462311 /* RACListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACListViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,14 @@
 				AD0D4FC91D20FF4700AC9EE2 /* ChannelView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AD0EBC701DE5205B0079E8A2 /* TableViewSection */ = {
+			isa = PBXGroup;
+			children = (
+				AD0EBC711DE5206E0079E8A2 /* SectionTableViewController.swift */,
+			);
+			path = TableViewSection;
 			sourceTree = "<group>";
 		};
 		AD15CFE81D17D3CD00462311 /* RACListController */ = {
@@ -374,6 +384,7 @@
 		ADE78A0E1CF7FBF000573D7F /* Cleasses */ = {
 			isa = PBXGroup;
 			children = (
+				AD0EBC701DE5205B0079E8A2 /* TableViewSection */,
 				AD2B68451DDAA9290030F665 /* ScrollViewText */,
 				AD2A7E381DBA02E30074BBC8 /* PhotoBrower */,
 				AD9DD6C41DADE607003F2634 /* Call */,
@@ -603,6 +614,7 @@
 				AD1D77701D6E8FD4001B0154 /* PHPhotosCollectionViewCell.swift in Sources */,
 				AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */,
 				AD2B68471DDAA9400030F665 /* ScrollTextViewController.swift in Sources */,
+				AD0EBC721DE5206E0079E8A2 /* SectionTableViewController.swift in Sources */,
 				AD1C6C401D6C55900026281D /* AssetsLibraryViewController.swift in Sources */,
 				ADA7D1A31D0056BD00F840E3 /* TableViewModel.swift in Sources */,
 				AD15CFEC1D17D3F000462311 /* RACListViewModel.swift in Sources */,

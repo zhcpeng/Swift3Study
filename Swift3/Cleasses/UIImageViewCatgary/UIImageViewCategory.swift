@@ -53,7 +53,7 @@ class UIImageViewCategory: UIViewController {
     }
     
     deinit{
-        self.removeObserver(self, forKeyPath: "highlighted")
+//        self.removeObserver(self, forKeyPath: "highlighted")
     }
     
 //    func sendSmsWithMobile(licenseNo: String, mobile:String,mode:Int,scene:String,successHandler:(isRegistered:Bool)->Void,failureHandler:(driver:Driver)->Void)
