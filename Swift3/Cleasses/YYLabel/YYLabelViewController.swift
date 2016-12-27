@@ -12,7 +12,7 @@ import YYText
 
 class YYLabelViewController: UIViewController {
     
-    private lazy var contentLabel : YYLabel = {
+    fileprivate lazy var contentLabel : YYLabel = {
         let label = YYLabel()
         label.numberOfLines = 0
         return label
@@ -28,7 +28,7 @@ class YYLabelViewController: UIViewController {
         contentLabel.frame = CGRect.init(x: 0, y: 100, width: kScreenWidth, height: 100)
         
         let text = NSMutableAttributedString.init(string: "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试...全文", attributes: nil)
-        text.yy_setTextHighlightRange(NSRange.init(location: text.length - 2, length: 2), color: UIColor.blueColor(), backgroundColor: UIColor.clearColor()) { (_, _, _, _) in
+        text.yy_setTextHighlight(NSRange.init(location: text.length - 2, length: 2), color: UIColor.blue, backgroundColor: UIColor.clear) { (_, _, _, _) in
             print("点击 全文")
         }
         contentLabel.attributedText = text

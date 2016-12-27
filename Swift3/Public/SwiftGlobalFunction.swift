@@ -11,20 +11,20 @@ import SnapKit
 import Alamofire
 import SwiftyJSON
 
-let IS_IOS7 = (UIDevice.currentDevice().systemVersion as NSString).doubleValue >= 7.0
-let IS_IOS8 = (UIDevice.currentDevice().systemVersion as NSString).doubleValue >= 8.0
+let IS_IOS7 = (UIDevice.current.systemVersion as NSString).doubleValue >= 7.0
+let IS_IOS8 = (UIDevice.current.systemVersion as NSString).doubleValue >= 8.0
 
-let kScreenWidth = UIScreen.mainScreen().bounds.size.width
-let kScreenHeight = UIScreen.mainScreen().bounds.size.height
+let kScreenWidth = UIScreen.main.bounds.size.width
+let kScreenHeight = UIScreen.main.bounds.size.height
 
-public func kCurrentHeight(H:CGFloat) -> CGFloat{
+public func kCurrentHeight(_ H:CGFloat) -> CGFloat{
     return (H * (kScreenWidth) / 320.0)
 }
-public func kGetCurrentHeight(W:CGFloat,H:CGFloat) -> CGFloat{
+public func kGetCurrentHeight(_ W:CGFloat,H:CGFloat) -> CGFloat{
     return (((kScreenWidth) - (320 - W)) * H / W)
 }
 
-public func kUIColor (color: UInt32) -> UIColor{
+public func kUIColor (_ color: UInt32) -> UIColor{
     let redComponent = (color & 0xFF0000) >> 16
     let greenComponent = (color & 0x00FF00) >> 8
     let blueComponent = color & 0x0000FF
@@ -32,8 +32,8 @@ public func kUIColor (color: UInt32) -> UIColor{
     return resultcolor
 }
 
-public func SwiftClassFromString(className: String) -> UIViewController? {
-    if  let appName = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as? String {
+public func SwiftClassFromString(_ className: String) -> UIViewController? {
+    if  let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String {
         let classStringName = "_TtC\(appName.characters.count)\(appName)\(className.characters.count)\(className)"
         let  cls: AnyClass? = NSClassFromString(classStringName)
         assert(cls != nil, "class not found,please check className")

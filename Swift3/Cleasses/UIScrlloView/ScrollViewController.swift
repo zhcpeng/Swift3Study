@@ -18,8 +18,8 @@ class ScrollViewController: UIViewController {
         
         let scrollView : UIScrollView = UIScrollView()
         self.view.addSubview(scrollView)
-        scrollView.backgroundColor = UIColor.whiteColor()
-        scrollView.snp_makeConstraints { (make) in
+        scrollView.backgroundColor = UIColor.white
+        scrollView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
         
@@ -30,33 +30,33 @@ class ScrollViewController: UIViewController {
             view.backgroundColor = UIColor.init(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1)
             scrollView.addSubview(view)
             
-            view.snp_makeConstraints(closure: { (make) in
+            view.snp.makeConstraints({ (make) in
                 make.width.equalTo(300)
                 make.height.equalTo(50)
                 if i == 0 {
-                    make.top.equalTo(scrollView.snp_top)
+                    make.top.equalTo(scrollView.snp.top)
                 }else{
-                    make.top.equalTo(topView!.snp_bottom)
+                    make.top.equalTo(topView!.snp.bottom)
                 }
                 
             })
            topView = view
         }
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(3 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
             let view = scrollView.viewWithTag(2)
-            view?.snp_updateConstraints(closure: { (make) in
+            view?.snp.updateConstraints({ (make) in
                 make.height.equalTo(0)
             })
-            UIView.animateWithDuration(1, animations: { 
+            UIView.animate(withDuration: 1, animations: { 
                 scrollView.layoutIfNeeded()
             })
         })
         
         let gradientView = XCRGradientColorView.init(frame: CGRect.init(x: 0, y: 300, width: 300, height: 50))
-        gradientView.backgroundColor = UIColor.clearColor()
+        gradientView.backgroundColor = UIColor.clear
         scrollView.addSubview(gradientView)
-//        gradientView.snp_makeConstraints { (make) in
+//        gradientView.snp.makeConstraints { (make) in
 //            make.left.bottom.right.equalTo(scrollView)
 //            make.width.equalTo(scrollView)
 //            make.height.equalTo(50)

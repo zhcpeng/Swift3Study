@@ -18,7 +18,7 @@ class XCRGradientColorView: UIView {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
         
         let context = UIGraphicsGetCurrentContext()
@@ -28,13 +28,13 @@ class XCRGradientColorView: UIView {
 //        let colors : [CGFloat] = [0,0,0,0.1,0,0,0,1]
         let colors : [CGFloat] = [0,0,0,0,0,0,0,1]
         // locations 代表2个颜色的区域分布（0～1） ，如果需要均匀分布需要传入NULL
-        let locations :[CGFloat] = [0,1]
+//        let locations :[CGFloat] = [0,1]
 //        let gradient = CGGradientCreateWithColorComponents(colorSpace, colors, locations, 2);
-        let gradient = CGGradientCreateWithColorComponents(colorSpace, colors, nil, 2);
+        let gradient = CGGradient(colorSpace: colorSpace, colorComponents: colors, locations: nil, count: 2);
         
         // 第三个参数表示起始点，第四个参数表示结束点
         // 最后一个参数如果设置kCGGradientDrawsAfterEndLocation表示结束点后面的区域使用渐变填充，设置kCGGradientDrawsBeforeStartLocation表示起始点前面的区域使用渐变色填充，设置为0表示只填充起始点和结束点中间区域
-        CGContextDrawLinearGradient(context, gradient, CGPointMake(0, self.bounds.size.height), CGPointMake(self.bounds.size.width, self.bounds.size.height), .DrawsAfterEndLocation);
+        context?.drawLinearGradient(gradient!, start: CGPoint(x: 0, y: self.bounds.size.height), end: CGPoint(x: self.bounds.size.width, y: self.bounds.size.height), options: .drawsAfterEndLocation);
     }
 
 }

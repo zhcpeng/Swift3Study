@@ -15,8 +15,8 @@ class CanMoveTableViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-		self.tableView.editing = true
+		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+		self.tableView.isEditing = true
 
 		for i in 0..<20 {
 			itemList.append(String(i))
@@ -49,16 +49,16 @@ class CanMoveTableViewController: UITableViewController {
 
 	// MARK: - Table view data source
 
-	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	override func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 
-	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 20
 	}
 
-	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 		cell.textLabel?.text = itemList[indexPath.row]
 
 		// Configure the cell...
@@ -87,14 +87,14 @@ class CanMoveTableViewController: UITableViewController {
 	 */
 
 	// Override to support rearranging the table view.
-	override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+	override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to toIndexPath: IndexPath) {
 		let string = itemList[fromIndexPath.row]
 		itemList[fromIndexPath.row] = itemList[toIndexPath.row]
 		itemList[toIndexPath.row] = string
 	}
 
-	override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-		return .None
+	override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+		return .none
 	}
 
 	/*

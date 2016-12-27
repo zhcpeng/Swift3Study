@@ -13,22 +13,22 @@ import Photos
 
 class AssetsLibraryViewController: UIViewController {
 
-	private lazy var photoLibrary: PHPhotoLibrary = PHPhotoLibrary.sharedPhotoLibrary()
+	fileprivate lazy var photoLibrary: PHPhotoLibrary = PHPhotoLibrary.shared()
 
-	private lazy var imageManager: PHImageManager = PHImageManager.defaultManager()
+	fileprivate lazy var imageManager: PHImageManager = PHImageManager.default()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		let state = PHPhotoLibrary.authorizationStatus()
 		switch state {
-		case .Authorized:
+		case .authorized:
 			/*
 			 Optional("美颜相机")
 			 Optional("QQ")
 			 Optional("My Photo Stream")
 			 */
-			let resultAlbum = PHAssetCollection.fetchAssetCollectionsWithType(.Album, subtype: .Any, options: nil)
+//			let resultAlbum = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: nil)
 
 			/*
 			 Optional("Recently Added")
@@ -43,7 +43,7 @@ class AssetsLibraryViewController: UIViewController {
 			 Optional("Selfies")
 			 Optional("Slo-mo")
 			 */
-			let resultSmartAlbum = PHAssetCollection.fetchAssetCollectionsWithType(.SmartAlbum, subtype: .Any, options: nil)
+//			let resultSmartAlbum = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .any, options: nil)
 
 			/*
 			 Optional("北京市 - 西城区 & 东城区")
@@ -54,17 +54,17 @@ class AssetsLibraryViewController: UIViewController {
 			 */
 			// let resultMoment = PHAssetCollection.fetchAssetCollectionsWithType(.Moment, subtype: .Any, options: nil)
 
-			resultAlbum.enumerateObjectsUsingBlock({ (item, index, stop) in
-				let collection = item as? PHAssetCollection
-				print(collection?.localizedTitle)
-			})
-			print("1")
-			resultSmartAlbum.enumerateObjectsUsingBlock({ (item, index, stop) in
-				let collection = item as? PHAssetCollection
-				print(collection?.localizedTitle)
-
-			})
-			print("2")
+//			resultAlbum.enumerateObjects({ (item, index, stop) in
+//				let collection = item as PHAssetCollection
+//				print(collection.localizedTitle)
+//			})
+//			print("1")
+//			resultSmartAlbum.enumerateObjects({ (item, index, stop) in
+//				let collection = item as PHAssetCollection
+//				print(collection.localizedTitle)
+//
+//			})
+//			print("2")
 			// resultMoment.enumerateObjectsUsingBlock({ (item, index, stop) in
 			// let collection = item as? PHCollection
 			// print(collection?.localizedTitle)
@@ -97,7 +97,7 @@ class AssetsLibraryViewController: UIViewController {
 	// }
 	// }
 
-	var assetResults: PHFetchResult!
+	var assetResults: PHFetchResult<PHAsset>!
 	var arrImages: NSMutableArray!
 	var arrImageStateWithImage: NSMutableArray!
 
@@ -110,33 +110,33 @@ class AssetsLibraryViewController: UIViewController {
 
 		/* Then get an object of type PHFetchResult that will contain
 		 all our image assets */
-		assetResults = PHAsset.fetchAssetsWithMediaType(.Image, options: options)
+		assetResults = PHAsset.fetchAssets(with: .image, options: options)
 
 		print("Found \(assetResults.count) results")
 
 		let imageManager = PHCachingImageManager()
 
-		assetResults.enumerateObjectsUsingBlock { (object: AnyObject, count: Int, stop: UnsafeMutablePointer<ObjCBool>) in
-
-			if object is PHAsset {
-
-				let asset = object as! PHAsset
-
-				let imageSize = CGSize(width: asset.pixelWidth,
-					height: asset.pixelHeight)
-
-				/* For faster performance, and maybe degraded image */
-				let options = PHImageRequestOptions()
-				options.deliveryMode = .FastFormat
-				imageManager.requestImageForAsset(asset, targetSize: imageSize,
-					contentMode: PHImageContentMode.AspectFill, options: options, resultHandler: { (image: UIImage?, info: [NSObject: AnyObject]?) in
-
-						self.arrImages.addObject(image!)
-						self.arrImageStateWithImage.addObject(0)
-
-				})
-			}
-		}
+        assetResults.enumerateObjects({ (object: AnyObject, count: Int, stop: UnsafeMutablePointer<ObjCBool>) in
+            
+            if object is PHAsset {
+                
+                let asset = object as! PHAsset
+                
+                let imageSize = CGSize(width: asset.pixelWidth,
+                                       height: asset.pixelHeight)
+                
+                /* For faster performance, and maybe degraded image */
+                let options = PHImageRequestOptions()
+                options.deliveryMode = .fastFormat
+                imageManager.requestImage(for: asset, targetSize: imageSize,
+                                          contentMode: PHImageContentMode.aspectFill, options: options, resultHandler: { (image: UIImage?, info: [AnyHashable: Any]?) in
+                                            
+                                            self.arrImages.add(image!)
+                                            self.arrImageStateWithImage.add(0)
+                                            
+                })
+            }
+        })
 	}
 
 	override func didReceiveMemoryWarning() {

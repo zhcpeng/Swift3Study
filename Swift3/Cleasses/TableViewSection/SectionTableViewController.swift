@@ -10,24 +10,24 @@ import UIKit
 
 class SectionTableViewController: UITableViewController {
     
-    private var timer : dispatch_source_t!
+    fileprivate var timer : DispatchSource!
     
-    private var count : Int = 5
-    private var all : Bool = false
+    fileprivate var count : Int = 5
+    fileprivate var all : Bool = false
     
-    private var itemList : [Int] = [1,2,3,4,5,6,7,8,9]
+    fileprivate var itemList : [Int] = [1,2,3,4,5,6,7,8,9]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.rowHeight = 40
         tableView.sectionFooterHeight = 30
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-        tableView.registerClass(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "Section")
-        tableView.editing = true
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "Section")
+        tableView.isEditing = true
         
         let view = UIView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 100))
-        view.backgroundColor = UIColor.greenColor()
+        view.backgroundColor = UIColor.green
         tableView.tableFooterView = view
 //        tableView.tableHeaderView = view
         
@@ -50,16 +50,16 @@ class SectionTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemList.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         cell.textLabel?.text = "\(itemList[indexPath.row])"
 
         return cell
@@ -71,14 +71,14 @@ class SectionTableViewController: UITableViewController {
 //        return view
 //    }
     
-    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return .Delete
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle  == .Delete {
-            itemList.removeAtIndex(indexPath.row)
-            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle  == .delete {
+            itemList.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
 

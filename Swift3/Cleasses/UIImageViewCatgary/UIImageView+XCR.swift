@@ -27,12 +27,12 @@ extension UIImageView {
             if newValue {
                 self.highlightedView.backgroundColor = UIColor.init(red: 1, green: 0, blue: 0, alpha: 0.5)
             }else{
-                self.highlightedView.backgroundColor = UIColor.clearColor()
+                self.highlightedView.backgroundColor = UIColor.clear
             }
         }
     }
     
-    private var highlightedView : UIView {
+    fileprivate var highlightedView : UIView {
         get{
             let obj = objc_getAssociatedObject(self, &privateHighlightedView)
             if obj == nil {

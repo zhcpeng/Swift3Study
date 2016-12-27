@@ -9,7 +9,7 @@
 import UIKit
 
 /// 1像素线的高度（为解决在Plus上标记为0.5时高度不一样的情况）
-let kOnePixelLineHeight : CGFloat = (1 / UIScreen.mainScreen().scale)
+let kOnePixelLineHeight : CGFloat = (1 / UIScreen.main.scale)
 
 class SingleLineViewController: UIViewController {
 
@@ -20,19 +20,19 @@ class SingleLineViewController: UIViewController {
         
         
         let hView = UIView.init(frame: CGRect.init(x: 50, y: 200.33, width: 200, height: kOnePixelLineHeight))
-        hView.backgroundColor = UIColor.redColor()
+        hView.backgroundColor = UIColor.red
         self.view.addSubview(hView)
         
         let vView = UIView.init(frame: CGRect.init(x: 50.33, y: 200, width: 0.33, height: 200))
-        vView.backgroundColor = UIColor.blackColor()
+        vView.backgroundColor = UIColor.black
         self.view.addSubview(vView)
         
         let hView2 = UIView.init(frame: CGRect.init(x: 50, y: 300.33, width: 200, height: 0.5))
-        hView2.backgroundColor = UIColor.redColor()
+        hView2.backgroundColor = UIColor.red
         self.view.addSubview(hView2)
         
         let vView2 = UIView.init(frame: CGRect.init(x: 150.33, y: 200, width: 0.5, height: 200))
-        vView2.backgroundColor = UIColor.blackColor()
+        vView2.backgroundColor = UIColor.black
         self.view.addSubview(vView2)
         
     }

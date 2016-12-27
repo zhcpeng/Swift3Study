@@ -22,9 +22,9 @@ class CallPhoneViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func callPhone(sender: UIButton) {
+    @IBAction func callPhone(_ sender: UIButton) {
         let phone = "telprompt://10010"
-        UIApplication.sharedApplication().openURL(NSURL.init(string: phone)!)
+        UIApplication.shared.openURL(URL.init(string: phone)!)
     }
 
 }

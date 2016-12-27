@@ -66,21 +66,21 @@ import AVFoundation
 //}
 
 func rotationTransform() -> CGAffineTransform {
-    return CGAffineTransformMakeRotation(degreesToRadians(rotationAngleToMatchDeviceOrientation(UIDevice.currentDevice().orientation)))
+    return CGAffineTransform(rotationAngle: degreesToRadians(rotationAngleToMatchDeviceOrientation(UIDevice.current.orientation)))
 }
 
-func degreesToRadians(degree: CGFloat) -> CGFloat {
+func degreesToRadians(_ degree: CGFloat) -> CGFloat {
     return CGFloat(M_PI) * degree / 180
 }
 
-private func rotationAngleToMatchDeviceOrientation(orientation: UIDeviceOrientation) -> CGFloat {
+private func rotationAngleToMatchDeviceOrientation(_ orientation: UIDeviceOrientation) -> CGFloat {
     var desiredRotationAngle: CGFloat = 0
     switch orientation {
-    case .LandscapeLeft:
+    case .landscapeLeft:
         desiredRotationAngle = 90
-    case .LandscapeRight:
+    case .landscapeRight:
         desiredRotationAngle = -90
-    case .PortraitUpsideDown:
+    case .portraitUpsideDown:
         desiredRotationAngle = 180
     default:
         desiredRotationAngle = 0
@@ -89,16 +89,16 @@ private func rotationAngleToMatchDeviceOrientation(orientation: UIDeviceOrientat
 }
 
 func rotationAdjustedBounds() -> CGRect {
-    let applicationWindow = UIApplication.sharedApplication().delegate?.window?.flatMap { $0 }
-    guard let window = applicationWindow else { return UIScreen.mainScreen().bounds }
+    let applicationWindow = UIApplication.shared.delegate?.window?.flatMap { $0 }
+    guard let window = applicationWindow else { return UIScreen.main.bounds }
     if isPortraitOnly() {
-        return (UIDevice.currentDevice().orientation.isLandscape) ? CGRect(origin: CGPointZero, size: CGSize.init(width: window.frame.size.height, height: window.frame.size.width)): window.bounds
+        return (UIDevice.current.orientation.isLandscape) ? CGRect(origin: CGPoint.zero, size: CGSize.init(width: window.frame.size.height, height: window.frame.size.width)): window.bounds
     }
     return window.bounds
 }
 
 func isPortraitOnly() -> Bool {
-    return UIApplication.sharedApplication().supportedInterfaceOrientationsForWindow(nil) == .Portrait
+    return UIApplication.shared.supportedInterfaceOrientations(for: nil) == .portrait
 }
 
 //func maximumZoomScale(forBoundingSize boundingSize: CGSize, contentSize: CGSize) -> CGFloat {

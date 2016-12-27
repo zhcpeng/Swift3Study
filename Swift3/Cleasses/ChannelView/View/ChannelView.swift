@@ -9,10 +9,10 @@
 import UIKit
 
 /// 标签view
-public class ChannelView: UIView {
+open class ChannelView: UIView {
     
-    public weak var delegate : ChannelViewDelegate?
-    public var itemList : Array<String>?
+    open weak var delegate : ChannelViewDelegate?
+    open var itemList : Array<String>?
     
     
     
@@ -29,6 +29,6 @@ public class ChannelView: UIView {
 
 public protocol ChannelViewDelegate : NSObjectProtocol {
     
-    func channelView(channelView: ChannelView, didSelectedIndex index: Int)
+    func channelView(_ channelView: ChannelView, didSelectedIndex index: Int)
     
 }

@@ -3,17 +3,17 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'Alamofire', '~> 3.0'
+pod 'Alamofire'
 pod 'SDWebImage', '~>3.7'
-pod 'ReactiveCocoa'
-pod 'SnapKit','~>0.22.0'
+pod 'ReactiveCocoa', '5.0.0-alpha.6'
+pod 'SnapKit'
 pod 'YYModel'
-pod 'SwiftyJSON','2.4.0'
+pod 'SwiftyJSON'
 pod 'YYText'
 pod 'RTLabel'
 pod 'iCarousel'
 #pod 'ImageViewer'
 pod 'MWPhotoBrowser'
-pod 'Kingfisher', '2.6.0'
+pod 'Kingfisher'
 
 end

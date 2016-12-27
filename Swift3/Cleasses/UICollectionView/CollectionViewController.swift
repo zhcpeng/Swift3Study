@@ -10,7 +10,7 @@ import UIKit
 
 class CollectionViewController: UIViewController {
     
-    private var itemList = [CollectionModel]()
+    fileprivate var itemList = [CollectionModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +29,12 @@ class CollectionViewController: UIViewController {
 
 extension CollectionViewController : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemList.count ?? 0
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return itemList.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kCollectionViewCellIdentifier, forIndexPath: indexPath) as! CollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCellIdentifier, for: indexPath) as! CollectionViewCell
         
         return cell
     }

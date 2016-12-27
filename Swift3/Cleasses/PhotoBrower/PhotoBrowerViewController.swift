@@ -10,26 +10,26 @@ import UIKit
 
 class PhotoBrowerViewController: UIViewController, UIScrollViewDelegate {
 
-	private var performingLayout: Bool = false
-	private var rotating: Bool = false
+	fileprivate var performingLayout: Bool = false
+	fileprivate var rotating: Bool = false
 
 	var currentPageIndex: Int = 0 {
 		didSet {
 			self.title = String(currentPageIndex + 1)
 		}
 	}
-	private lazy var imageViewList: [UIImageView?] = []
+	fileprivate lazy var imageViewList: [UIImageView?] = []
 
-	private lazy var scrollView: UIScrollView = {
+	fileprivate lazy var scrollView: UIScrollView = {
 		let scrollView = UIScrollView()
-		scrollView.pagingEnabled = true
-		scrollView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-		scrollView.backgroundColor = UIColor.blackColor()
+		scrollView.isPagingEnabled = true
+		scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+		scrollView.backgroundColor = UIColor.black
 		scrollView.delegate = self
 		return scrollView
 	}()
 
-	private lazy var itemList: [String] = ["http://i0.hdslb.com/bfs/archive/7afbb4a41cff90d69dddc3be197c1839033e676a.jpg",
+	fileprivate lazy var itemList: [String] = ["http://i0.hdslb.com/bfs/archive/7afbb4a41cff90d69dddc3be197c1839033e676a.jpg",
 		"http://img4.duitang.com/uploads/item/201505/21/20150521004418_fFv5V.thumb.700_0.jpeg",
 		"http://cdn.duitang.com/uploads/item/201507/23/20150723161932_WY3AC.jpeg",
 		"http://cdn.duitang.com/uploads/item/201510/10/20151010200119_r5GTP.jpeg",
@@ -53,19 +53,19 @@ class PhotoBrowerViewController: UIViewController, UIScrollViewDelegate {
 		layoutVisiblePages()
 	}
 
-	override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+	override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
 		rotating = true
 	}
 
-	override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+	override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
 		rotating = false
 	}
-	func scrollViewDidScroll(scrollView: UIScrollView) {
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		if performingLayout || rotating {
 			return
 		}
 		let visibleBounds = scrollView.bounds
-		var index = Int(floor(CGRectGetMidX(visibleBounds) / CGRectGetWidth(visibleBounds)))
+		var index = Int(floor(visibleBounds.midX / visibleBounds.width))
 		if index < 0 { index = 0 }
 		if index > numberOfPhotos() - 1 { index = numberOfPhotos() - 1 }
 		let previousCurrentPage = currentPageIndex
@@ -75,7 +75,7 @@ class PhotoBrowerViewController: UIViewController, UIScrollViewDelegate {
 		}
 	}
 
-	private func layoutVisiblePages() {
+	fileprivate func layoutVisiblePages() {
 		performingLayout = true
 		if numberOfPhotos() > 0 {
 			scrollView.frame = view.bounds
@@ -98,12 +98,12 @@ class PhotoBrowerViewController: UIViewController, UIScrollViewDelegate {
 		performingLayout = false
 	}
 
-	private func reloadData() {
+	fileprivate func reloadData() {
 		let numberOfPhotos: Int = self.numberOfPhotos()
 		for imageView in imageViewList {
 			imageView?.removeFromSuperview()
 		}
-		imageViewList = Array(count: numberOfPhotos, repeatedValue: nil)
+		imageViewList = Array(repeating: nil, count: numberOfPhotos)
 		if numberOfPhotos > 0 {
 			currentPageIndex = max(0, min(currentPageIndex, numberOfPhotos))
 		} else {
@@ -115,10 +115,10 @@ class PhotoBrowerViewController: UIViewController, UIScrollViewDelegate {
 		didStartViewingPageAtIndex(currentPageIndex)
 	}
 
-	private func numberOfPhotos() -> Int {
+	fileprivate func numberOfPhotos() -> Int {
 		return itemList.count
 	}
-	private func photoAtIndex(index: Int) -> UIImageView {
+	fileprivate func photoAtIndex(_ index: Int) -> UIImageView {
 		if index < numberOfPhotos() {
 			if let imageView = imageViewList[index] {
 				imageView.frame = getFrameForIndex(index)
@@ -126,7 +126,7 @@ class PhotoBrowerViewController: UIViewController, UIScrollViewDelegate {
 			} else {
 				let imageView = UIImageView()
 				imageView.frame = getFrameForIndex(index)
-				imageView.contentMode = .ScaleAspectFit
+				imageView.contentMode = .scaleAspectFit
 				scrollView.addSubview(imageView)
 				imageViewList[index] = imageView
 				return imageView
@@ -135,13 +135,13 @@ class PhotoBrowerViewController: UIViewController, UIScrollViewDelegate {
 		return UIImageView()
 	}
 
-	private func didStartViewingPageAtIndex(index: Int) {
+	fileprivate func didStartViewingPageAtIndex(_ index: Int) {
 		guard numberOfPhotos() > 0 else {
 			return
 		}
 
 		let imageView = photoAtIndex(index)
-		imageView.kf_setImageWithURL(NSURL(string: itemList[index]))
+		imageView.kf.setImage(with: URL(string: itemList[index]))
 
 		if index > 0 {
 			for i in 0..<index - 1 {
@@ -159,16 +159,16 @@ class PhotoBrowerViewController: UIViewController, UIScrollViewDelegate {
 		currentPageIndex = index
 	}
 
-	private func getFrameForIndex(index: Int) -> CGRect {
+	fileprivate func getFrameForIndex(_ index: Int) -> CGRect {
 		return CGRect(x: CGFloat(index) * scrollView.bounds.size.width, y: 0, width: scrollView.bounds.size.width, height: scrollView.bounds.size.height)
 	}
-	private func getPointForIndex(index: Int) -> CGPoint {
+	fileprivate func getPointForIndex(_ index: Int) -> CGPoint {
 		return CGPoint(x: CGFloat(index) * view.bounds.size.width, y: 0)
 	}
-	private func getWidth() -> CGFloat {
+	fileprivate func getWidth() -> CGFloat {
 		return scrollView.bounds.size.width
 	}
-	private func getHight() -> CGFloat {
+	fileprivate func getHight() -> CGFloat {
 		return scrollView.bounds.size.height
 	}
 

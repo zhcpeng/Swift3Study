@@ -16,7 +16,7 @@ class GradientColorViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        gradientView.backgroundColor = UIColor.clearColor()
+        gradientView.backgroundColor = UIColor.clear
     }
 
     override func didReceiveMemoryWarning() {

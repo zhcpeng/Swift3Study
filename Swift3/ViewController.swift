@@ -15,7 +15,7 @@ class ViewController: UIViewController {
 
 		// Do any additional setup after loading the view.
 
-		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(2.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
 			let vc = RootListController()
 			self.navigationController?.pushViewController(vc, animated: true)
 		}
@@ -91,7 +91,7 @@ class ViewController: UIViewController {
 	// return String(number)
 	// }
 
-    @IBAction func btnAction(sender: UIButton) {
+    @IBAction func btnAction(_ sender: UIButton) {
         self.navigationController?.pushViewController(RootListController(), animated: true)
     }
 	override func didReceiveMemoryWarning() {

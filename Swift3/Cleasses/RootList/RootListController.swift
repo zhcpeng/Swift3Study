@@ -15,7 +15,7 @@ class RootListController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		itemList.append("TableViewController")
+//		itemList.append("TableViewController")
 		itemList.append("CanMoveTableViewController")
 		itemList.append("ScrollViewController")
 		itemList.append("GradientColorViewController")
@@ -23,14 +23,14 @@ class RootListController: UITableViewController {
 		itemList.append("SingleLineViewController")
 		itemList.append("YYLabelViewController")
         itemList.append("AssetsLibraryViewController")
-        itemList.append("PHPhotosAlbumViewController")
+//        itemList.append("PHPhotosAlbumViewController")
         itemList.append("OrientationViewController")
         itemList.append("CallPhoneViewController")
         itemList.append("PhotoBrowerViewController")
         itemList.append("ScrollTextViewController")
         itemList.append("SectionTableViewController")
 
-		self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -40,23 +40,25 @@ class RootListController: UITableViewController {
 
 	// MARK: - Table view data source
 
-	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	override func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 
-	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return itemList.count
 	}
 
-	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 		cell.textLabel?.text = itemList[indexPath.row]
 		return cell
 	}
 
-	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		let vc = SwiftClassFromString(itemList[indexPath.row])
-		self.navigationController?.pushViewController(vc!, animated: true);
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let any = NSClassFromString(itemList[indexPath.row]) as? UIViewController.Type {
+            let vc = any.init()
+            navigationController?.pushViewController(vc, animated: true);
+        }
 	}
 
 }

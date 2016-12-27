@@ -21,10 +21,10 @@ class XCRPhotosBrowserCollectionViewCell: UICollectionViewCell, UIScrollViewDele
 	}
 
 	/// 加载中
-	private lazy var loadingView: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .White)
+	fileprivate lazy var loadingView: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .white)
 
 	/// 图片容器
-	private lazy var scrollView: UIScrollView = {
+	fileprivate lazy var scrollView: UIScrollView = {
 		let scrollView = UIScrollView()
 		scrollView.showsHorizontalScrollIndicator = false
 		scrollView.showsVerticalScrollIndicator = false
@@ -32,9 +32,9 @@ class XCRPhotosBrowserCollectionViewCell: UICollectionViewCell, UIScrollViewDele
 		scrollView.bouncesZoom = true
 		scrollView.minimumZoomScale = 1
 		scrollView.maximumZoomScale = 2.5
-		scrollView.multipleTouchEnabled = true
+		scrollView.isMultipleTouchEnabled = true
 		scrollView.scrollsToTop = false
-		scrollView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+		scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 		scrollView.delaysContentTouches = false
 		scrollView.canCancelContentTouches = true
 		scrollView.alwaysBounceVertical = false
@@ -45,7 +45,7 @@ class XCRPhotosBrowserCollectionViewCell: UICollectionViewCell, UIScrollViewDele
 	/// 图片view
 	lazy var imageView: UIImageView = {
 		let imageView = UIImageView()
-		imageView.userInteractionEnabled = true
+		imageView.isUserInteractionEnabled = true
 		return imageView
 	}()
 
@@ -64,7 +64,7 @@ class XCRPhotosBrowserCollectionViewCell: UICollectionViewCell, UIScrollViewDele
 	var singleTagGestureBlock: (() -> ())?
 
 	/// 图片下载成功block
-	var imageDownloadCompletionHandler: ((success: Bool) -> ())?
+	var imageDownloadCompletionHandler: ((_ success: Bool) -> ())?
 
 	/// 图片是否下载成功
 	var imageDownloadSuccess = false
@@ -73,7 +73,7 @@ class XCRPhotosBrowserCollectionViewCell: UICollectionViewCell, UIScrollViewDele
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 
-		self.backgroundColor = UIColor.blackColor()
+		self.backgroundColor = UIColor.black
 		self.commonInit()
 		self.addGestureRecognizers()
 	}
@@ -90,42 +90,43 @@ class XCRPhotosBrowserCollectionViewCell: UICollectionViewCell, UIScrollViewDele
 	}
 
 	// MAEK: - UIScrollViewDelegate
-	func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+	func viewForZooming(in scrollView: UIScrollView) -> UIView? {
 		return imageView
 	}
-	func scrollViewDidZoom(scrollView: UIScrollView) {
+	func scrollViewDidZoom(_ scrollView: UIScrollView) {
 		let x: CGFloat = (scrollView.frame.size.width > scrollView.contentSize.width) ? (scrollView.frame.size.width - scrollView.contentSize.width) * 0.5: 0.0
 		let y: CGFloat = (scrollView.frame.size.height > scrollView.contentSize.height) ? (scrollView.frame.size.height - scrollView.contentSize.height) * 0.5: 0.0
 		imageView.center = CGPoint(x: scrollView.contentSize.width * 0.5 + x, y: scrollView.contentSize.height * 0.5 + y)
 	}
 
 	// MARK: - Private Method
-	private func commonInit() {
+	fileprivate func commonInit() {
 		self.contentView.addSubview(scrollView)
 		self.contentView.addSubview(loadingView)
 //		self.contentView.addSubview(emptyView)
-		scrollView.snp_makeConstraints { (make) in
+		scrollView.snp.makeConstraints { (make) in
 			make.edges.equalTo(self.contentView)
 		}
-//		emptyView.snp_makeConstraints { (make) in
+//		emptyView.snp.makeConstraints { (make) in
 //			make.edges.equalTo(self.contentView)
 //		}
-		loadingView.snp_makeConstraints { (make) in
+		loadingView.snp.makeConstraints { (make) in
 			make.center.equalTo(self.contentView)
 		}
 		scrollView.addSubview(imageView)
 		imageView.frame = self.bounds
 	}
 
-	private func setImageWithURLString(url: String?) {
-		guard let url = url where url.isEmpty == false else {
+	fileprivate func setImageWithURLString(_ url: String?) {
+		guard let url = url, url.isEmpty == false else {
 			return
 		}
 		self.loadingView.startAnimating()
 //		self.emptyView.hidden = true
-		self.imageView.kf_setImageWithURL(NSURL(string: url)) { (image, error, cacheType, imageURL) in
+//        self.imageView.kf_setImage(URL(string: url)) { (image, error, cacheType, imageURL)
+		self.imageView.kf.setImage(with: URL(string: url)) { (image, error, cacheType, imageURL) in
 			self.loadingView.stopAnimating()
-			self.imageDownloadCompletionHandler?(success: (error == nil))
+			self.imageDownloadCompletionHandler?((error == nil))
 			self.imageDownloadSuccess = (error == nil)
 			if error != nil {
 //				self.emptyView.hidden = false
@@ -139,7 +140,7 @@ class XCRPhotosBrowserCollectionViewCell: UICollectionViewCell, UIScrollViewDele
 					self.imageView.frame = frame
 				} else {
 					var height = size.height / size.width * self.frame.size.width
-					if height < 1 || isnan(height) {
+					if height < 1 /*|| Double.nan(height)*/ {
 						height = self.frame.size.height
 					}
 					frame.size.height = floor(height)
@@ -158,7 +159,7 @@ class XCRPhotosBrowserCollectionViewCell: UICollectionViewCell, UIScrollViewDele
 		}
 	}
 
-	private func addGestureRecognizers() {
+	fileprivate func addGestureRecognizers() {
 		// 单击
 		let singleTap = UITapGestureRecognizer(target: self, action: #selector(imageSingleTapAction(_:)))
 		singleTap.numberOfTapsRequired = 1
@@ -169,20 +170,20 @@ class XCRPhotosBrowserCollectionViewCell: UICollectionViewCell, UIScrollViewDele
 		doubleTap.numberOfTapsRequired = 2
 		imageView.addGestureRecognizer(doubleTap)
 
-		singleTap.requireGestureRecognizerToFail(doubleTap)
+		singleTap.require(toFail: doubleTap)
 	}
 
-	@objc private func imageSingleTapAction(gest: UIGestureRecognizer) {
+	@objc fileprivate func imageSingleTapAction(_ gest: UIGestureRecognizer) {
 		self.singleTagGestureBlock?()
 	}
-	@objc private func imageDoubleTapAction(gest: UIGestureRecognizer) {
+	@objc fileprivate func imageDoubleTapAction(_ gest: UIGestureRecognizer) {
 		if scrollView.zoomScale > 1.0 {
 			scrollView.setZoomScale(1.0, animated: true)
 		} else {
-			let touchPoint = gest.locationInView(imageView)
+			let touchPoint = gest.location(in: imageView)
 			let x = self.frame.size.width / scrollView.maximumZoomScale
 			let y = self.frame.size.height / scrollView.maximumZoomScale
-			scrollView.zoomToRect(CGRect.init(x: touchPoint.x - x / 2, y: touchPoint.y - y / 2, width: x, height: y), animated: true)
+			scrollView.zoom(to: CGRect.init(x: touchPoint.x - x / 2, y: touchPoint.y - y / 2, width: x, height: y), animated: true)
 		}
 	}
 

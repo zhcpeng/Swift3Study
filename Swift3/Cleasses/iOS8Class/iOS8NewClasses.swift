@@ -10,8 +10,8 @@ import Foundation
 
 ///8 2 0 8.1系统返回false
 ///8 4 0 8.1系统返回ture
-let sys = NSOperatingSystemVersion.init(majorVersion: 8, minorVersion: 2, patchVersion: 0)
-let x = NSProcessInfo().isOperatingSystemAtLeastVersion(sys)
+let sys = OperatingSystemVersion.init(majorVersion: 8, minorVersion: 2, patchVersion: 0)
+let x = ProcessInfo().isOperatingSystemAtLeast(sys)
 
 //let ciqi_vc = UIViewController()
 //let yuqi_vc = UIViewController()

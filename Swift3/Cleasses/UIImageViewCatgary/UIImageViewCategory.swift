@@ -11,16 +11,16 @@ import UIKit
 class UIImageViewCategory: UIViewController {
     
     
-    private lazy var imageView : UIImageView = {
+    fileprivate lazy var imageView : UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    private lazy var button :UIButton = {
-        let button = UIButton.init(type: .Custom)
-        button.setBackgroundImage(UIImage.imageWithColor(kUIColor(0x666666)), forState: .Normal)
-        button.setBackgroundImage(UIImage.imageWithColor(kUIColor(0x333333)), forState: .Highlighted)
+    fileprivate lazy var button :UIButton = {
+        let button = UIButton.init(type: .custom)
+        button.setBackgroundImage(UIImage.imageWithColor(kUIColor(0x666666)), for: UIControlState())
+        button.setBackgroundImage(UIImage.imageWithColor(kUIColor(0x333333)), for: .highlighted)
         
         return button
     }()
@@ -38,13 +38,13 @@ class UIImageViewCategory: UIViewController {
         self.view.addSubview(button)
         button.frame = CGRect.init(x: 0, y: 100, width: kScreenWidth, height: 50)
         
-        button.addObserver(self, forKeyPath: "highlighted", options: .New, context: nil)
+        button.addObserver(self, forKeyPath: "highlighted", options: .new, context: nil)
  
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         let button = object as! UIButton
-        self.imageView.showHighlighted = button.highlighted
+        self.imageView.showHighlighted = button.isHighlighted
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,17 +113,17 @@ extension UIImage {
      - parameter    pixelSize:      图片大小
      - returns:     UIImage
      */
-    class func imageWithColor(color: UIColor, pixelSize: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
-        let pixelScale = UIScreen.mainScreen().scale
+    class func imageWithColor(_ color: UIColor, pixelSize: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
+        let pixelScale = UIScreen.main.scale
         let fillSize = CGSize(width: (pixelSize.width / pixelScale), height: (pixelSize.height / pixelScale))
         let fillRect = CGRect(origin: CGPoint.zero, size: fillSize)
         UIGraphicsBeginImageContextWithOptions(fillRect.size, false, pixelScale)
         let graphicsContext = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(graphicsContext, color.CGColor)
-        CGContextFillRect(graphicsContext, fillRect)
+        graphicsContext?.setFillColor(color.cgColor)
+        graphicsContext?.fill(fillRect)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+        return image!
     }
     
 }
