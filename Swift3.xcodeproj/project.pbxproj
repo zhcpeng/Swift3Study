@@ -28,6 +28,8 @@
 		AD314B231CFE7D56003593F7 /* SwiftGlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD314B221CFE7D56003593F7 /* SwiftGlobalFunction.swift */; };
 		AD5088461D61A0BD0023824B /* YYLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5088451D61A0BD0023824B /* YYLabelViewController.swift */; };
 		AD5C29001DBF070D00A68052 /* XCRPhotosBrowserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5C28FF1DBF070D00A68052 /* XCRPhotosBrowserCollectionViewCell.swift */; };
+		AD74FD611E55A94800B32CFA /* ImageBrowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74FD601E55A94800B32CFA /* ImageBrowerViewController.swift */; };
+		AD74FD631E55A96500B32CFA /* ImageBrowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74FD621E55A96500B32CFA /* ImageBrowerCollectionViewCell.swift */; };
 		AD8E3B351D48B73800A8C43F /* AVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8E3B341D48B73800A8C43F /* AVPlayerViewController.swift */; };
 		AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9127951CFE73A00093F219 /* TaskInfoTool.m */; };
 		AD9DD6C71DADE644003F2634 /* CallPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD6C51DADE644003F2634 /* CallPhoneViewController.swift */; };
@@ -35,6 +37,10 @@
 		ADA7D1981D003CA500F840E3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D1971D003CA500F840E3 /* CollectionViewController.swift */; };
 		ADA7D19A1D003CB600F840E3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D1991D003CB600F840E3 /* CollectionViewCell.swift */; };
 		ADA7D19C1D003EA800F840E3 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D19B1D003EA800F840E3 /* CollectionModel.swift */; };
+		ADAA2CD01E13BEDF00E8D2A6 /* StretchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA2CCF1E13BEDF00E8D2A6 /* StretchViewController.swift */; };
+		ADAA2CD21E13BF0B00E8D2A6 /* StretchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA2CD11E13BF0B00E8D2A6 /* StretchView.swift */; };
+		ADC171D61E1F79EE007A38B4 /* RTLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC171D51E1F79EE007A38B4 /* RTLabelViewController.swift */; };
+		ADCDA3861E6CFE3D00E60A29 /* UITransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDA3851E6CFE3D00E60A29 /* UITransitionViewController.swift */; };
 		ADE789FD1CF7F3D300573D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE789FC1CF7F3D300573D7F /* AppDelegate.swift */; };
 		ADE789FF1CF7F3D300573D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE789FE1CF7F3D300573D7F /* Assets.xcassets */; };
 		ADE78A021CF7F3D300573D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE78A001CF7F3D300573D7F /* LaunchScreen.storyboard */; };
@@ -75,6 +81,8 @@
 		AD5088451D61A0BD0023824B /* YYLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYLabelViewController.swift; sourceTree = "<group>"; };
 		AD5C28FF1DBF070D00A68052 /* XCRPhotosBrowserCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCRPhotosBrowserCollectionViewCell.swift; sourceTree = "<group>"; };
 		AD6545781CFEC5460070A3AC /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
+		AD74FD601E55A94800B32CFA /* ImageBrowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBrowerViewController.swift; sourceTree = "<group>"; };
+		AD74FD621E55A96500B32CFA /* ImageBrowerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBrowerCollectionViewCell.swift; sourceTree = "<group>"; };
 		AD8E3B341D48B73800A8C43F /* AVPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerViewController.swift; sourceTree = "<group>"; };
 		AD9127941CFE73A00093F219 /* TaskInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskInfoTool.h; sourceTree = "<group>"; };
 		AD9127951CFE73A00093F219 /* TaskInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskInfoTool.m; sourceTree = "<group>"; };
@@ -83,6 +91,10 @@
 		ADA7D1971D003CA500F840E3 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		ADA7D1991D003CB600F840E3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		ADA7D19B1D003EA800F840E3 /* CollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
+		ADAA2CCF1E13BEDF00E8D2A6 /* StretchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchViewController.swift; sourceTree = "<group>"; };
+		ADAA2CD11E13BF0B00E8D2A6 /* StretchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchView.swift; sourceTree = "<group>"; };
+		ADC171D51E1F79EE007A38B4 /* RTLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTLabelViewController.swift; sourceTree = "<group>"; };
+		ADCDA3851E6CFE3D00E60A29 /* UITransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITransitionViewController.swift; sourceTree = "<group>"; };
 		ADE789F91CF7F3D300573D7F /* Swift3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE789FC1CF7F3D300573D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADE789FE1CF7F3D300573D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -244,6 +256,15 @@
 			path = YYLabel;
 			sourceTree = "<group>";
 		};
+		AD74FD5F1E55A93100B32CFA /* ImageBrower */ = {
+			isa = PBXGroup;
+			children = (
+				AD74FD601E55A94800B32CFA /* ImageBrowerViewController.swift */,
+				AD74FD621E55A96500B32CFA /* ImageBrowerCollectionViewCell.swift */,
+			);
+			path = ImageBrower;
+			sourceTree = "<group>";
+		};
 		AD8E3B331D48B71C00A8C43F /* AVPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +299,31 @@
 				ADA7D19B1D003EA800F840E3 /* CollectionModel.swift */,
 			);
 			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		ADAA2CCE1E13BEC400E8D2A6 /* StretchHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				ADAA2CCF1E13BEDF00E8D2A6 /* StretchViewController.swift */,
+				ADAA2CD11E13BF0B00E8D2A6 /* StretchView.swift */,
+			);
+			path = StretchHeaderView;
+			sourceTree = "<group>";
+		};
+		ADC171D41E1F798B007A38B4 /* RTLabelController */ = {
+			isa = PBXGroup;
+			children = (
+				ADC171D51E1F79EE007A38B4 /* RTLabelViewController.swift */,
+			);
+			path = RTLabelController;
+			sourceTree = "<group>";
+		};
+		ADCDA3841E6CFE2D00E60A29 /* UITransitionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ADCDA3851E6CFE3D00E60A29 /* UITransitionViewController.swift */,
+			);
+			path = UITransitionViewController;
 			sourceTree = "<group>";
 		};
 		ADE789F01CF7F3D300573D7F = {
@@ -316,6 +362,10 @@
 		ADE78A0E1CF7FBF000573D7F /* Cleasses */ = {
 			isa = PBXGroup;
 			children = (
+				ADCDA3841E6CFE2D00E60A29 /* UITransitionViewController */,
+				AD74FD5F1E55A93100B32CFA /* ImageBrower */,
+				ADC171D41E1F798B007A38B4 /* RTLabelController */,
+				ADAA2CCE1E13BEC400E8D2A6 /* StretchHeaderView */,
 				AD0EBC701DE5205B0079E8A2 /* TableViewSection */,
 				AD2B68451DDAA9290030F665 /* ScrollViewText */,
 				AD2A7E381DBA02E30074BBC8 /* PhotoBrower */,
@@ -521,8 +571,11 @@
 				AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */,
 				AD2B68471DDAA9400030F665 /* ScrollTextViewController.swift in Sources */,
 				AD0EBC721DE5206E0079E8A2 /* SectionTableViewController.swift in Sources */,
+				ADC171D61E1F79EE007A38B4 /* RTLabelViewController.swift in Sources */,
 				AD1C6C401D6C55900026281D /* AssetsLibraryViewController.swift in Sources */,
+				ADCDA3861E6CFE3D00E60A29 /* UITransitionViewController.swift in Sources */,
 				AD1A86C91D7FA79E000F8743 /* OrientationViewController.swift in Sources */,
+				AD74FD611E55A94800B32CFA /* ImageBrowerViewController.swift in Sources */,
 				AD8E3B351D48B73800A8C43F /* AVPlayerViewController.swift in Sources */,
 				AD2A7E3A1DBA030C0074BBC8 /* PhotoBrowerViewController.swift in Sources */,
 				ADE78A0B1CF7FB2000573D7F /* ViewController.swift in Sources */,
@@ -535,7 +588,10 @@
 				AD314B231CFE7D56003593F7 /* SwiftGlobalFunction.swift in Sources */,
 				ADA7D19C1D003EA800F840E3 /* CollectionModel.swift in Sources */,
 				AD2180201D2CB674004E67E6 /* ScrollViewController.swift in Sources */,
+				ADAA2CD21E13BF0B00E8D2A6 /* StretchView.swift in Sources */,
+				ADAA2CD01E13BEDF00E8D2A6 /* StretchViewController.swift in Sources */,
 				ADE78A111CF7FC0C00573D7F /* RootListController.swift in Sources */,
+				AD74FD631E55A96500B32CFA /* ImageBrowerCollectionViewCell.swift in Sources */,
 				AD1A86CB1D7FA946000F8743 /* UtilityFunctions.swift in Sources */,
 				AD9DD6C71DADE644003F2634 /* CallPhoneViewController.swift in Sources */,
 				ADE789FD1CF7F3D300573D7F /* AppDelegate.swift in Sources */,

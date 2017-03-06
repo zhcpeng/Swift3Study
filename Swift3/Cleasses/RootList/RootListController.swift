@@ -14,21 +14,24 @@ class RootListController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        
+        itemList.append(NSStringFromClass(CanMoveTableViewController.self))
+        itemList.append(NSStringFromClass(ScrollViewController.self))
+        itemList.append(NSStringFromClass(GradientColorViewController.self))
+        itemList.append(NSStringFromClass(UIImageViewCategory.self))
+        itemList.append(NSStringFromClass(SingleLineViewController.self))
+        itemList.append(NSStringFromClass(YYLabelViewController.self))
+        itemList.append(NSStringFromClass(AssetsLibraryViewController.self))
+        itemList.append(NSStringFromClass(OrientationViewController.self))
+        itemList.append(NSStringFromClass(CallPhoneViewController.self))
+        itemList.append(NSStringFromClass(PhotoBrowerViewController.self))
+        itemList.append(NSStringFromClass(ScrollTextViewController.self))
+        itemList.append(NSStringFromClass(SectionTableViewController.self))
+        itemList.append(NSStringFromClass(StretchViewController.self))
+        itemList.append(NSStringFromClass(RTLabelViewController.self))
+        itemList.append(NSStringFromClass(ImageBrowerViewController.self))
+        itemList.append(NSStringFromClass(UITransitionViewController.self))
 
-//		itemList.append("TableViewController")
-		itemList.append("CanMoveTableViewController")
-		itemList.append("ScrollViewController")
-		itemList.append("GradientColorViewController")
-		itemList.append("UIImageViewCategory")
-		itemList.append("SingleLineViewController")
-		itemList.append("YYLabelViewController")
-        itemList.append("AssetsLibraryViewController")
-//        itemList.append("PHPhotosAlbumViewController")
-        itemList.append("OrientationViewController")
-        itemList.append("CallPhoneViewController")
-        itemList.append("PhotoBrowerViewController")
-        itemList.append("ScrollTextViewController")
-        itemList.append("SectionTableViewController")
 
 		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
 	}
@@ -57,7 +60,13 @@ class RootListController: UITableViewController {
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let any = NSClassFromString(itemList[indexPath.row]) as? UIViewController.Type {
             let vc = any.init()
-            navigationController?.pushViewController(vc, animated: true);
+            
+//            let tration = CATransition()
+//            tration.duration = 1
+//            tration.type = kCATransitionFade
+//            navigationController?.view.layer.add(tration, forKey: "animation")
+            
+            navigationController?.pushViewController(vc, animated: false);
         }
 	}
 

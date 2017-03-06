@@ -41,6 +41,9 @@ class SectionTableViewController: UITableViewController {
 //        }
 //        dispatch_resume(timer)
         
+        
+//        let memoryManagedResult:String = StringByAddingTwoStrings(str1, str2).takeUnretainedValue()
+        
     }
 
     override func didReceiveMemoryWarning() {
