@@ -47,7 +47,7 @@ class RTLabelViewController: UIViewController {
 //        label.lineBreakMode = RTTextLineBreakModeClip
         label.text = "<font color=\"#8E919C\">华晨华晨华晨华晨华晨华晨华晨</font><font color=\"red\">宝马</font>-之诺"
 //        label.text = "<font face='HelveticaNeue-CondensedBold' size=20><u color=blue>underlined</u> <uu color=red>text</uu></font>"
-        print(label)
+//        print(label)
         
         
         
@@ -73,16 +73,5 @@ class RTLabelViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

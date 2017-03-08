@@ -30,7 +30,7 @@ class RootListController: UITableViewController {
         itemList.append(NSStringFromClass(StretchViewController.self))
         itemList.append(NSStringFromClass(RTLabelViewController.self))
         itemList.append(NSStringFromClass(ImageBrowerViewController.self))
-        itemList.append(NSStringFromClass(UITransitionViewController.self))
+        itemList.append(NSStringFromClass(UIFirstViewController.self))
 
 
 		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
@@ -66,7 +66,7 @@ class RootListController: UITableViewController {
 //            tration.type = kCATransitionFade
 //            navigationController?.view.layer.add(tration, forKey: "animation")
             
-            navigationController?.pushViewController(vc, animated: false);
+            navigationController?.pushViewController(vc, animated: true);
         }
 	}
 

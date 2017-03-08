@@ -5,7 +5,7 @@ use_frameworks!
 
 pod 'Alamofire'
 pod 'SDWebImage', '~>3.7'
-pod 'ReactiveCocoa', '5.0.0-alpha.6'
+pod 'ReactiveCocoa'
 pod 'SnapKit'
 pod 'YYModel'
 pod 'SwiftyJSON'
@@ -15,5 +15,6 @@ pod 'iCarousel'
 #pod 'ImageViewer'
 pod 'MWPhotoBrowser'
 pod 'Kingfisher'
+pod 'Hero'
 
 end
