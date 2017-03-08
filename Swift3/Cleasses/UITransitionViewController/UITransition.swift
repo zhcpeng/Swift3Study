@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 下滑动画关闭
 
 class XCRPhotosTransition :NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -35,32 +36,58 @@ class XCRPhotosTransition :NSObject, UIViewControllerAnimatedTransitioning {
 
 class XCRInteractiveTransition: UIPercentDrivenInteractiveTransition {
     
+    var panRecognizer: UIPanGestureRecognizer? {
+        didSet{
+            oldValue?.removeTarget(self, action: #selector(panGestureRecognizer(_:)))
+        }
+    }
+    
     weak var viewController: UIViewController? {
         didSet{
             if let vc = viewController {
-                let panGesturn = UIPanGestureRecognizer()
-                panGesturn.reactive.stateChanged.observeValues { [weak self](gestureRecognizer) in
-                    guard let strongSelf = self else { return }
-                    let translation = gestureRecognizer.translation(in: gestureRecognizer.view)
-                    let progress = translation.y / vc.view.bounds.height
-                    switch gestureRecognizer.state{
-                    case .began:
-                        vc.dismiss(animated: true, completion: nil)
-                    case .changed:
-                        strongSelf.update(progress)
-                    default:
-                        if(progress > 0.3){
-                            strongSelf.finish()
-                        }else{
-                            strongSelf.cancel()
-                        }
-                    }
-                }
-                vc.view.addGestureRecognizer(panGesturn)
+                panRecognizer = UIPanGestureRecognizer()
+                panRecognizer!.addTarget(self, action: #selector(panGestureRecognizer(_:)))
+                /// 使用RAC会造成内存泄漏！！！
+//                panRecognizer.reactive.stateChanged.observeValues { [weak self](gestureRecognizer) in
+//                    guard let strongSelf = self else { return }
+//                    let translation = gestureRecognizer.translation(in: gestureRecognizer.view)
+//                    let progress = translation.y / vc.view.bounds.height
+//                    switch gestureRecognizer.state{
+//                    case .began:
+//                        vc.dismiss(animated: true, completion: nil)
+//                    case .changed:
+//                        strongSelf.update(progress)
+//                    default:
+//                        if(progress > 0.4){
+//                            strongSelf.finish()
+//                        }else{
+//                            strongSelf.cancel()
+//                        }
+//                    }
+//                }
+                vc.view.addGestureRecognizer(panRecognizer!)
             }
         }
     }
     
+    @objc private func panGestureRecognizer(_ gestureRecognizer: UIPanGestureRecognizer) {
+        guard let vc = self.viewController else { return }
+        let translation = gestureRecognizer.translation(in: gestureRecognizer.view)
+        var progress = translation.y / vc.view.bounds.height
+        progress = min(1, max(0, progress))
+        switch gestureRecognizer.state{
+        case .began:
+            vc.dismiss(animated: true, completion: nil)
+        case .changed:
+            update(progress)
+        default:
+            if(progress > 0.4){
+                finish()
+            }else{
+                cancel()
+            }
+        }
+    }
 }
 
 

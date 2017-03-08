@@ -9,22 +9,20 @@
 import UIKit
 
 class UIFirstViewController: UIViewController {
-    
+
     private lazy var button: UIButton = {
         let button = UIButton(type: .custom)
         button.backgroundColor = UIColor.red
         button.reactive.controlEvents(.touchUpInside).observeValues({ [weak self](_) in
             let nav = UINavigationController(rootViewController: UISecondViewController())
-//            nav.transitioningDelegate = self
-            nav.view.backgroundColor = UIColor.brown
+            
             nav.transitioningDelegate = XCRPhotoDismissManager.share
             XCRPhotoDismissManager.share.interactiveTransition.viewController = nav
+
             self?.present(nav, animated: true, completion: nil)
-//            self?.present(UISecondViewController(), animated: true, completion: nil)
         })
         return button
     }()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
