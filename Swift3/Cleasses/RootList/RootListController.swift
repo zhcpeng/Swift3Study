@@ -31,6 +31,8 @@ class RootListController: UITableViewController {
         itemList.append(NSStringFromClass(RTLabelViewController.self))
         itemList.append(NSStringFromClass(ImageBrowerViewController.self))
         itemList.append(NSStringFromClass(UIFirstViewController.self))
+        itemList.append(NSStringFromClass(SelectedCollectionViewController.self))
+        itemList.append(NSStringFromClass(UIPopWindowViewController.self))
 
 
 		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")

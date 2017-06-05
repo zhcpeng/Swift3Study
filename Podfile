@@ -17,4 +17,9 @@ pod 'MWPhotoBrowser'
 pod 'Kingfisher'
 pod 'Hero'
 
+#pod 'AFNetworking', '~> 3'
+#pod 'HappyDNS', '>= 0.3'
+
+pod 'Qiniu', '~> 7.1'
+
 end

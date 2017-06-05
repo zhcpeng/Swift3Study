@@ -8,6 +8,7 @@
 
 import UIKit
 import RTLabel
+import YYText
 
 class RTLabelViewController: UIViewController {
     
@@ -38,14 +39,14 @@ class RTLabelViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         view.addSubview(label)
-        label.frame = CGRect.init(x: 0, y: 100, width: 200, height: 30)
+        label.frame = CGRect.init(x: 0, y: 100, width: 300, height: 100)
 //        label.snp.makeConstraints { (make) in
 //            make.edges.equalTo(view)
 //        }
         
 //        label.textAlignment = RTTextAlignmentJustify
 //        label.lineBreakMode = RTTextLineBreakModeClip
-        label.text = "<font color=\"#8E919C\">华晨华晨华晨华晨华晨华晨华晨</font><font color=\"red\">宝马</font>-之诺"
+        label.text = "<font color=\"#8E919C\">华晨华晨华晨</font><font color=\"red\">宝马</font>-之诺"
 //        label.text = "<font face='HelveticaNeue-CondensedBold' size=20><u color=blue>underlined</u> <uu color=red>text</uu></font>"
 //        print(label)
         
@@ -65,6 +66,16 @@ class RTLabelViewController: UIViewController {
         
 //        label2.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
         label2.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: .horizontal)
+        
+        
+        
+        let yyLabel = YYLabel()
+        yyLabel.text = "<font color=\"#8E919C\">华晨华晨华晨</font><font color=\"red\">宝马</font>-之诺"
+        
+        
+        view.addSubview(yyLabel)
+        yyLabel.frame = CGRect.init(x: 0, y: 300, width: 50, height: 100)
+        
 
         
     }

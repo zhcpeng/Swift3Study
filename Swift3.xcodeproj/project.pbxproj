@@ -43,7 +43,9 @@
 		ADAA2CD01E13BEDF00E8D2A6 /* StretchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA2CCF1E13BEDF00E8D2A6 /* StretchViewController.swift */; };
 		ADAA2CD21E13BF0B00E8D2A6 /* StretchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA2CD11E13BF0B00E8D2A6 /* StretchView.swift */; };
 		ADC171D61E1F79EE007A38B4 /* RTLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC171D51E1F79EE007A38B4 /* RTLabelViewController.swift */; };
+		ADC5ABFD1EA4588700ABDC8B /* UIPopWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC5ABFC1EA4588700ABDC8B /* UIPopWindowViewController.swift */; };
 		ADCDA3861E6CFE3D00E60A29 /* UITransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDA3851E6CFE3D00E60A29 /* UITransition.swift */; };
+		ADE489191E8DE60A000BA3F6 /* SelectedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE489181E8DE60A000BA3F6 /* SelectedCollectionViewController.swift */; };
 		ADE789FD1CF7F3D300573D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE789FC1CF7F3D300573D7F /* AppDelegate.swift */; };
 		ADE789FF1CF7F3D300573D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE789FE1CF7F3D300573D7F /* Assets.xcassets */; };
 		ADE78A021CF7F3D300573D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE78A001CF7F3D300573D7F /* LaunchScreen.storyboard */; };
@@ -100,7 +102,9 @@
 		ADAA2CCF1E13BEDF00E8D2A6 /* StretchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchViewController.swift; sourceTree = "<group>"; };
 		ADAA2CD11E13BF0B00E8D2A6 /* StretchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchView.swift; sourceTree = "<group>"; };
 		ADC171D51E1F79EE007A38B4 /* RTLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTLabelViewController.swift; sourceTree = "<group>"; };
+		ADC5ABFC1EA4588700ABDC8B /* UIPopWindowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPopWindowViewController.swift; sourceTree = "<group>"; };
 		ADCDA3851E6CFE3D00E60A29 /* UITransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITransition.swift; sourceTree = "<group>"; };
+		ADE489181E8DE60A000BA3F6 /* SelectedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedCollectionViewController.swift; sourceTree = "<group>"; };
 		ADE789F91CF7F3D300573D7F /* Swift3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE789FC1CF7F3D300573D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADE789FE1CF7F3D300573D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -324,6 +328,21 @@
 			path = RTLabelController;
 			sourceTree = "<group>";
 		};
+		ADC5ABFB1EA4586600ABDC8B /* PopWindow */ = {
+			isa = PBXGroup;
+			children = (
+				ADC5ABFC1EA4588700ABDC8B /* UIPopWindowViewController.swift */,
+			);
+			path = PopWindow;
+			sourceTree = "<group>";
+		};
+		ADC5ADCB1EBAC63600F454C0 /* QiNiu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = QiNiu;
+			sourceTree = "<group>";
+		};
 		ADCDA3841E6CFE2D00E60A29 /* UITransitionViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +352,14 @@
 				AD3C0EBA1E6EBBDC0072A8AC /* UIThirdViewController.swift */,
 			);
 			path = UITransitionViewController;
+			sourceTree = "<group>";
+		};
+		ADE489171E8DE5F5000BA3F6 /* SelectedCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				ADE489181E8DE60A000BA3F6 /* SelectedCollectionViewController.swift */,
+			);
+			path = SelectedCollectionView;
 			sourceTree = "<group>";
 		};
 		ADE789F01CF7F3D300573D7F = {
@@ -371,6 +398,9 @@
 		ADE78A0E1CF7FBF000573D7F /* Cleasses */ = {
 			isa = PBXGroup;
 			children = (
+				ADC5ADCB1EBAC63600F454C0 /* QiNiu */,
+				ADC5ABFB1EA4586600ABDC8B /* PopWindow */,
+				ADE489171E8DE5F5000BA3F6 /* SelectedCollectionView */,
 				ADCDA3841E6CFE2D00E60A29 /* UITransitionViewController */,
 				AD74FD5F1E55A93100B32CFA /* ImageBrower */,
 				ADC171D41E1F798B007A38B4 /* RTLabelController */,
@@ -461,7 +491,7 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 3MK2KJ67U7;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -595,6 +625,8 @@
 				ADEBC0461D2F48A000E12074 /* XCRGradientColorView.swift in Sources */,
 				ADFAD8C81D0F98B400817EB9 /* Common.swift in Sources */,
 				ADA7D19A1D003CB600F840E3 /* CollectionViewCell.swift in Sources */,
+				ADE489191E8DE60A000BA3F6 /* SelectedCollectionViewController.swift in Sources */,
+				ADC5ABFD1EA4588700ABDC8B /* UIPopWindowViewController.swift in Sources */,
 				AD0D4FCA1D20FF4700AC9EE2 /* ChannelView.swift in Sources */,
 				AD3C0EBB1E6EBBDC0072A8AC /* UIThirdViewController.swift in Sources */,
 				AD314B231CFE7D56003593F7 /* SwiftGlobalFunction.swift in Sources */,
@@ -718,15 +750,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 3MK2KJ67U7;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Swift3/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Swift3/Cleasses/QiNiu/sdk",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhcpeng.Swift3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "dd7925dc-31f0-4a32-8c9e-a980a4265eef";
-				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift3/Public/Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -738,15 +774,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 3MK2KJ67U7;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Swift3/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Swift3/Cleasses/QiNiu/sdk",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhcpeng.Swift3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "dd7925dc-31f0-4a32-8c9e-a980a4265eef";
-				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift3/Public/Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

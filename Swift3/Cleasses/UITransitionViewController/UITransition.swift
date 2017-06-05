@@ -12,7 +12,8 @@ import UIKit
 
 class XCRPhotosTransition :NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.5
+        return UIApplication.shared.statusBarOrientationAnimationDuration
+//        return 2
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {

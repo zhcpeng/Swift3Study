@@ -16,8 +16,8 @@ class UIFirstViewController: UIViewController {
         button.reactive.controlEvents(.touchUpInside).observeValues({ [weak self](_) in
             let nav = UINavigationController(rootViewController: UISecondViewController())
             
-            nav.transitioningDelegate = XCRPhotoDismissManager.share
-            XCRPhotoDismissManager.share.interactiveTransition.viewController = nav
+//            nav.transitioningDelegate = XCRPhotoDismissManager.share
+//            XCRPhotoDismissManager.share.interactiveTransition.viewController = nav
 
             self?.present(nav, animated: true, completion: nil)
         })
