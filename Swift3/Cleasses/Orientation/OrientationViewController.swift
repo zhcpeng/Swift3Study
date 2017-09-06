@@ -37,7 +37,7 @@ class OrientationViewController: UIViewController {
 
 		// Do any additional setup after loading the view.
 
-		self.navigationController?.setNavigationBarHidden(true, animated: false)
+//		self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
 //        self.view.clipsToBounds = false
         

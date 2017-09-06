@@ -11,6 +11,8 @@
 
 #import <YYModel/YYModel.h>
 
+#import "YYText.h"
+
 //#pragma mark UILabel+VerticalAlign
 //#import "UILabel+VerticalAlign.h"
 //

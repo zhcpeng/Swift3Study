@@ -41,16 +41,6 @@ class SelectedCollectionViewController: UIViewController, UICollectionViewDataSo
             }
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        print("\(#function)")
-        
-//        if !collectionView.visibleCells.isEmpty {
-//            selectedIndexPath = IndexPath(item: 0, section: 0)
-//        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,15 +51,7 @@ class SelectedCollectionViewController: UIViewController, UICollectionViewDataSo
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
-        
-//        for i in 0...10 {
-//            itemList.append("\(i)")
-//        }
-//        collectionView.reloadData()
-//        collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .top)
-        
-        
+
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(2.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
             for i in 0...10 {
                 self.itemList.append("\(i)")

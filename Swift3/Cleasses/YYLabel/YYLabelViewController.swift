@@ -8,7 +8,7 @@
 
 import UIKit
 
-import YYText
+//import YYText
 
 class YYLabelViewController: UIViewController {
     

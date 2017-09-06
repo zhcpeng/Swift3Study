@@ -8,7 +8,7 @@
 
 import UIKit
 import RTLabel
-import YYText
+//import YYText
 
 class RTLabelViewController: UIViewController {
     
@@ -46,10 +46,12 @@ class RTLabelViewController: UIViewController {
         
 //        label.textAlignment = RTTextAlignmentJustify
 //        label.lineBreakMode = RTTextLineBreakModeClip
-        label.text = "<font color=\"#8E919C\">华晨华晨华晨</font><font color=\"red\">宝马</font>-之诺"
+//        label.text = "<font color=\"#8E919C\">华晨华晨华晨</font><font color=\"red\">宝马</font>-之诺"
 //        label.text = "<font face='HelveticaNeue-CondensedBold' size=20><u color=blue>underlined</u> <uu color=red>text</uu></font>"
 //        print(label)
-        
+
+
+        label.text = "您发表的帖子 《系统消息，哈哈哈》 被 无线测试 限时高亮 。 操作理由：限时高亮，如有异议，联系 <a href=\"appxcar://m.xcar.com.cn.sendmessage?params=%7B%22uid%22%3A100066%2C%22username%22%3A%22%5Cu7231%5Cu5361%5Cu5ba2%5Cu670d%22%7D\">爱卡客服</a>"
         
         
         view.addSubview(label1)
