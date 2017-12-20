@@ -14,7 +14,7 @@ class UIVideoCameraViewController: UIViewController {
 
     
     private lazy var videoCamera: GPUImageVideoCamera = {
-        let camera = GPUImageVideoCamera.init(sessionPreset: AVCaptureSessionPreset1280x720, cameraPosition: .back)
+        let camera = GPUImageVideoCamera.init(sessionPreset: AVCaptureSession.Preset.hd1280x720.rawValue, cameraPosition: .back)
         camera?.outputImageOrientation = .portrait
         return camera!
     }()

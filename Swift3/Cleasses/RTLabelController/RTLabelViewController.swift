@@ -67,7 +67,7 @@ class RTLabelViewController: UIViewController {
         }
         
 //        label2.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
-        label2.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: .horizontal)
+        label2.setContentCompressionResistancePriority(UILayoutPriority.required, for: .horizontal)
         
         
         

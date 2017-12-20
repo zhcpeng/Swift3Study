@@ -46,7 +46,7 @@ class XCRRightImageButtonView: UIView {
             make.centerY.right.equalToSuperview()
             make.left.equalTo(button.snp.right).offset(6)
         }
-        imageView.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
+        imageView.setContentHuggingPriority(UILayoutPriority.required, for: .horizontal)
     }
 
 }

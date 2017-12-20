@@ -30,7 +30,7 @@ class ScrollTextViewController: UIViewController {
     
     fileprivate lazy var contentView : UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.init(colorLiteralRed: 0.5, green: 0.5, blue: 0, alpha: 0)
+        view.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0, alpha: 0)
         view.isUserInteractionEnabled = false
         return view
     }()

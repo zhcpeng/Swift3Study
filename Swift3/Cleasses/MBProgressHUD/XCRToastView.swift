@@ -128,7 +128,7 @@ class XCRToastView: UIView {
                     make.right.lessThanOrEqualToSuperview().offset(-12)
                 })
                 textLabel.preferredMaxLayoutWidth = 184
-                textLabel.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: .horizontal)
+                textLabel.setContentCompressionResistancePriority(UILayoutPriority.required, for: .horizontal)
             }
         }
     }

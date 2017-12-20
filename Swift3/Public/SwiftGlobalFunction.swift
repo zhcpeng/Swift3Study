@@ -51,11 +51,11 @@ public func kUIColor (_ color: UInt32) -> UIColor{
 
 
 //主字体颜色 0x666666
-let kColorMain = UIColor(colorLiteralRed: 66/255.0, green: 66/255.0, blue: 66/255.0, alpha: 1)
+let kColorMain = UIColor(red: 66/255.0, green: 66/255.0, blue: 66/255.0, alpha: 1)
 //次要字体颜色 0x999999
-let kColorSecondary = UIColor(colorLiteralRed: 99/255.0, green: 99/255.0, blue: 99/255.0, alpha: 1)
+let kColorSecondary = UIColor(red: 99/255.0, green: 99/255.0, blue: 99/255.0, alpha: 1)
 //不可用字体颜色 0xdddddd
-let kColorEnable  = UIColor(colorLiteralRed: 221/255.0, green: 221/255.0, blue: 221/255.0, alpha: 1)
+let kColorEnable  = UIColor(red: 221/255.0, green: 221/255.0, blue: 221/255.0, alpha: 1)
 
 
 
