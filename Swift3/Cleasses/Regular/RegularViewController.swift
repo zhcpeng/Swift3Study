@@ -8,8 +8,6 @@
 
 import UIKit
 
-import SwiftEmoji
-
 class RegularViewController: UIViewController {
 
     private var emoticonRegex: NSRegularExpression = try! NSRegularExpression(pattern: "\\#.*?\\#", options: [])

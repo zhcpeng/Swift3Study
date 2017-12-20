@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4AB62912EC0BE71C81A9E3CD /* Pods_Swift3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9956F811B9179BE7014C5D /* Pods_Swift3.framework */; };
 		6045E68D1F8DF5DF004F46A3 /* CALayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6045E68C1F8DF5DF004F46A3 /* CALayerViewController.swift */; };
 		606D7E851FC50F020039CA61 /* XButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D7E841FC50F020039CA61 /* XButtonViewController.swift */; };
 		606E1F1C1FEA5004009A0EB8 /* PhotosAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606E1F1B1FEA5004009A0EB8 /* PhotosAlbumViewController.swift */; };
+		606E1F201FEA54F6009A0EB8 /* PhotosAlbumViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606E1F1F1FEA54F6009A0EB8 /* PhotosAlbumViewCell.swift */; };
 		60BDE03B1F78EEE200922AA2 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BDE03A1F78EEE200922AA2 /* CycleViewController.swift */; };
 		60BDE03D1F78EF1300922AA2 /* XCRCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BDE03C1F78EF1300922AA2 /* XCRCycleView.swift */; };
 		60E0B75A1F7A570E000C674B /* XCRRightImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E0B7591F7A570E000C674B /* XCRRightImageButtonView.swift */; };
+		997FD16764957EB256EFBB0C /* Pods_Swift4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65085693BCA80E3D2E96750 /* Pods_Swift4.framework */; };
 		AD05A1471D26582300955761 /* CanMoveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A1461D26582300955761 /* CanMoveTableViewController.swift */; };
 		AD0D4FCA1D20FF4700AC9EE2 /* ChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0D4FC91D20FF4700AC9EE2 /* ChannelView.swift */; };
 		AD0EBC721DE5206E0079E8A2 /* SectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0EBC711DE5206E0079E8A2 /* SectionTableViewController.swift */; };
@@ -105,10 +106,12 @@
 		6045E68C1F8DF5DF004F46A3 /* CALayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerViewController.swift; sourceTree = "<group>"; };
 		606D7E841FC50F020039CA61 /* XButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XButtonViewController.swift; sourceTree = "<group>"; };
 		606E1F1B1FEA5004009A0EB8 /* PhotosAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAlbumViewController.swift; sourceTree = "<group>"; };
+		606E1F1F1FEA54F6009A0EB8 /* PhotosAlbumViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosAlbumViewCell.swift; sourceTree = "<group>"; };
 		60BDE03A1F78EEE200922AA2 /* CycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
 		60BDE03C1F78EF1300922AA2 /* XCRCycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCRCycleView.swift; sourceTree = "<group>"; };
 		60E0B7591F7A570E000C674B /* XCRRightImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCRRightImageButtonView.swift; sourceTree = "<group>"; };
 		8168AB51746051386FA7D1DB /* Pods-Swift3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift3/Pods-Swift3.release.xcconfig"; sourceTree = "<group>"; };
+		A65085693BCA80E3D2E96750 /* Pods_Swift4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD05A1461D26582300955761 /* CanMoveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanMoveTableViewController.swift; sourceTree = "<group>"; };
 		AD0D4FC91D20FF4700AC9EE2 /* ChannelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelView.swift; sourceTree = "<group>"; };
 		AD0EBC711DE5206E0079E8A2 /* SectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTableViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 		ADEBC04C1D2F4DEC00E12074 /* 15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15.jpg; sourceTree = "<group>"; };
 		ADF02C671D476FF500B51E95 /* SingleLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleLineViewController.swift; sourceTree = "<group>"; };
 		ADFAD8C71D0F98B400817EB9 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		D62606C1F586237CE9ADA0DC /* Pods-Swift4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift4.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift4/Pods-Swift4.release.xcconfig"; sourceTree = "<group>"; };
+		FAA7E46133B039454BB99710 /* Pods-Swift4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift4.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift4/Pods-Swift4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,7 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AB62912EC0BE71C81A9E3CD /* Pods_Swift3.framework in Frameworks */,
+				997FD16764957EB256EFBB0C /* Pods_Swift4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				3E9956F811B9179BE7014C5D /* Pods_Swift3.framework */,
+				A65085693BCA80E3D2E96750 /* Pods_Swift4.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				606E1F1B1FEA5004009A0EB8 /* PhotosAlbumViewController.swift */,
+				606E1F1F1FEA54F6009A0EB8 /* PhotosAlbumViewCell.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -283,6 +290,8 @@
 			children = (
 				0A6B42CE9D23BED5E7FA744D /* Pods-Swift3.debug.xcconfig */,
 				8168AB51746051386FA7D1DB /* Pods-Swift3.release.xcconfig */,
+				FAA7E46133B039454BB99710 /* Pods-Swift4.debug.xcconfig */,
+				D62606C1F586237CE9ADA0DC /* Pods-Swift4.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -752,7 +761,7 @@
 				TargetAttributes = {
 					ADE789F81CF7F3D300573D7F = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 3MK2KJ67U7;
+						DevelopmentTeam = KELVN2Q7P4;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -807,7 +816,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift3/Pods-Swift3-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift4/Pods-Swift4-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A8F25C9D1577083F01B95102 /* [CP] Check Pods Manifest.lock */ = {
@@ -821,7 +830,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Swift3-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Swift4-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -847,7 +856,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Swift3/Pods-Swift3-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Swift4/Pods-Swift4-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
@@ -861,7 +870,6 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftEmoji/SwiftEmoji.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
@@ -881,14 +889,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEmoji.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift3/Pods-Swift3-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift4/Pods-Swift4-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -905,6 +912,7 @@
 				AD5088461D61A0BD0023824B /* YYLabelViewController.swift in Sources */,
 				AD5C29001DBF070D00A68052 /* XCRPhotosBrowserCollectionViewCell.swift in Sources */,
 				ADF02C681D476FF500B51E95 /* SingleLineViewController.swift in Sources */,
+				606E1F201FEA54F6009A0EB8 /* PhotosAlbumViewCell.swift in Sources */,
 				AD3C0EB71E6EA51C0072A8AC /* UIFirstViewController.swift in Sources */,
 				AD72F7F51F56B26900E1670D /* PhotosBrowerViewController.swift in Sources */,
 				AD82150C1EE53E7F00C6C88D /* YYTextDebugOption.m in Sources */,
@@ -1086,19 +1094,16 @@
 		};
 		ADE78A071CF7F3D300573D7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A6B42CE9D23BED5E7FA744D /* Pods-Swift3.debug.xcconfig */;
+			baseConfigurationReference = FAA7E46133B039454BB99710 /* Pods-Swift4.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KELVN2Q7P4;
 				INFOPLIST_FILE = Swift3/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Swift3/Cleasses/QiNiu/sdk",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhcpeng.Swift3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1111,19 +1116,16 @@
 		};
 		ADE78A081CF7F3D300573D7F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8168AB51746051386FA7D1DB /* Pods-Swift3.release.xcconfig */;
+			baseConfigurationReference = D62606C1F586237CE9ADA0DC /* Pods-Swift4.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KELVN2Q7P4;
 				INFOPLIST_FILE = Swift3/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Swift3/Cleasses/QiNiu/sdk",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhcpeng.Swift3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
