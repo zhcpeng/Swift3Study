@@ -33,13 +33,16 @@ class RootListController: UITableViewController {
         itemList.append(NSStringFromClass(UIFirstViewController.self))
         itemList.append(NSStringFromClass(SelectedCollectionViewController.self))
         itemList.append(NSStringFromClass(UIPopWindowViewController.self))
-//        itemList.append(NSStringFromClass(YYTextTableViewController.self))
-//        itemList.append(NSStringFromClass(YYTextCollectionViewController.self))
         itemList.append(NSStringFromClass(GIFViewController.self))
         itemList.append(NSStringFromClass(MBProgressHUDViewController.self))
         itemList.append(NSStringFromClass(RegularViewController.self))
-//        itemList.append(NSStringFromClass(ImageViewContentModeViewController.self))
         itemList.append(NSStringFromClass(ImageTransitionViewController.self))
+        itemList.append(NSStringFromClass(CycleViewController.self))
+        itemList.append(NSStringFromClass(CALayerViewController.self))
+        itemList.append(NSStringFromClass(XButtonViewController.self))
+        itemList.append(NSStringFromClass(PhotosAlbumViewController.self))
+
+        itemList = itemList.reversed()
 
 		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
 	}

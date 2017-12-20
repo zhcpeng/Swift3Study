@@ -12,17 +12,11 @@ pod 'SwiftyJSON'
 #pod 'YYText'
 pod 'RTLabel'
 pod 'iCarousel'
-#pod 'ImageViewer'
 pod 'MWPhotoBrowser'
 pod 'Kingfisher'
 pod 'Hero'
 
 pod 'GPUImage'
 pod 'MBProgressHUD'
-
-#pod 'AFNetworking', '~> 3'
-#pod 'HappyDNS', '>= 0.3'
-
-#pod 'Qiniu', '~> 7.1'
 
 end
