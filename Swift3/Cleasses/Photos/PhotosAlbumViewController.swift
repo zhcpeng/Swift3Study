@@ -198,7 +198,7 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
 
 
 
- //   /*
+    /*
      /// 只选中轨迹中的cell
     @objc private func panGesture(_ gesture: UIGestureRecognizer) {
         let x = gesture.location(in: collectionView).x
@@ -222,29 +222,96 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
             m_lastAccessed = nil
         }
     }
-//     */
-
-//    /// 选中所有
-//    @objc private func panGesture(_ gesture: UIGestureRecognizer) {
-//
-//    }
+     */
 
 
-    @objc private func leftSwipeGesture(_ gesture: UIGestureRecognizer) {
-        print("left \(gesture.state.rawValue)")
+    private var startPoint: CGPoint = CGPoint.zero
+    private var movePoint: CGPoint = CGPoint.zero
+    /// 选中所有
+    @objc private func panGesture(_ gest: UIGestureRecognizer) {
+        switch gest.state {
+        case .began:
+            startPoint = gest.location(ofTouch: 0, in: collectionView)
+//            lastPoint = gest.location(ofTouch: 0, in: collectionView)
+            startEdgeTimer()
+        case .changed:
+            movePoint = gest.location(ofTouch: 0, in: collectionView)
+//            lastPoint = gest.location(ofTouch: 0, in: collectionView)
+            selectedCell(gest)
+        default:
+            stopEdgeTimer()
+        }
     }
 
-    @objc private func rightSwipeGesture(_ gesture: UIGestureRecognizer) {
-        print("right \(gesture.state.rawValue)")
+    // 滑动相关
+    private func startEdgeTimer() {
+        edgeTimer = CADisplayLink(target: self, selector: #selector(edgeScroll))
+        edgeTimer?.add(to: RunLoop.main, forMode: .commonModes)
+    }
+    private func stopEdgeTimer() {
+        edgeTimer?.invalidate()
+        edgeTimer = nil
+    }
+    private func setCollectionScrollDirection() {
+        scrollDirection = .none
+        guard let view = tempMoveView else { return }
+        let size = collectionView.bounds.size
+        let contentOffset = collectionView.contentOffset
+        if view.center.y - contentOffset.y < view.bounds.size.height / 2 && contentOffset.y > 0 {
+            scrollDirection = .up
+        }
+        if size.height + contentOffset.y - view.center.y < view.bounds.size.height / 2 && collectionView.bounds.size.height + contentOffset.y < collectionView.contentSize.height {
+            scrollDirection = .down
+        }
+    }
+    @objc private func edgeScroll() {
+        setCollectionScrollDirection()
+        switch scrollDirection {
+        case .up:
+            collectionView.setContentOffset(CGPoint(x: collectionView.contentOffset.x, y: collectionView.contentOffset.y - 4), animated: false)
+            if let view = tempMoveView {
+                view.center = CGPoint(x: view.center.x, y: view.center.y - 4)
+            }
+            lastPoint.y -= 4
+        case .down:
+            collectionView.setContentOffset(CGPoint(x: collectionView.contentOffset.x, y: collectionView.contentOffset.y + 4), animated: false)
+            if let view = tempMoveView {
+                view.center = CGPoint(x: view.center.x, y: view.center.y + 4)
+            }
+            lastPoint.y += 4
+        default:
+            break
+        }
+    }
+
+    private func selectedCell(_ gest: UIGestureRecognizer) {
+//        let cells = collectionView.visibleCells.filter({ return !$0.isSelected })
+        let indexPaths: [IndexPath] = collectionView.collectionViewLayout.layoutAttributesForElements(in: getRect())?.map{ $0.indexPath } ?? []
+        for indexPath in indexPaths {
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.isSelected = true
+        }
     }
 
 
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-//        if gestureRecognizer.view?.isKind(of: UICollectionView.self) ?? false {
-//            return false
-//        }
-//        return true
-//    }
+    private func getRect() -> CGRect {
+        /*
+        //矩形选择
+        var frame = CGRect (x: 0, y: 0, width: 0, height: 0)
+        frame.origin.x = min(startPoint.x, movePoint.x)
+        frame.origin.y = min(startPoint.y, movePoint.y)
+        frame.size.width = fabs(startPoint.x - movePoint.x)
+        frame.size.height = fabs(startPoint.y - movePoint.y)
+        return frame
+         */
+
+        var frame = CGRect (x: 0, y: 0, width: 0, height: 0)
+        frame.origin.x = min(startPoint.x, movePoint.x)
+        frame.origin.y = min(startPoint.y, movePoint.y)
+        frame.size.width = fabs(startPoint.x - movePoint.x)
+        frame.size.height = fabs(startPoint.y - movePoint.y)
+        return frame
+    }
 
 }
 
