@@ -63,13 +63,9 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
 
 
     // 拖动
-    private var originalIndexPath: IndexPath?
-    private var orignalCell: UICollectionViewCell?
-    private var orignalCenter: CGPoint = CGPoint.zero
-    private var moveIndexPath: IndexPath?
     private var tempMoveView: UIView?
     private var lastPoint: CGPoint = CGPoint.zero
-    private var addImageCell: UICollectionViewCell?
+
     private var edgeTimer: CADisplayLink?
     private var scrollDirection: XCRCollectionScrollDirection = .none
 
@@ -197,7 +193,6 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
     }
 
 
-
     /*
      /// 只选中轨迹中的cell
     @objc private func panGesture(_ gesture: UIGestureRecognizer) {
@@ -232,14 +227,19 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
         switch gest.state {
         case .began:
             startPoint = gest.location(ofTouch: 0, in: collectionView)
-//            lastPoint = gest.location(ofTouch: 0, in: collectionView)
+            tempMoveView = UIView()
+            tempMoveView?.backgroundColor = UIColor.clear
+            tempMoveView?.frame = CGRect(x: 0, y: 0, width: width, height: width)
+            tempMoveView?.center = startPoint
+            view.addSubview(tempMoveView!)
             startEdgeTimer()
         case .changed:
             movePoint = gest.location(ofTouch: 0, in: collectionView)
-//            lastPoint = gest.location(ofTouch: 0, in: collectionView)
+            tempMoveView?.center = movePoint
             selectedCell(gest)
         default:
             stopEdgeTimer()
+            tempMoveView?.removeFromSuperview()
         }
     }
 
@@ -257,6 +257,9 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
         guard let view = tempMoveView else { return }
         let size = collectionView.bounds.size
         let contentOffset = collectionView.contentOffset
+//        if view.center.y - contentOffset.y < view.bounds.size.height / 2 && contentOffset.y > 0 {
+//            scrollDirection = .up
+//        }
         if view.center.y - contentOffset.y < view.bounds.size.height / 2 && contentOffset.y > 0 {
             scrollDirection = .up
         }
@@ -285,34 +288,33 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
     }
 
     private func selectedCell(_ gest: UIGestureRecognizer) {
-//        let cells = collectionView.visibleCells.filter({ return !$0.isSelected })
-        let indexPaths: [IndexPath] = collectionView.collectionViewLayout.layoutAttributesForElements(in: getRect())?.map{ $0.indexPath } ?? []
+        /// 矩形选择
+//        var frame = CGRect (x: 0, y: 0, width: 0, height: 0)
+//        frame.origin.x = min(startPoint.x, movePoint.x)
+//        frame.origin.y = min(startPoint.y, movePoint.y)
+//        frame.size.width = fabs(startPoint.x - movePoint.x)
+//        frame.size.height = fabs(startPoint.y - movePoint.y)
+//        let indexPaths: [IndexPath] = collectionView.collectionViewLayout.layoutAttributesForElements(in: frame)?.map{ $0.indexPath } ?? []
+//        for indexPath in indexPaths {
+//            let cell = collectionView.cellForItem(at: indexPath)
+//            cell?.isSelected = true
+//        }
+
+        /// 从头到尾包含的全部选择
+        let startRect = CGRect(origin: startPoint, size: CGSize.init(width: 1, height: 1))
+        let endRect = CGRect(origin: movePoint, size: CGSize.init(width: 1, height: 1))
+        guard let startItem = collectionView.collectionViewLayout.layoutAttributesForElements(in: startRect)?.first?.indexPath.item, let endItem = collectionView.collectionViewLayout.layoutAttributesForElements(in: endRect)?.first?.indexPath.item else { return }
+        let minItem = min(startItem, endItem)
+        let maxItem = max(startItem, endItem)
+        var indexPaths: [IndexPath] = []
+        for item in minItem...maxItem {
+            indexPaths.append(IndexPath(item: item, section: 0))
+        }
         for indexPath in indexPaths {
             let cell = collectionView.cellForItem(at: indexPath)
             cell?.isSelected = true
         }
     }
-
-
-    private func getRect() -> CGRect {
-        /*
-        //矩形选择
-        var frame = CGRect (x: 0, y: 0, width: 0, height: 0)
-        frame.origin.x = min(startPoint.x, movePoint.x)
-        frame.origin.y = min(startPoint.y, movePoint.y)
-        frame.size.width = fabs(startPoint.x - movePoint.x)
-        frame.size.height = fabs(startPoint.y - movePoint.y)
-        return frame
-         */
-
-        var frame = CGRect (x: 0, y: 0, width: 0, height: 0)
-        frame.origin.x = min(startPoint.x, movePoint.x)
-        frame.origin.y = min(startPoint.y, movePoint.y)
-        frame.size.width = fabs(startPoint.x - movePoint.x)
-        frame.size.height = fabs(startPoint.y - movePoint.y)
-        return frame
-    }
-
 }
 
 extension PhotosAlbumViewController: UICollectionViewDelegate, UICollectionViewDataSource {

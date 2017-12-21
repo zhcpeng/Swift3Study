@@ -11,18 +11,11 @@ import SnapKit
 import Alamofire
 import SwiftyJSON
 
-let IS_IOS7 = (UIDevice.current.systemVersion as NSString).doubleValue >= 7.0
-let IS_IOS8 = (UIDevice.current.systemVersion as NSString).doubleValue >= 8.0
-
 let kScreenWidth = UIScreen.main.bounds.size.width
 let kScreenHeight = UIScreen.main.bounds.size.height
 
-//public func kCurrentHeight(_ H:CGFloat) -> CGFloat{
-//    return (H * (kScreenWidth) / 320.0)
-//}
-//public func kGetCurrentHeight(_ W:CGFloat,H:CGFloat) -> CGFloat{
-//    return (((kScreenWidth) - (320 - W)) * H / W)
-//}
+let iPhoneX = (CGSize(width: 1125, height: 2436).equalTo(UIScreen.main.currentMode!.size))
+var kNavigationBarHeight: CGFloat { return iPhoneX ? 88 : 64 }
 
 public func kUIColor (_ color: UInt32) -> UIColor{
     let redComponent = (color & 0xFF0000) >> 16
@@ -32,22 +25,6 @@ public func kUIColor (_ color: UInt32) -> UIColor{
     return resultcolor
 }
 
-//public func SwiftClassFromString(_ className: String) -> UIViewController? {
-//    if  let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String {
-//        let classStringName = "_TtC\(appName.characters.count)\(appName)\(className.characters.count)\(className)"
-//        let  cls: AnyClass? = NSClassFromString(classStringName)
-//        assert(cls != nil, "class not found,please check className")
-//        if let viewClass = cls as? UIViewController.Type {
-//            let view = viewClass.init()
-//            return view
-//        }
-//    }
-//    return nil;
-//}
-
-//public func SwiftSetValueWithJSON(model:AnyObject , json : JSON){
-//    
-//}
 
 
 //主字体颜色 0x666666
