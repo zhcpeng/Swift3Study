@@ -17,7 +17,7 @@ private enum XCRCollectionScrollDirection {
     case right
 }
 
-class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate {
+class PhotosAlbumViewController: UIViewController {
 
     private var itemList: PHFetchResult<PHAsset>?
     fileprivate lazy var imageManager: PHCachingImageManager = PHCachingImageManager()
@@ -38,7 +38,6 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
         options.includeAssetSourceTypes = .typeUserLibrary
         return options
     }()
-    fileprivate lazy var currentAlbumsIndex: Int = 0
     private var previousPreheatRect = CGRect.zero
     fileprivate lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -61,11 +60,8 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
 
     private var m_lastAccessed: IndexPath?
 
-
     // 拖动
     private var tempMoveView: UIView?
-    private var lastPoint: CGPoint = CGPoint.zero
-
     private var edgeTimer: CADisplayLink?
     private var scrollDirection: XCRCollectionScrollDirection = .none
 
@@ -102,20 +98,15 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
             break
         }
 
-
         let pan = UIPanGestureRecognizer.init()
         pan.addTarget(self, action: #selector(panGesture(_ :)))
-//        pan.delegate = self
         view.addGestureRecognizer(pan)
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 
     // MARK: UIScrollView
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -219,7 +210,7 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
     }
      */
 
-
+    // MARK: 选中
     private var startPoint: CGPoint = CGPoint.zero
     private var movePoint: CGPoint = CGPoint.zero
     /// 选中所有
@@ -243,7 +234,7 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
         }
     }
 
-    // 滑动相关
+    // MARK: 滑动相关
     private func startEdgeTimer() {
         edgeTimer = CADisplayLink(target: self, selector: #selector(edgeScroll))
         edgeTimer?.add(to: RunLoop.main, forMode: .commonModes)
@@ -257,10 +248,7 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
         guard let view = tempMoveView else { return }
         let size = collectionView.bounds.size
         let contentOffset = collectionView.contentOffset
-//        if view.center.y - contentOffset.y < view.bounds.size.height / 2 && contentOffset.y > 0 {
-//            scrollDirection = .up
-//        }
-        if view.center.y - contentOffset.y < view.bounds.size.height / 2 && contentOffset.y > 0 {
+        if view.center.y - contentOffset.y < view.bounds.size.height && contentOffset.y >= -kNavigationBarHeight {
             scrollDirection = .up
         }
         if size.height + contentOffset.y - view.center.y < view.bounds.size.height / 2 && collectionView.bounds.size.height + contentOffset.y < collectionView.contentSize.height {
@@ -275,13 +263,11 @@ class PhotosAlbumViewController: UIViewController , UIGestureRecognizerDelegate 
             if let view = tempMoveView {
                 view.center = CGPoint(x: view.center.x, y: view.center.y - 4)
             }
-            lastPoint.y -= 4
         case .down:
             collectionView.setContentOffset(CGPoint(x: collectionView.contentOffset.x, y: collectionView.contentOffset.y + 4), animated: false)
             if let view = tempMoveView {
                 view.center = CGPoint(x: view.center.x, y: view.center.y + 4)
             }
-            lastPoint.y += 4
         default:
             break
         }
