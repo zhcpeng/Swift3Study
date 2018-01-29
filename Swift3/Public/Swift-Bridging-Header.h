@@ -13,12 +13,3 @@
 
 #import "YYText.h"
 
-//#pragma mark UILabel+VerticalAlign
-//#import "UILabel+VerticalAlign.h"
-//
-//#import "UILabelStrikeThrougj.h"
-//
-//#pragma mark  - Objective - C 类
-//#pragma mark Model
-////#import "CustomTableViewModel.h"
-//#import "JsonModel.h"

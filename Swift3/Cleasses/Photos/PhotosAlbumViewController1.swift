@@ -9,19 +9,7 @@
 import UIKit
 import Photos
 
-enum XCRCollectionScrollDirection {
-    case none
-    case up
-    case down
-    case left
-    case right
-}
-
-class PhotosAlbumViewController: UIViewController {
-
-    var selectedPhotos: [XCRPhotosSelectedModel] = []
-    private var isSeletcedCell: Bool = true
-    private var isReversed: Bool = false
+class PhotosAlbumViewController1: UIViewController {
 
     private var itemList: PHFetchResult<PHAsset>?
     fileprivate lazy var imageManager: PHCachingImageManager = PHCachingImageManager()
@@ -187,6 +175,33 @@ class PhotosAlbumViewController: UIViewController {
         return allLayoutAttributes.map { $0.indexPath.item }
     }
 
+
+    /*
+     /// 只选中轨迹中的cell
+    @objc private func panGesture(_ gesture: UIGestureRecognizer) {
+        let x = gesture.location(in: collectionView).x
+        let y = gesture.location(in: collectionView).y
+
+        for cell in collectionView.visibleCells {
+            let cellLeftTop = cell.frame.origin.x
+            let cellRightTop = cellLeftTop + cell.frame.size.width
+            let cellLeftBottom = cell.frame.origin.y
+            let cellRightBottom = cellLeftBottom + cell.frame.size.height
+
+            if x >= cellLeftTop, x <= cellRightTop, y >= cellLeftBottom, y <= cellRightBottom {
+                let touchOver = collectionView.indexPath(for: cell)
+                if m_lastAccessed != touchOver {
+                    cell.isSelected = true
+                }
+                m_lastAccessed = touchOver
+            }
+        }
+        if gesture.state == .ended || gesture.state == .cancelled {
+            m_lastAccessed = nil
+        }
+    }
+     */
+
     // MARK: 选中
     private var startPoint: CGPoint = CGPoint.zero
     private var movePoint: CGPoint = CGPoint.zero
@@ -201,17 +216,6 @@ class PhotosAlbumViewController: UIViewController {
             tempMoveView?.center = startPoint
             view.addSubview(tempMoveView!)
             startEdgeTimer()
-            let startRect = CGRect(origin: startPoint, size: CGSize(width: 1, height: 1))
-            if let startIndexPath = collectionView.collectionViewLayout.layoutAttributesForElements(in: startRect)?.first?.indexPath {
-                var contentPhoto = false
-                for model in selectedPhotos where model.representedAssetIdentifier == itemList![startIndexPath.item].localIdentifier {
-                    contentPhoto = true
-                    break
-                }
-                isSeletcedCell = !contentPhoto
-            } else {
-                isSeletcedCell = true
-            }
         case .changed:
             movePoint = gest.location(ofTouch: 0, in: collectionView)
             tempMoveView?.center = movePoint
@@ -219,7 +223,6 @@ class PhotosAlbumViewController: UIViewController {
         default:
             stopEdgeTimer()
             tempMoveView?.removeFromSuperview()
-            resetGesture()
         }
     }
 
@@ -261,63 +264,38 @@ class PhotosAlbumViewController: UIViewController {
             break
         }
     }
-    private func resetGesture() {
-        gestureContentIndexPathCount = -1
-        startPoint = CGPoint.zero
-        movePoint = CGPoint.zero
-    }
-    private var gestureContentIndexPathCount: Int = -1
+
     private func selectedCell(_ gest: UIGestureRecognizer) {
-        /// 从头到尾包含的全部选择
-        let startRect = CGRect(origin: startPoint, size: CGSize(width: 1, height: 1))
-        let endRect = CGRect(origin: movePoint, size: CGSize(width: 1, height: 1))
-        guard let startItem = collectionView.collectionViewLayout.layoutAttributesForElements(in: startRect)?.first?.indexPath.item, let endItem = collectionView.collectionViewLayout.layoutAttributesForElements(in: endRect)?.first?.indexPath.item else { return }
-        isReversed = endItem < startItem
-        let minItem = min(startItem, endItem)
-        let maxItem = max(startItem, endItem)
-        var indexPaths: [IndexPath] = []
-        for item in minItem...maxItem {
-            indexPaths.append(IndexPath(item: item, section: 0))
-        }
-        if gestureContentIndexPathCount == indexPaths.count {
-            return
-        }
-        gestureContentIndexPathCount = indexPaths.count
-        if isReversed {
-            indexPaths = indexPaths.reversed()
-        }
+        /// 矩形选择
+        var frame = CGRect (x: 0, y: 0, width: 0, height: 0)
+        frame.origin.x = min(startPoint.x, movePoint.x)
+        frame.origin.y = min(startPoint.y, movePoint.y)
+        frame.size.width = fabs(startPoint.x - movePoint.x)
+        frame.size.height = fabs(startPoint.y - movePoint.y)
+        let indexPaths: [IndexPath] = collectionView.collectionViewLayout.layoutAttributesForElements(in: frame)?.map{ $0.indexPath } ?? []
         for indexPath in indexPaths {
-            var contentPhoto = false
-            for model in selectedPhotos where model.representedAssetIdentifier == itemList![indexPath.item].localIdentifier {
-                contentPhoto = true
-                break
-            }
-            if isSeletcedCell {
-                // 选中，选中时忽略已选中的
-                if !contentPhoto {
-                    let newModel = XCRPhotosSelectedModel()
-                    newModel.image = (collectionView.cellForItem(at: indexPath) as? PhotosAlbumViewCell)?.imageView.image
-                    newModel.representedAssetIdentifier = itemList![indexPath.item].localIdentifier
-                    newModel.phAsset = itemList?[indexPath.item]
-                    selectedPhotos.append(newModel)
-                    collectionView.reloadItems(at: [indexPath])
-                }
-            } else {
-                if contentPhoto {
-                    for (index, model) in selectedPhotos.enumerated() where model.representedAssetIdentifier == itemList![indexPath.item].localIdentifier {
-                        selectedPhotos.remove(at: index)
-                        break
-                    }
-                }
-            }
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.isSelected = true
         }
-        if !isSeletcedCell {
-            collectionView.reloadData()
-        }
+
+//        /// 从头到尾包含的全部选择
+//        let startRect = CGRect(origin: startPoint, size: CGSize.init(width: 1, height: 1))
+//        let endRect = CGRect(origin: movePoint, size: CGSize.init(width: 1, height: 1))
+//        guard let startItem = collectionView.collectionViewLayout.layoutAttributesForElements(in: startRect)?.first?.indexPath.item, let endItem = collectionView.collectionViewLayout.layoutAttributesForElements(in: endRect)?.first?.indexPath.item else { return }
+//        let minItem = min(startItem, endItem)
+//        let maxItem = max(startItem, endItem)
+//        var indexPaths: [IndexPath] = []
+//        for item in minItem...maxItem {
+//            indexPaths.append(IndexPath(item: item, section: 0))
+//        }
+//        for indexPath in indexPaths {
+//            let cell = collectionView.cellForItem(at: indexPath)
+//            cell?.isSelected = true
+//        }
     }
 }
 
-extension PhotosAlbumViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PhotosAlbumViewController1: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return itemList?.count ?? 0
@@ -325,38 +303,9 @@ extension PhotosAlbumViewController: UICollectionViewDelegate, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosAlbumViewCell", for: indexPath) as! PhotosAlbumViewCell
-        cell.controller = self
         imageManager.requestImage(for: itemList![indexPath.item], targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: imageRequestOptions) { (result, _) in
             cell.imageView.image = result
         }
-        cell.representedAssetIdentifier = itemList![indexPath.item].localIdentifier
-        for (index, model) in selectedPhotos.enumerated() where model.representedAssetIdentifier == itemList![indexPath.item].localIdentifier {
-            cell.selected(true, animate: true, index: index)
-            break
-        }
         return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        guard let cell = collectionView.cellForItem(at: indexPath) as? PhotosAlbumViewCell else { return }
-        var contentPhoto = false
-        for model in selectedPhotos where model.representedAssetIdentifier == cell.representedAssetIdentifier {
-            contentPhoto = true
-            break
-        }
-        if contentPhoto {
-            for (index, model) in selectedPhotos.enumerated() where model.representedAssetIdentifier == cell.representedAssetIdentifier {
-                selectedPhotos.remove(at: index)
-                break
-            }
-            collectionView.reloadData()
-        } else {
-            let newModel = XCRPhotosSelectedModel()
-            newModel.image = cell.imageView.image
-            newModel.representedAssetIdentifier = itemList?[indexPath.item].localIdentifier ?? ""
-            newModel.phAsset = itemList?[indexPath.item]
-            selectedPhotos.append(newModel)
-        }
     }
 }
