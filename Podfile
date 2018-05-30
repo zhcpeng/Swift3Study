@@ -16,6 +16,8 @@ pod 'MWPhotoBrowser'
 pod 'Kingfisher'
 pod 'Hero'
 
+pod 'Moya'
+
 pod 'GPUImage'
 pod 'MBProgressHUD'
 

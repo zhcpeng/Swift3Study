@@ -341,22 +341,19 @@ extension PhotosAlbumViewController: UICollectionViewDelegate, UICollectionViewD
         collectionView.deselectItem(at: indexPath, animated: true)
         guard let cell = collectionView.cellForItem(at: indexPath) as? PhotosAlbumViewCell else { return }
         var contentPhoto = false
-        for model in selectedPhotos where model.representedAssetIdentifier == cell.representedAssetIdentifier {
+        for (index, model) in selectedPhotos.enumerated() where model.representedAssetIdentifier == cell.representedAssetIdentifier {
+            selectedPhotos.remove(at: index)
+            collectionView.reloadData()
             contentPhoto = true
             break
         }
-        if contentPhoto {
-            for (index, model) in selectedPhotos.enumerated() where model.representedAssetIdentifier == cell.representedAssetIdentifier {
-                selectedPhotos.remove(at: index)
-                break
-            }
-            collectionView.reloadData()
-        } else {
+        if !contentPhoto {
             let newModel = XCRPhotosSelectedModel()
             newModel.image = cell.imageView.image
             newModel.representedAssetIdentifier = itemList?[indexPath.item].localIdentifier ?? ""
             newModel.phAsset = itemList?[indexPath.item]
             selectedPhotos.append(newModel)
+            collectionView.reloadItems(at: [indexPath])
         }
     }
 }

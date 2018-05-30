@@ -43,6 +43,10 @@ class RootListController: UITableViewController {
         itemList.append(NSStringFromClass(PhotosAlbumViewController.self))
         itemList.append(NSStringFromClass(PhotosAlbumViewController1.self))
         itemList.append(NSStringFromClass(PhotosAlbumViewController2.self))
+        itemList.append(NSStringFromClass(AVCaptureViewController.self))
+        itemList.append(NSStringFromClass(ViewAnimateViewController.self))
+        itemList.append(NSStringFromClass(TreeViewController.self))
+        itemList.append(NSStringFromClass(MemoryGraphViewController.self))
 
         itemList = itemList.reversed()
 
