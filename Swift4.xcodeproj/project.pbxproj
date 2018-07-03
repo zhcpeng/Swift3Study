@@ -11,6 +11,8 @@
 		600A59B5204795550065C9C0 /* TreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600A59B4204795550065C9C0 /* TreeViewController.swift */; };
 		600A59B7204795640065C9C0 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600A59B6204795640065C9C0 /* Tree.swift */; };
 		6045E68D1F8DF5DF004F46A3 /* CALayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6045E68C1F8DF5DF004F46A3 /* CALayerViewController.swift */; };
+		606A3DD020D358AF009927BF /* RadarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DCF20D358AF009927BF /* RadarChartViewController.swift */; };
+		606A3DD220D358C3009927BF /* XCRRadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DD120D358C3009927BF /* XCRRadarView.swift */; };
 		606D7E851FC50F020039CA61 /* XButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D7E841FC50F020039CA61 /* XButtonViewController.swift */; };
 		606E1F1C1FEA5004009A0EB8 /* PhotosAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606E1F1B1FEA5004009A0EB8 /* PhotosAlbumViewController.swift */; };
 		606E1F201FEA54F6009A0EB8 /* PhotosAlbumViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606E1F1F1FEA54F6009A0EB8 /* PhotosAlbumViewCell.swift */; };
@@ -39,11 +41,14 @@
 		608AB7AA200346F2007569E2 /* YYTextWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 608AB78F200346F2007569E2 /* YYTextWeakProxy.m */; };
 		608AB7AB200346F2007569E2 /* YYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 608AB791200346F2007569E2 /* YYLabel.m */; };
 		608AB7AC200346F2007569E2 /* YYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 608AB794200346F2007569E2 /* YYTextView.m */; };
+		60A7063F20C6650E00992F0D /* InsertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A7063E20C6650E00992F0D /* InsertTableViewController.swift */; };
 		60B193EC1FF230B500107F2F /* PhotosAlbumViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B193EA1FF230B500107F2F /* PhotosAlbumViewController2.swift */; };
 		60B193ED1FF230B500107F2F /* PhotosAlbumViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B193EB1FF230B500107F2F /* PhotosAlbumViewController1.swift */; };
 		60BDE03B1F78EEE200922AA2 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BDE03A1F78EEE200922AA2 /* CycleViewController.swift */; };
 		60BDE03D1F78EF1300922AA2 /* XCRCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BDE03C1F78EF1300922AA2 /* XCRCycleView.swift */; };
 		60E0B75A1F7A570E000C674B /* XCRRightImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E0B7591F7A570E000C674B /* XCRRightImageButtonView.swift */; };
+		60EC3CA420C0E69200A7470A /* TimeAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EC3CA320C0E69200A7470A /* TimeAlertViewController.swift */; };
+		60EC3CA620C0E9E400A7470A /* XCRTimeAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EC3CA520C0E9E400A7470A /* XCRTimeAlertViewController.swift */; };
 		60F860FD2041442F0069B818 /* ViewAnimateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F860FC2041442F0069B818 /* ViewAnimateViewController.swift */; };
 		997FD16764957EB256EFBB0C /* Pods_Swift4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65085693BCA80E3D2E96750 /* Pods_Swift4.framework */; };
 		AD05A1471D26582300955761 /* CanMoveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A1461D26582300955761 /* CanMoveTableViewController.swift */; };
@@ -114,6 +119,8 @@
 		600A59B4204795550065C9C0 /* TreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewController.swift; sourceTree = "<group>"; };
 		600A59B6204795640065C9C0 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		6045E68C1F8DF5DF004F46A3 /* CALayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerViewController.swift; sourceTree = "<group>"; };
+		606A3DCF20D358AF009927BF /* RadarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartViewController.swift; sourceTree = "<group>"; };
+		606A3DD120D358C3009927BF /* XCRRadarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCRRadarView.swift; sourceTree = "<group>"; };
 		606D7E841FC50F020039CA61 /* XButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XButtonViewController.swift; sourceTree = "<group>"; };
 		606E1F1B1FEA5004009A0EB8 /* PhotosAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAlbumViewController.swift; sourceTree = "<group>"; };
 		606E1F1F1FEA54F6009A0EB8 /* PhotosAlbumViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosAlbumViewCell.swift; sourceTree = "<group>"; };
@@ -167,11 +174,14 @@
 		608AB792200346F2007569E2 /* YYText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYText.h; sourceTree = "<group>"; };
 		608AB793200346F2007569E2 /* YYTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextView.h; sourceTree = "<group>"; };
 		608AB794200346F2007569E2 /* YYTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextView.m; sourceTree = "<group>"; };
+		60A7063E20C6650E00992F0D /* InsertTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertTableViewController.swift; sourceTree = "<group>"; };
 		60B193EA1FF230B500107F2F /* PhotosAlbumViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosAlbumViewController2.swift; sourceTree = "<group>"; };
 		60B193EB1FF230B500107F2F /* PhotosAlbumViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosAlbumViewController1.swift; sourceTree = "<group>"; };
 		60BDE03A1F78EEE200922AA2 /* CycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
 		60BDE03C1F78EF1300922AA2 /* XCRCycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCRCycleView.swift; sourceTree = "<group>"; };
 		60E0B7591F7A570E000C674B /* XCRRightImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCRRightImageButtonView.swift; sourceTree = "<group>"; };
+		60EC3CA320C0E69200A7470A /* TimeAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAlertViewController.swift; sourceTree = "<group>"; };
+		60EC3CA520C0E9E400A7470A /* XCRTimeAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCRTimeAlertViewController.swift; sourceTree = "<group>"; };
 		60F860FC2041442F0069B818 /* ViewAnimateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnimateViewController.swift; sourceTree = "<group>"; };
 		8168AB51746051386FA7D1DB /* Pods-Swift3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift3/Pods-Swift3.release.xcconfig"; sourceTree = "<group>"; };
 		A65085693BCA80E3D2E96750 /* Pods_Swift4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,6 +299,15 @@
 			path = Layer;
 			sourceTree = "<group>";
 		};
+		606A3DCE20D35894009927BF /* RadarChart */ = {
+			isa = PBXGroup;
+			children = (
+				606A3DCF20D358AF009927BF /* RadarChartViewController.swift */,
+				606A3DD120D358C3009927BF /* XCRRadarView.swift */,
+			);
+			path = RadarChart;
+			sourceTree = "<group>";
+		};
 		606D7E831FC50EEC0039CA61 /* iPhoneXButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +415,14 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		60A7063D20C664F800992F0D /* InsertTableView */ = {
+			isa = PBXGroup;
+			children = (
+				60A7063E20C6650E00992F0D /* InsertTableViewController.swift */,
+			);
+			path = InsertTableView;
+			sourceTree = "<group>";
+		};
 		60BDE0361F78EEB600922AA2 /* CycleView */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +431,15 @@
 				60E0B7591F7A570E000C674B /* XCRRightImageButtonView.swift */,
 			);
 			path = CycleView;
+			sourceTree = "<group>";
+		};
+		60EC3CA220C0E67A00A7470A /* TimeAlert */ = {
+			isa = PBXGroup;
+			children = (
+				60EC3CA320C0E69200A7470A /* TimeAlertViewController.swift */,
+				60EC3CA520C0E9E400A7470A /* XCRTimeAlertViewController.swift */,
+			);
+			path = TimeAlert;
 			sourceTree = "<group>";
 		};
 		60F860FB2041440E0069B818 /* ViewAnimate */ = {
@@ -703,6 +739,9 @@
 		ADE78A0E1CF7FBF000573D7F /* Cleasses */ = {
 			isa = PBXGroup;
 			children = (
+				606A3DCE20D35894009927BF /* RadarChart */,
+				60A7063D20C664F800992F0D /* InsertTableView */,
+				60EC3CA220C0E67A00A7470A /* TimeAlert */,
 				6078C59120B7FBE800C529B3 /* MemoryGraph */,
 				600A59B3204795420065C9C0 /* Tree */,
 				60F860FB2041440E0069B818 /* ViewAnimate */,
@@ -970,6 +1009,7 @@
 				AD5C29001DBF070D00A68052 /* XCRPhotosBrowserCollectionViewCell.swift in Sources */,
 				ADF02C681D476FF500B51E95 /* SingleLineViewController.swift in Sources */,
 				606E1F201FEA54F6009A0EB8 /* PhotosAlbumViewCell.swift in Sources */,
+				60EC3CA420C0E69200A7470A /* TimeAlertViewController.swift in Sources */,
 				6002CA44202052D500BAB858 /* AVCaptureViewController.swift in Sources */,
 				AD3C0EB71E6EA51C0072A8AC /* UIFirstViewController.swift in Sources */,
 				AD72F7F51F56B26900E1670D /* PhotosBrowerViewController.swift in Sources */,
@@ -982,7 +1022,9 @@
 				AD8EDC4A1F27458D00D1AADC /* XCRToastView.swift in Sources */,
 				60B193ED1FF230B500107F2F /* PhotosAlbumViewController1.swift in Sources */,
 				AD2B68471DDAA9400030F665 /* ScrollTextViewController.swift in Sources */,
+				606A3DD020D358AF009927BF /* RadarChartViewController.swift in Sources */,
 				608AB799200346F2007569E2 /* YYTextKeyboardManager.m in Sources */,
+				60EC3CA620C0E9E400A7470A /* XCRTimeAlertViewController.swift in Sources */,
 				AD0EBC721DE5206E0079E8A2 /* SectionTableViewController.swift in Sources */,
 				608AB7A7200346F2007569E2 /* YYTextAsyncLayer.m in Sources */,
 				ADC171D61E1F79EE007A38B4 /* RTLabelViewController.swift in Sources */,
@@ -1000,6 +1042,7 @@
 				608AB7A2200346F2007569E2 /* YYTextRunDelegate.m in Sources */,
 				ADE78A0B1CF7FB2000573D7F /* ViewController.swift in Sources */,
 				ADDC5FE91F53F06D00086E80 /* RegularViewController.swift in Sources */,
+				606A3DD220D358C3009927BF /* XCRRadarView.swift in Sources */,
 				ADEBC04A1D2F4DD400E12074 /* GradientColorViewController.swift in Sources */,
 				AD2863181D3C832300E5428F /* UIImageViewCategory.swift in Sources */,
 				6045E68D1F8DF5DF004F46A3 /* CALayerViewController.swift in Sources */,
@@ -1048,6 +1091,7 @@
 				608AB79F200346F2007569E2 /* YYTextAttribute.m in Sources */,
 				AD864A021F5E368C0044771B /* ImageTransitionViewController.swift in Sources */,
 				ADE789FD1CF7F3D300573D7F /* AppDelegate.swift in Sources */,
+				60A7063F20C6650E00992F0D /* InsertTableViewController.swift in Sources */,
 				AD6FA5761F161E2E009E46B3 /* GIFViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

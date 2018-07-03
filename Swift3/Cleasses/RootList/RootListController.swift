@@ -47,6 +47,9 @@ class RootListController: UITableViewController {
         itemList.append(NSStringFromClass(ViewAnimateViewController.self))
         itemList.append(NSStringFromClass(TreeViewController.self))
         itemList.append(NSStringFromClass(MemoryGraphViewController.self))
+        itemList.append(NSStringFromClass(TimeAlertViewController.self))
+        itemList.append(NSStringFromClass(InsertTableViewController.self))
+        itemList.append(NSStringFromClass(RadarChartViewController.self))
 
         itemList = itemList.reversed()
 
