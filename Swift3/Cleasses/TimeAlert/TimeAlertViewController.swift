@@ -33,20 +33,20 @@ class TimeAlertViewController: UIViewController {
         let xcrAlert = XCRTimeAlertViewController.init("确定停止吗", message: nil, time: 5, okAction: okAction, cancelString: "取消")
         self.present(xcrAlert, animated: true, completion: nil)
 
-        return
-
-        let alert = UIAlertController(title: "确定停止吗", message: nil, preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "取消(5)", style: .destructive, handler: nil)
-        let ok = UIAlertAction(title: "确定", style: .default) { (_) in
-            print("确定")
-        }
-        alert.addAction(ok)
-        alert.addAction(cancel)
-        self.present(alert, animated: true, completion: nil)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            cancel.setValue("取消(4)", forKey: "title")
-        }
+//        return
+//
+//        let alert = UIAlertController(title: "确定停止吗", message: nil, preferredStyle: .alert)
+//        let cancel = UIAlertAction(title: "取消(5)", style: .destructive, handler: nil)
+//        let ok = UIAlertAction(title: "确定", style: .default) { (_) in
+//            print("确定")
+//        }
+//        alert.addAction(ok)
+//        alert.addAction(cancel)
+//        self.present(alert, animated: true, completion: nil)
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            cancel.setValue("取消(4)", forKey: "title")
+//        }
     }
 
     override func didReceiveMemoryWarning() {

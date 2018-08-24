@@ -678,3 +678,51 @@ func exchange<T>(_ list: inout [T], l: Int, r: Int) {
 var list: [Int] = [0,1,1,3,1,5,6,5,5,9]
 quick3Way(&list)
 
+
+
+enum Kind {
+    case wolf
+    case fox
+    case dog
+    case sheep
+}
+
+struct Animal {
+    private var a: Int = 1       //8 byte
+    var b: String = "animal"     //24 byte
+    var c: Kind = .wolf          //1 byte
+    var d: String?               //25 byte
+    var e: Int8 = 8              //1 byte
+
+    //返回指向 Animal 实例头部的指针
+    mutating func headPointerOfStruct() -> UnsafeMutablePointer<Int8> {
+        return withUnsafeMutablePointer(to: &self) {
+            return UnsafeMutableRawPointer($0).bindMemory(to: Int8.self, capacity: MemoryLayout<Animal>.stride)
+        }
+    }
+
+    func printA() {
+        print("Animal a:\(a)")
+    }
+}
+
+var animal = Animal()
+let animalPtr: UnsafeMutablePointer<Int8> = animal.headPointerOfStruct()
+let intValueFromJson = 100
+
+//将之前得到的指向 animal 实例的指针转化为 rawPointer 指针类型，方便我们进行指针偏移操作
+var animalRawPtr = UnsafeMutableRawPointer(animalPtr)
+// UnsafeMutablePointer
+let aPtr = animalRawPtr.advanced(by: 0).assumingMemoryBound(to: Int.self)
+aPtr.pointee          // 1
+animal.printA()       //Animal a: 1
+aPtr.initialize(to: intValueFromJson)
+aPtr.pointee          // 100
+animal.printA()       //Animal a:100
+
+
+//let a[5] = [1, 2, 3, 4, 5];
+//let *ptr = (Int *)(&a + 1);
+//printf("%d, %d", *(a + 1), *(ptr + 1));
+
+

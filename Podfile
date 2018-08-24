@@ -21,4 +21,7 @@ pod 'Moya'
 pod 'GPUImage'
 pod 'MBProgressHUD'
 
+
+#pod 'GodEye'
+
 end

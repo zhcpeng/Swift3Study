@@ -50,6 +50,10 @@ class RootListController: UITableViewController {
         itemList.append(NSStringFromClass(TimeAlertViewController.self))
         itemList.append(NSStringFromClass(InsertTableViewController.self))
         itemList.append(NSStringFromClass(RadarChartViewController.self))
+        itemList.append(NSStringFromClass(CutImageViewController.self))
+        itemList.append(NSStringFromClass(PerformanceMonitorViewController.self))
+        itemList.append(NSStringFromClass(NameSpaceViewController.self))
+        itemList.append(NSStringFromClass(SingletonViewController.self))
 
         itemList = itemList.reversed()
 
