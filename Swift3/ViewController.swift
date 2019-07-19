@@ -15,13 +15,10 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		// Do any additional setup after loading the view.
-
-		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(2.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
 			let vc = RootListController()
 			self.navigationController?.pushViewController(vc, animated: true)
 		}
-
     }
     
     @IBAction func btnAction(_ sender: UIButton) {
