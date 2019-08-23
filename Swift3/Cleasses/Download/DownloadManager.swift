@@ -8,12 +8,14 @@
 
 import UIKit
 import Alamofire
+import MBProgressHUD
 
 class DownloadManager: NSObject {
     static let shared: DownloadManager = DownloadManager()
     private var isDownload: Bool = false
     private var downloadList: [String] = []
     private var downloadRequest: DownloadRequest?
+    var downloadProgress: ((Progress)->Void)?
     
     private let destination:DownloadRequest.DownloadFileDestination = { _, response in
 //        let documentURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -39,6 +41,10 @@ class DownloadManager: NSObject {
         isDownload = true
         downloadRequest = Alamofire.download(URL, to: destination)
         downloadRequest?.responseData(completionHandler: downloadResponse)
+        downloadRequest?.downloadProgress(closure: { [weak self](progress) in
+//            print(progress.completedUnitCount)
+            self?.downloadProgress?(progress)
+        })
     }
     
     private func downloadResponse(response:DownloadResponse<Data>){
@@ -54,14 +60,23 @@ class DownloadManager: NSObject {
                 self.downloadRequest = nil
                 self.download()
                 
-                print("路径:\(response.destinationURL?.path)")
+//                print("路径:\(response.destinationURL?.path)")
                 
                 ZFileManager.shared.loadFile()
                 
+//                let hub = MBProgressHUD()
+//                hub.labelText = "下载成功\n \(response.destinationURL!.path)"
+//                hub.removeFromSuperViewOnHide = true
+//                hub.show(true)
             }
         case .failure(error:):
             isDownload = false
             download()
+            
+//            let hub = MBProgressHUD()
+//            hub.labelText = "下载失败"
+//            hub.removeFromSuperViewOnHide = true
+//            hub.show(true)
             print("下载失败！！！")
             break
         }

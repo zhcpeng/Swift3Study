@@ -11,6 +11,7 @@
 		567626A122E1614300D9AABF /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567626A022E1614300D9AABF /* DownloadManager.swift */; };
 		5676274822E1971D00D9AABF /* ZFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5676274722E1971D00D9AABF /* ZFileManager.swift */; };
 		56B6B5AC21E3568E00A1A7E4 /* TaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6B5AB21E3568E00A1A7E4 /* TaxViewController.swift */; };
+		56ECC3CF22E58BBE003C128A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ECC3CE22E58BBE003C128A /* UIViewExtension.swift */; };
 		56FA85FE21DF438E004BBC5B /* TouchMoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA85FD21DF438E004BBC5B /* TouchMoveViewController.swift */; };
 		6002CA44202052D500BAB858 /* AVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6002CA43202052D500BAB858 /* AVCaptureViewController.swift */; };
 		600A59B5204795550065C9C0 /* TreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600A59B4204795550065C9C0 /* TreeViewController.swift */; };
@@ -69,7 +70,6 @@
 		60F860FD2041442F0069B818 /* ViewAnimateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F860FC2041442F0069B818 /* ViewAnimateViewController.swift */; };
 		997FD16764957EB256EFBB0C /* Pods_Swift4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65085693BCA80E3D2E96750 /* Pods_Swift4.framework */; };
 		AD05A1471D26582300955761 /* CanMoveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A1461D26582300955761 /* CanMoveTableViewController.swift */; };
-		AD0D4FCA1D20FF4700AC9EE2 /* ChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0D4FC91D20FF4700AC9EE2 /* ChannelView.swift */; };
 		AD0EBC721DE5206E0079E8A2 /* SectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0EBC711DE5206E0079E8A2 /* SectionTableViewController.swift */; };
 		AD1A86C91D7FA79E000F8743 /* OrientationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A86C81D7FA79E000F8743 /* OrientationViewController.swift */; };
 		AD1A86CB1D7FA946000F8743 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A86CA1D7FA946000F8743 /* UtilityFunctions.swift */; };
@@ -104,9 +104,6 @@
 		AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9127951CFE73A00093F219 /* TaskInfoTool.m */; };
 		AD9DD6C71DADE644003F2634 /* CallPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD6C51DADE644003F2634 /* CallPhoneViewController.swift */; };
 		AD9DD6C81DADE644003F2634 /* CallPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD6C61DADE644003F2634 /* CallPhoneViewController.xib */; };
-		ADA7D1981D003CA500F840E3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D1971D003CA500F840E3 /* CollectionViewController.swift */; };
-		ADA7D19A1D003CB600F840E3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D1991D003CB600F840E3 /* CollectionViewCell.swift */; };
-		ADA7D19C1D003EA800F840E3 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7D19B1D003EA800F840E3 /* CollectionModel.swift */; };
 		ADAA2CD01E13BEDF00E8D2A6 /* StretchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA2CCF1E13BEDF00E8D2A6 /* StretchViewController.swift */; };
 		ADAA2CD21E13BF0B00E8D2A6 /* StretchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA2CD11E13BF0B00E8D2A6 /* StretchView.swift */; };
 		ADC171D61E1F79EE007A38B4 /* RTLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC171D51E1F79EE007A38B4 /* RTLabelViewController.swift */; };
@@ -125,7 +122,6 @@
 		ADEBC04A1D2F4DD400E12074 /* GradientColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBC0481D2F4DD400E12074 /* GradientColorViewController.swift */; };
 		ADEBC04B1D2F4DD400E12074 /* GradientColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADEBC0491D2F4DD400E12074 /* GradientColorViewController.xib */; };
 		ADEBC04D1D2F4DEC00E12074 /* 15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADEBC04C1D2F4DEC00E12074 /* 15.jpg */; };
-		ADF02C681D476FF500B51E95 /* SingleLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF02C671D476FF500B51E95 /* SingleLineViewController.swift */; };
 		ADFAD8C81D0F98B400817EB9 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFAD8C71D0F98B400817EB9 /* Common.swift */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +132,7 @@
 		567626A022E1614300D9AABF /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		5676274722E1971D00D9AABF /* ZFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZFileManager.swift; sourceTree = "<group>"; };
 		56B6B5AB21E3568E00A1A7E4 /* TaxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxViewController.swift; sourceTree = "<group>"; };
+		56ECC3CE22E58BBE003C128A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		56FA85FD21DF438E004BBC5B /* TouchMoveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchMoveViewController.swift; sourceTree = "<group>"; };
 		6002CA43202052D500BAB858 /* AVCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureViewController.swift; sourceTree = "<group>"; };
 		600A59B4204795550065C9C0 /* TreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewController.swift; sourceTree = "<group>"; };
@@ -223,7 +220,6 @@
 		8168AB51746051386FA7D1DB /* Pods-Swift3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift3/Pods-Swift3.release.xcconfig"; sourceTree = "<group>"; };
 		A65085693BCA80E3D2E96750 /* Pods_Swift4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD05A1461D26582300955761 /* CanMoveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanMoveTableViewController.swift; sourceTree = "<group>"; };
-		AD0D4FC91D20FF4700AC9EE2 /* ChannelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelView.swift; sourceTree = "<group>"; };
 		AD0EBC711DE5206E0079E8A2 /* SectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTableViewController.swift; sourceTree = "<group>"; };
 		AD1A86C81D7FA79E000F8743 /* OrientationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrientationViewController.swift; sourceTree = "<group>"; };
 		AD1A86CA1D7FA946000F8743 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
@@ -261,9 +257,6 @@
 		AD9127951CFE73A00093F219 /* TaskInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskInfoTool.m; sourceTree = "<group>"; };
 		AD9DD6C51DADE644003F2634 /* CallPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallPhoneViewController.swift; sourceTree = "<group>"; };
 		AD9DD6C61DADE644003F2634 /* CallPhoneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallPhoneViewController.xib; sourceTree = "<group>"; };
-		ADA7D1971D003CA500F840E3 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		ADA7D1991D003CB600F840E3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		ADA7D19B1D003EA800F840E3 /* CollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		ADAA2CCF1E13BEDF00E8D2A6 /* StretchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchViewController.swift; sourceTree = "<group>"; };
 		ADAA2CD11E13BF0B00E8D2A6 /* StretchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchView.swift; sourceTree = "<group>"; };
 		ADC171D51E1F79EE007A38B4 /* RTLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTLabelViewController.swift; sourceTree = "<group>"; };
@@ -284,7 +277,6 @@
 		ADEBC0481D2F4DD400E12074 /* GradientColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColorViewController.swift; sourceTree = "<group>"; };
 		ADEBC0491D2F4DD400E12074 /* GradientColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradientColorViewController.xib; sourceTree = "<group>"; };
 		ADEBC04C1D2F4DEC00E12074 /* 15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15.jpg; sourceTree = "<group>"; };
-		ADF02C671D476FF500B51E95 /* SingleLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleLineViewController.swift; sourceTree = "<group>"; };
 		ADFAD8C71D0F98B400817EB9 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		D62606C1F586237CE9ADA0DC /* Pods-Swift4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift4.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift4/Pods-Swift4.release.xcconfig"; sourceTree = "<group>"; };
 		FAA7E46133B039454BB99710 /* Pods-Swift4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift4.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift4/Pods-Swift4.debug.xcconfig"; sourceTree = "<group>"; };
@@ -574,22 +566,6 @@
 			path = UITableViewCanMove;
 			sourceTree = "<group>";
 		};
-		AD0D4FC51D20FE1800AC9EE2 /* ChannelView */ = {
-			isa = PBXGroup;
-			children = (
-				AD0D4FC61D20FE3500AC9EE2 /* View */,
-			);
-			path = ChannelView;
-			sourceTree = "<group>";
-		};
-		AD0D4FC61D20FE3500AC9EE2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AD0D4FC91D20FF4700AC9EE2 /* ChannelView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		AD0EBC701DE5205B0079E8A2 /* TableViewSection */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,6 +636,7 @@
 				AD314B221CFE7D56003593F7 /* SwiftGlobalFunction.swift */,
 				ADFAD8C71D0F98B400817EB9 /* Common.swift */,
 				AD6545781CFEC5460070A3AC /* Playground.playground */,
+				56ECC3CE22E58BBE003C128A /* UIViewExtension.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -744,16 +721,6 @@
 				AD9DD6C61DADE644003F2634 /* CallPhoneViewController.xib */,
 			);
 			path = Call;
-			sourceTree = "<group>";
-		};
-		ADA7D1961D003C9000F840E3 /* UICollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				ADA7D1971D003CA500F840E3 /* CollectionViewController.swift */,
-				ADA7D1991D003CB600F840E3 /* CollectionViewCell.swift */,
-				ADA7D19B1D003EA800F840E3 /* CollectionModel.swift */,
-			);
-			path = UICollectionView;
 			sourceTree = "<group>";
 		};
 		ADAA2CCE1E13BEC400E8D2A6 /* StretchHeaderView */ = {
@@ -883,13 +850,10 @@
 				AD1C6C3E1D6C55800026281D /* AssetsLibrary */,
 				AD5088441D61A0B00023824B /* YYLabel */,
 				AD8E3B331D48B71C00A8C43F /* AVPlayer */,
-				ADF02C661D476FD400B51E95 /* SingleLine */,
 				AD2863141D3C81D600E5428F /* UIImageViewCatgary */,
 				ADEBC0471D2F4DC600E12074 /* GradientColorView */,
 				AD21801E1D2CB656004E67E6 /* UIScrlloView */,
 				AD05A1451D26580D00955761 /* UITableViewCanMove */,
-				AD0D4FC51D20FE1800AC9EE2 /* ChannelView */,
-				ADA7D1961D003C9000F840E3 /* UICollectionView */,
 				AD9127931CFE73A00093F219 /* TaskInfoTool */,
 				ADE78A0F1CF7FBF000573D7F /* RootList */,
 			);
@@ -920,14 +884,6 @@
 				ADEBC04C1D2F4DEC00E12074 /* 15.jpg */,
 			);
 			path = GradientColorView;
-			sourceTree = "<group>";
-		};
-		ADF02C661D476FD400B51E95 /* SingleLine */ = {
-			isa = PBXGroup;
-			children = (
-				ADF02C671D476FF500B51E95 /* SingleLineViewController.swift */,
-			);
-			path = SingleLine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1110,7 +1066,6 @@
 				AD5088461D61A0BD0023824B /* YYLabelViewController.swift in Sources */,
 				608AB7A1200346F2007569E2 /* YYTextRubyAnnotation.m in Sources */,
 				AD5C29001DBF070D00A68052 /* XCRPhotosBrowserCollectionViewCell.swift in Sources */,
-				ADF02C681D476FF500B51E95 /* SingleLineViewController.swift in Sources */,
 				606E1F201FEA54F6009A0EB8 /* PhotosAlbumViewCell.swift in Sources */,
 				567626A122E1614300D9AABF /* DownloadManager.swift in Sources */,
 				60EC3CA420C0E69200A7470A /* TimeAlertViewController.swift in Sources */,
@@ -1123,7 +1078,6 @@
 				5676269F22E160FC00D9AABF /* DownloadListViewController.swift in Sources */,
 				608AB795200346F2007569E2 /* YYTextContainerView.m in Sources */,
 				AD05A1471D26582300955761 /* CanMoveTableViewController.swift in Sources */,
-				ADA7D1981D003CA500F840E3 /* CollectionViewController.swift in Sources */,
 				6089A4D8210996130062913B /* NameSpace.swift in Sources */,
 				AD9127961CFE73A00093F219 /* TaskInfoTool.m in Sources */,
 				AD8EDC4A1F27458D00D1AADC /* XCRToastView.swift in Sources */,
@@ -1143,6 +1097,7 @@
 				606E1F1C1FEA5004009A0EB8 /* PhotosAlbumViewController.swift in Sources */,
 				600C038C212D317500CE4064 /* SingletonViewController.swift in Sources */,
 				6089A4D0210845860062913B /* PerformanceMonitor.swift in Sources */,
+				56ECC3CF22E58BBE003C128A /* UIViewExtension.swift in Sources */,
 				AD1A86C91D7FA79E000F8743 /* OrientationViewController.swift in Sources */,
 				AD74FD611E55A94800B32CFA /* ImageBrowerViewController.swift in Sources */,
 				60BDE03D1F78EF1300922AA2 /* XCRCycleView.swift in Sources */,
@@ -1163,14 +1118,12 @@
 				608AB796200346F2007569E2 /* YYTextDebugOption.m in Sources */,
 				ADFAD8C81D0F98B400817EB9 /* Common.swift in Sources */,
 				60E0B75A1F7A570E000C674B /* XCRRightImageButtonView.swift in Sources */,
-				ADA7D19A1D003CB600F840E3 /* CollectionViewCell.swift in Sources */,
 				608AB7AB200346F2007569E2 /* YYLabel.m in Sources */,
 				608AB79B200346F2007569E2 /* YYTextLine.m in Sources */,
 				ADE489191E8DE60A000BA3F6 /* SelectedCollectionViewController.swift in Sources */,
 				608AB798200346F2007569E2 /* YYTextInput.m in Sources */,
 				608AB79E200346F2007569E2 /* YYTextArchiver.m in Sources */,
 				ADC5ABFD1EA4588700ABDC8B /* UIPopWindowViewController.swift in Sources */,
-				AD0D4FCA1D20FF4700AC9EE2 /* ChannelView.swift in Sources */,
 				608AB79D200346F2007569E2 /* YYTextSelectionView.m in Sources */,
 				608AB7A6200346F2007569E2 /* UIView+YYText.m in Sources */,
 				AD6FA57A1F16213F009E46B3 /* XCRPhotosAlbumTableViewCell.swift in Sources */,
@@ -1181,7 +1134,6 @@
 				AD864A061F5E93DC0044771B /* PhotosBrowerCollectionViewCell.swift in Sources */,
 				AD314B231CFE7D56003593F7 /* SwiftGlobalFunction.swift in Sources */,
 				AD6FA57E1F1621D4009E46B3 /* XCRPhotosTakePicturesCell.swift in Sources */,
-				ADA7D19C1D003EA800F840E3 /* CollectionModel.swift in Sources */,
 				AD2180201D2CB674004E67E6 /* ScrollViewController.swift in Sources */,
 				608AB79C200346F2007569E2 /* YYTextMagnifier.m in Sources */,
 				ADAA2CD21E13BF0B00E8D2A6 /* StretchView.swift in Sources */,

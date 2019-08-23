@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class DownloadListViewController: UIViewController {
     
@@ -23,6 +24,18 @@ class DownloadListViewController: UIViewController {
         button.backgroundColor = UIColor.blue
         return button
     }()
+    private let clearButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Clear", for: .normal)
+        button.titleLabel!.font = UIFont.systemFont(ofSize: 14)
+        button.backgroundColor = UIColor.cyan
+        return button
+    }()
+    private let progress: UIProgressView = {
+        let progress = UIProgressView()
+        
+        return progress
+    }()
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -30,9 +43,21 @@ class DownloadListViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         return tableView
     }()
+    private let speedLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = UIColor.red
+        label.textAlignment = .right
+        label.text = "0KB"
+        return label
+    }()
     
+    private var timer: DispatchSourceTimer?
+    private var proData: Int64 = 0
+    private var currentData: Int64 = 0
     
     private var documentController: UIDocumentInteractionController?
+    
 
     // MARK: - Life Cycle
     override func viewDidAppear(_ animated: Bool) {
@@ -44,6 +69,13 @@ class DownloadListViewController: UIViewController {
             }
             UIPasteboard.general.string = ""
         }
+        
+//        let hub = MBProgressHUD()
+//        hub.labelText = "下载成功!!!!"
+//        hub.removeFromSuperViewOnHide = true
+//        hub.show(true)
+        
+//        textView.text = "https://vod.300hu.com/4c1f7a6atransbjngwcloud1oss/3d8b57fb183225688949022721/v.f30.mp4"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,38 +87,97 @@ class DownloadListViewController: UIViewController {
             self?.tableView.reloadData()
         }
         ZFileManager.shared.loadFile()
+        
+        DownloadManager.shared.downloadProgress = { [weak self](pro) in
+            let x: Float = Float(integerLiteral: pro.completedUnitCount) /  Float(integerLiteral: pro.totalUnitCount)
+            self?.progress.progress = x
+            self?.currentData = pro.completedUnitCount
+            if pro.isFinished {
+                self?.progress.progress = 0
+                self?.timer?.cancel()
+                self?.speedLabel.text = "0KB"
+            }
+        }
+    }
+    
+    private func updateDownloadSpeed() {
+        timer?.cancel()
+        timer = DispatchSource.makeTimerSource()
+        timer?.schedule(deadline: .now(), repeating: .seconds(1), leeway: .nanoseconds(0))
+        timer?.setEventHandler { [weak self]() in
+            guard let weakSelf = self else { return }
+            if weakSelf.currentData != 0 {
+                let x = weakSelf.formatterSpeed(weakSelf.currentData - weakSelf.proData)
+                print(x)
+                DispatchQueue.main.async {
+                    weakSelf.speedLabel.text = x
+                }
+                weakSelf.proData = weakSelf.currentData
+            }
+        }
+        timer?.resume()
+    }
+    
+    private func formatterSpeed(_ speed: Int64) -> String {
+//        Double.init(integerLiteral: speed)
+        switch speed {
+        case 0...1014*1024:
+            return "\(speed / 1024)KB"
+        case 1014*1024+1...1014*1024*1024:
+            return "\(Double(speed) / 1024 / 1024)MB"
+        default:
+            return "\(speed)"
+        }
     }
     
     private func commonUI() {
         let topView = UIView()
         topView.backgroundColor = UIColor.gray
-        topView.addSubview(textView)
-        topView.addSubview(button)
+        topView.addSubviews([progress, textView, button, clearButton, speedLabel])
         self.view.addSubview(topView)
         self.view.addSubview(tableView)
         topView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.top.equalToSuperview().offset(64)
-            make.height.equalTo(100)
+            make.height.equalTo(130)
+        }
+        progress.snp.makeConstraints { (make) in
+            make.left.top.right.equalToSuperview()
         }
         tableView.snp.makeConstraints { (make) in
             make.left.bottom.right.equalToSuperview()
             make.top.equalTo(topView.snp.bottom)
         }
         button.snp.makeConstraints { (make) in
-            make.top.right.bottom.equalToSuperview().inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
-            make.width.equalTo(80)
+            make.top.right.equalToSuperview().inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+            make.width.equalTo(100)
+            make.height.equalTo(40)
         }
         textView.snp.makeConstraints { (make) in
             make.top.left.bottom.equalToSuperview().inset(10)
             make.right.equalTo(button.snp.left).offset(-10)
+        }
+        clearButton.snp.makeConstraints { (make) in
+            make.left.right.equalTo(button)
+            make.top.equalTo(button.snp.bottom).offset(5)
+            make.height.equalTo(25)
+        }
+        speedLabel.snp.makeConstraints { (make) in
+            make.left.right.equalTo(button)
+            make.bottom.equalTo(textView)
+//            make.top.equalTo(clearButton.snp.bottom).offset(5)
         }
         
         button.reactive.controlEvents(.touchUpInside).observeValues { [weak self](_) in
             guard let weakSelf = self else { return }
             if let text = weakSelf.textView.text {
                 DownloadManager.shared.addDownloadURL(text)
+                weakSelf.progress.progress = 0
+                weakSelf.updateDownloadSpeed()
             }
+        }
+        clearButton.reactive.controlEvents(.touchUpInside).observeValues { [weak self](_) in
+            self?.textView.text = ""
         }
     }
 
@@ -122,9 +213,6 @@ extension DownloadListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         ZFileManager.shared.deleteFile(indexPath.row)
-        tableView.beginUpdates()
-        tableView.deleteRows(at: [indexPath], with: .automatic)
-        tableView.endUpdates()
     }
     
     

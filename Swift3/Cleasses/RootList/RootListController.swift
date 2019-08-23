@@ -19,7 +19,6 @@ class RootListController: UITableViewController {
         itemList.append(NSStringFromClass(ScrollViewController.self))
         itemList.append(NSStringFromClass(GradientColorViewController.self))
         itemList.append(NSStringFromClass(UIImageViewCategory.self))
-        itemList.append(NSStringFromClass(SingleLineViewController.self))
         itemList.append(NSStringFromClass(YYLabelViewController.self))
         itemList.append(NSStringFromClass(AssetsLibraryViewController.self))
         itemList.append(NSStringFromClass(OrientationViewController.self))
