@@ -30,12 +30,12 @@ class RegularViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        let length = text.unicodeScalars.count
-        let count  = text.characters.count
-        let x = text.utf8.count
-        
-        let xx : NSString = "👨‍👩‍👧‍👦" as NSString
-        print(xx.length)
+//        let length = text.unicodeScalars.count
+//        let count  = text.count
+//        let x = text.utf8.count
+//
+//        let xx : NSString = "👨‍👩‍👧‍👦" as NSString
+//        print(xx.length)
 
 
 //        let matches = emoticonRegex.matches(in: text, options: [], range: NSRange(location: 0, length: text.characters.count))

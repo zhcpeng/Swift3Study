@@ -463,13 +463,16 @@ class XCRPhotosAlbumViewController: UIViewController, UITableViewDelegate, UITab
 		return vc
 	}()
 
-	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-		let type = info[UIImagePickerControllerMediaType] as! String
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+		let type = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.mediaType)] as! String
 		if type == kUTTypeImage as String {
 			var resuleImage: UIImage?
-			if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+			if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
 				resuleImage = image
-			} else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+			} else if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
 				resuleImage = image
 			}
 			if let image = resuleImage {
@@ -774,3 +777,13 @@ class XCRPhotosAsset: NSObject {
     }
 }
 //swiftlint:enable empty_count
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}

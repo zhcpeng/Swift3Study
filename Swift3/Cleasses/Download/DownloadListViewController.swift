@@ -69,13 +69,6 @@ class DownloadListViewController: UIViewController {
             }
             UIPasteboard.general.string = ""
         }
-        
-//        let hub = MBProgressHUD()
-//        hub.labelText = "下载成功!!!!"
-//        hub.removeFromSuperViewOnHide = true
-//        hub.show(true)
-        
-//        textView.text = "https://vod.300hu.com/4c1f7a6atransbjngwcloud1oss/3d8b57fb183225688949022721/v.f30.mp4"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,14 +82,21 @@ class DownloadListViewController: UIViewController {
         ZFileManager.shared.loadFile()
         
         DownloadManager.shared.downloadProgress = { [weak self](pro) in
-            let x: Float = Float(integerLiteral: pro.completedUnitCount) /  Float(integerLiteral: pro.totalUnitCount)
-            self?.progress.progress = x
+            let x = Double(integerLiteral: pro.completedUnitCount) /  Double(integerLiteral: pro.totalUnitCount)
+            self?.progress.progress = Float(x)
             self?.currentData = pro.completedUnitCount
             if pro.isFinished {
                 self?.progress.progress = 0
                 self?.timer?.cancel()
                 self?.speedLabel.text = "0KB"
+//                self?.sendLocalNotification("Download Success!")
             }
+        }
+        DownloadManager.shared.backgroundDownloadFinish = { [weak self]() in
+            self?.progress.progress = 0
+            self?.timer?.cancel()
+            self?.speedLabel.text = "0KB"
+            self?.sendLocalNotification("Download Success!")
         }
     }
     
@@ -123,11 +123,24 @@ class DownloadListViewController: UIViewController {
         switch speed {
         case 0...1014*1024:
             return "\(speed / 1024)KB"
-        case 1014*1024+1...1014*1024*1024:
-            return "\(Double(speed) / 1024 / 1024)MB"
+        case (1014*1024+1)...(1014*1024*1024):
+            return String(format:"%.2fMB", arguments:[Double(speed) / 1024.0 / 1024])
         default:
             return "\(speed)"
         }
+    }
+    
+    func sendLocalNotification(_ msg: String) {
+        UIApplication.shared.cancelAllLocalNotifications()
+        
+        let localNotification = UILocalNotification()
+        localNotification.applicationIconBadgeNumber = 1
+        localNotification.fireDate = Date(timeIntervalSinceNow: 3)
+        localNotification.timeZone = TimeZone.current
+        localNotification.soundName = UILocalNotificationDefaultSoundName
+        localNotification.alertBody = msg
+        
+        UIApplication.shared.scheduleLocalNotification(localNotification)
     }
     
     private func commonUI() {
@@ -170,6 +183,7 @@ class DownloadListViewController: UIViewController {
         
         button.reactive.controlEvents(.touchUpInside).observeValues { [weak self](_) in
             guard let weakSelf = self else { return }
+            weakSelf.view.endEditing(true)
             if let text = weakSelf.textView.text {
                 DownloadManager.shared.addDownloadURL(text)
                 weakSelf.progress.progress = 0
@@ -178,6 +192,7 @@ class DownloadListViewController: UIViewController {
         }
         clearButton.reactive.controlEvents(.touchUpInside).observeValues { [weak self](_) in
             self?.textView.text = ""
+            DownloadManager.shared.cancelDownload()
         }
     }
 
@@ -202,15 +217,17 @@ extension DownloadListViewController: UITableViewDelegate, UITableViewDataSource
         let url = URL.init(fileURLWithPath: ZFileManager.shared.rootPath + "/" + ZFileManager.shared.fileList[indexPath.row])
         documentController = UIDocumentInteractionController(url: url)
         documentController!.presentOpenInMenu(from: CGRect.zero, in: self.view, animated: true)
+        
+        self.textView.text = ""
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         ZFileManager.shared.deleteFile(indexPath.row)
     }

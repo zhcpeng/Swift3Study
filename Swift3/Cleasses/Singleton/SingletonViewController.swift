@@ -23,7 +23,7 @@ class SingletonViewController: UIViewController {
 
         weak var weakSelf = self
         timer = Timer.init(timeInterval: 1, target: weakSelf!, selector: #selector(test), userInfo: nil, repeats: true)
-        RunLoop.main.add(timer, forMode: .commonModes)
+        RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
 
 //        if #available(iOS 10.0, *) {
 ////            var count: Int = 0

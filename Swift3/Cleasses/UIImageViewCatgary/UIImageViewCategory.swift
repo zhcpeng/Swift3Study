@@ -19,7 +19,7 @@ class UIImageViewCategory: UIViewController {
     
     fileprivate lazy var button :UIButton = {
         let button = UIButton.init(type: .custom)
-        button.setBackgroundImage(UIImage.imageWithColor(kUIColor(0x666666)), for: UIControlState())
+        button.setBackgroundImage(UIImage.imageWithColor(kUIColor(0x666666)), for: UIControl.State())
         button.setBackgroundImage(UIImage.imageWithColor(kUIColor(0x333333)), for: .highlighted)
         
         return button

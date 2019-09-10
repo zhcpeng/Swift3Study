@@ -56,7 +56,7 @@ class CanMoveTableViewController: UITableViewController {
 		itemList[toIndexPath.row] = string
 	}
 
-	override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+	override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
 		return .none
 	}
 

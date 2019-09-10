@@ -21,7 +21,7 @@ class XCRPhotosBrowserCollectionViewCell: UICollectionViewCell, UIScrollViewDele
 	}
 
 	/// 加载中
-	fileprivate lazy var loadingView: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .white)
+	fileprivate lazy var loadingView: UIActivityIndicatorView = UIActivityIndicatorView(style: .white)
 
 	/// 图片容器
 	fileprivate lazy var scrollView: UIScrollView = {

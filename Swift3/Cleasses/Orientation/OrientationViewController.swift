@@ -54,7 +54,7 @@ class OrientationViewController: UIViewController {
             make.height.equalTo(44)
         }
         
-        NotificationCenter.default.reactive.notifications(forName: NSNotification.Name.UIDeviceOrientationDidChange, object: nil).observe { notification in
+        NotificationCenter.default.reactive.notifications(forName: UIDevice.orientationDidChangeNotification, object: nil).observe { notification in
             self.rotate()
         }
         

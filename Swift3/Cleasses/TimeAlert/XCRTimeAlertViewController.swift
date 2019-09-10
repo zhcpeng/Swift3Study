@@ -17,7 +17,7 @@ class XCRTimeAlertViewController: UIAlertController {
 
     init(_ title: String, message: String? = nil, time: Int, okAction: UIAlertAction, cancelString: String = "取消") {
         super.init(nibName: nil, bundle: nil)
-        self.setValue(UIAlertControllerStyle.alert.rawValue, forKey: "preferredStyle")
+        self.setValue(UIAlertController.Style.alert.rawValue, forKey: "preferredStyle")
         self.title = title
         self.message = message
         self.time = time
@@ -42,7 +42,7 @@ class XCRTimeAlertViewController: UIAlertController {
 
         if time > 0 {
             timer = Timer(timeInterval: 1, target: self, selector: #selector(setCancelTitle), userInfo: nil, repeats: true)
-            RunLoop.main.add(timer!, forMode: .commonModes)
+            RunLoop.main.add(timer!, forMode: RunLoop.Mode.common)
         }
     }
 

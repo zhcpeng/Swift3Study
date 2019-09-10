@@ -231,7 +231,7 @@ class PhotosAlbumViewController2: UIViewController {
     // MARK: 滑动相关
     private func startEdgeTimer() {
         edgeTimer = CADisplayLink(target: self, selector: #selector(edgeScroll))
-        edgeTimer?.add(to: RunLoop.main, forMode: .commonModes)
+        edgeTimer?.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
     }
     private func stopEdgeTimer() {
         edgeTimer?.invalidate()

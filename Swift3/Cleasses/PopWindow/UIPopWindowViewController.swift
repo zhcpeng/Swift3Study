@@ -35,7 +35,7 @@ class UIPopWindowViewController: UIViewController, UIPopoverPresentationControll
         borderLayer.lineDashPattern = [5,3]
         borderLayer.fillColor = UIColor.clear.cgColor
         borderLayer.strokeColor = UIColor.red.cgColor
-        borderLayer.lineJoin = kCALineJoinRound
+        borderLayer.lineJoin = CAShapeLayerLineJoin.round
         
         button.layer.addSublayer(borderLayer)
         button.backgroundColor = UIColor.gray

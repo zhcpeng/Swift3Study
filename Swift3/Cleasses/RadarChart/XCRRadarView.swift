@@ -155,7 +155,7 @@ class XCRRadarView: UIView {
     }
 
     private func sizeOf(_ string: String, maxSize: CGSize, font: UIFont) -> CGSize {
-        return (string as NSString).boundingRect(with: maxSize, options: [.usesFontLeading, .usesLineFragmentOrigin, .truncatesLastVisibleLine], attributes: [NSAttributedStringKey.font : font], context: nil).size
+        return (string as NSString).boundingRect(with: maxSize, options: [.usesFontLeading, .usesLineFragmentOrigin, .truncatesLastVisibleLine], attributes: [NSAttributedString.Key.font : font], context: nil).size
     }
 }
 

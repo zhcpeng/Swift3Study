@@ -25,7 +25,7 @@ class XCRPhotosTransition :NSObject, UIViewControllerAnimatedTransitioning {
         let finalFrame = initFrame.offsetBy(dx: 0, dy: kScreenHeight)
         
         container.addSubview(toVC.view)
-        container.bringSubview(toFront: fromVC.view)
+        container.bringSubviewToFront(fromVC.view)
         
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
             fromVC.view.frame = finalFrame

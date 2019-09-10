@@ -57,7 +57,7 @@ class ImageBrowerCollectionViewCell: UICollectionViewCell, UIScrollViewDelegate 
         scrollView.addSubview(imageView)
         hand()
         
-        NotificationCenter.default.reactive.notifications(forName: NSNotification.Name.UIDeviceOrientationDidChange).observe { [weak self](_) in
+        NotificationCenter.default.reactive.notifications(forName: UIDevice.orientationDidChangeNotification).observe { [weak self](_) in
             // self?.resizeSubviews()
             self?.setNeedsLayout()
         }

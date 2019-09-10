@@ -5,7 +5,7 @@ use_frameworks!
 
 pod 'Alamofire'
 pod 'SDWebImage', '~>3.7'
-pod 'ReactiveCocoa'
+pod 'ReactiveCocoa', '~> 9.0'
 pod 'SnapKit'
 pod 'YYModel'
 pod 'SwiftyJSON'
