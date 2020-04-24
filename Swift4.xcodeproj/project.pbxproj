@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		561500312372602A00DBB98E /* NAvigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561500302372602A00DBB98E /* NAvigationBarViewController.swift */; };
 		5676269F22E160FC00D9AABF /* DownloadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5676269E22E160FC00D9AABF /* DownloadListViewController.swift */; };
 		567626A122E1614300D9AABF /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567626A022E1614300D9AABF /* DownloadManager.swift */; };
 		5676274822E1971D00D9AABF /* ZFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5676274722E1971D00D9AABF /* ZFileManager.swift */; };
@@ -128,6 +129,7 @@
 /* Begin PBXFileReference section */
 		0A6B42CE9D23BED5E7FA744D /* Pods-Swift3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift3/Pods-Swift3.debug.xcconfig"; sourceTree = "<group>"; };
 		3E9956F811B9179BE7014C5D /* Pods_Swift3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		561500302372602A00DBB98E /* NAvigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAvigationBarViewController.swift; sourceTree = "<group>"; };
 		5676269E22E160FC00D9AABF /* DownloadListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadListViewController.swift; sourceTree = "<group>"; };
 		567626A022E1614300D9AABF /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		5676274722E1971D00D9AABF /* ZFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZFileManager.swift; sourceTree = "<group>"; };
@@ -301,6 +303,14 @@
 				A65085693BCA80E3D2E96750 /* Pods_Swift4.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5615002F23725D8D00DBB98E /* NavBar */ = {
+			isa = PBXGroup;
+			children = (
+				561500302372602A00DBB98E /* NAvigationBarViewController.swift */,
+			);
+			path = NavBar;
 			sourceTree = "<group>";
 		};
 		5676269D22E160D500D9AABF /* Download */ = {
@@ -812,6 +822,7 @@
 		ADE78A0E1CF7FBF000573D7F /* Cleasses */ = {
 			isa = PBXGroup;
 			children = (
+				5615002F23725D8D00DBB98E /* NavBar */,
 				5676269D22E160D500D9AABF /* Download */,
 				56B6B5AA21E3568300A1A7E4 /* Tax */,
 				56FA85FC21DF437C004BBC5B /* TouchMove */,
@@ -1113,6 +1124,7 @@
 				ADEBC04A1D2F4DD400E12074 /* GradientColorViewController.swift in Sources */,
 				AD2863181D3C832300E5428F /* UIImageViewCategory.swift in Sources */,
 				6045E68D1F8DF5DF004F46A3 /* CALayerViewController.swift in Sources */,
+				561500312372602A00DBB98E /* NAvigationBarViewController.swift in Sources */,
 				ADEBC0461D2F48A000E12074 /* XCRGradientColorView.swift in Sources */,
 				AD864A041F5E37040044771B /* PhotosBrowerAnimationDelegate.swift in Sources */,
 				608AB796200346F2007569E2 /* YYTextDebugOption.m in Sources */,

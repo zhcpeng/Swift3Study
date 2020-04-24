@@ -29,11 +29,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // register local notification
         application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
         
-        
+//        DispatchQueue.global().async {
+//            let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.test), userInfo: nil, repeats: true)
+//
+//            RunLoop.current.add(timer, forMode: .common)
+//            print("curr: \(RunLoop.current)")
+//            var keep = true
+//            DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+//                keep = false
+//            }
+//            while(keep && RunLoop.current.run(mode: .default, before: Date.init(timeIntervalSinceNow: 1))) {
+//
+//            }
+//            RunLoop.current.run()
+//            print("111-\(Thread.current)")
+//        }
         
         self.window!.makeKeyAndVisible()
         return true
     }
+    
+//    @objc func test() {
+//        print("222-\(Thread.current)")
+//    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

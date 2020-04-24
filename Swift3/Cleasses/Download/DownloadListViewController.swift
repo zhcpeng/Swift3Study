@@ -106,7 +106,8 @@ class DownloadListViewController: UIViewController {
         timer?.schedule(deadline: .now(), repeating: .seconds(1), leeway: .nanoseconds(0))
         timer?.setEventHandler { [weak self]() in
             guard let weakSelf = self else { return }
-            if weakSelf.currentData != 0 {
+            
+   if weakSelf.currentData != 0 {
                 let x = weakSelf.formatterSpeed(weakSelf.currentData - weakSelf.proData)
                 print(x)
                 DispatchQueue.main.async {

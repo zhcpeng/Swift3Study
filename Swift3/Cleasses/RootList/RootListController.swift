@@ -56,6 +56,7 @@ class RootListController: UITableViewController {
         itemList.append(NSStringFromClass(TouchMoveViewController.self))
         itemList.append(NSStringFromClass(TaxViewController.self))
         itemList.append(NSStringFromClass(DownloadListViewController.self))
+        itemList.append(NSStringFromClass(NAvigationBarViewController.self))
 
         itemList = itemList.reversed()
 
