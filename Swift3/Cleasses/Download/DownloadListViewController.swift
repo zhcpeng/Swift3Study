@@ -96,7 +96,7 @@ class DownloadListViewController: UIViewController {
             self?.progress.progress = 0
             self?.timer?.cancel()
             self?.speedLabel.text = "0KB"
-            self?.sendLocalNotification("Download Success!")
+//            self?.sendLocalNotification("Download Success!")
         }
     }
     
@@ -126,6 +126,8 @@ class DownloadListViewController: UIViewController {
             return "\(speed / 1024)KB"
         case (1014*1024+1)...(1014*1024*1024):
             return String(format:"%.2fMB", arguments:[Double(speed) / 1024.0 / 1024])
+        case ...0:
+            return "0"
         default:
             return "\(speed)"
         }
@@ -185,6 +187,10 @@ class DownloadListViewController: UIViewController {
         button.reactive.controlEvents(.touchUpInside).observeValues { [weak self](_) in
             guard let weakSelf = self else { return }
             weakSelf.view.endEditing(true)
+            
+            if DownloadManager.shared.isDownload {
+                return
+            }
             if let text = weakSelf.textView.text {
                 DownloadManager.shared.addDownloadURL(text)
                 weakSelf.progress.progress = 0

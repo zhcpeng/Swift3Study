@@ -70,7 +70,7 @@ class DownloadManager: NSObject {
     
     private func downloadResponse(response:DownloadResponse<Data>){
         switch response.result {
-        case .success(let _):
+        case .success(_):
             // 下载完成
             DispatchQueue.main.async {
                 self.isDownload = false
