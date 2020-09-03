@@ -10,53 +10,55 @@ import UIKit
 
 class RootListController: UITableViewController {
 
-	var itemList: [String] = []
+	var itemList: [AnyClass] = []
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
         
-        itemList.append(NSStringFromClass(CanMoveTableViewController.self))
-        itemList.append(NSStringFromClass(ScrollViewController.self))
-        itemList.append(NSStringFromClass(GradientColorViewController.self))
-        itemList.append(NSStringFromClass(UIImageViewCategory.self))
-        itemList.append(NSStringFromClass(YYLabelViewController.self))
-        itemList.append(NSStringFromClass(AssetsLibraryViewController.self))
-        itemList.append(NSStringFromClass(OrientationViewController.self))
-        itemList.append(NSStringFromClass(CallPhoneViewController.self))
-        itemList.append(NSStringFromClass(PhotoBrowerViewController.self))
-        itemList.append(NSStringFromClass(ScrollTextViewController.self))
-        itemList.append(NSStringFromClass(SectionTableViewController.self))
-        itemList.append(NSStringFromClass(StretchViewController.self))
-        itemList.append(NSStringFromClass(RTLabelViewController.self))
-        itemList.append(NSStringFromClass(ImageBrowerViewController.self))
-        itemList.append(NSStringFromClass(UIFirstViewController.self))
-        itemList.append(NSStringFromClass(SelectedCollectionViewController.self))
-        itemList.append(NSStringFromClass(UIPopWindowViewController.self))
-        itemList.append(NSStringFromClass(GIFViewController.self))
-        itemList.append(NSStringFromClass(MBProgressHUDViewController.self))
-        itemList.append(NSStringFromClass(RegularViewController.self))
-        itemList.append(NSStringFromClass(ImageTransitionViewController.self))
-        itemList.append(NSStringFromClass(CycleViewController.self))
-        itemList.append(NSStringFromClass(CALayerViewController.self))
-        itemList.append(NSStringFromClass(XButtonViewController.self))
-        itemList.append(NSStringFromClass(PhotosAlbumViewController.self))
-        itemList.append(NSStringFromClass(PhotosAlbumViewController1.self))
-        itemList.append(NSStringFromClass(PhotosAlbumViewController2.self))
-        itemList.append(NSStringFromClass(AVCaptureViewController.self))
-        itemList.append(NSStringFromClass(ViewAnimateViewController.self))
-        itemList.append(NSStringFromClass(TreeViewController.self))
-        itemList.append(NSStringFromClass(MemoryGraphViewController.self))
-        itemList.append(NSStringFromClass(TimeAlertViewController.self))
-        itemList.append(NSStringFromClass(InsertTableViewController.self))
-        itemList.append(NSStringFromClass(RadarChartViewController.self))
-        itemList.append(NSStringFromClass(CutImageViewController.self))
-        itemList.append(NSStringFromClass(PerformanceMonitorViewController.self))
-        itemList.append(NSStringFromClass(NameSpaceViewController.self))
-        itemList.append(NSStringFromClass(SingletonViewController.self))
-        itemList.append(NSStringFromClass(TouchMoveViewController.self))
-        itemList.append(NSStringFromClass(TaxViewController.self))
-        itemList.append(NSStringFromClass(DownloadListViewController.self))
-        itemList.append(NSStringFromClass(NAvigationBarViewController.self))
+        itemList.append(CanMoveTableViewController.self)
+        itemList.append(ScrollViewController.self)
+        itemList.append(GradientColorViewController.self)
+        itemList.append(UIImageViewCategory.self)
+        itemList.append(YYLabelViewController.self)
+        itemList.append(AssetsLibraryViewController.self)
+        itemList.append(OrientationViewController.self)
+        itemList.append(CallPhoneViewController.self)
+        itemList.append(PhotoBrowerViewController.self)
+        itemList.append(ScrollTextViewController.self)
+        itemList.append(SectionTableViewController.self)
+        itemList.append(StretchViewController.self)
+        itemList.append(RTLabelViewController.self)
+        itemList.append(ImageBrowerViewController.self)
+        itemList.append(UIFirstViewController.self)
+        itemList.append(SelectedCollectionViewController.self)
+        itemList.append(UIPopWindowViewController.self)
+        itemList.append(GIFViewController.self)
+        itemList.append(MBProgressHUDViewController.self)
+        itemList.append(RegularViewController.self)
+        itemList.append(ImageTransitionViewController.self)
+        itemList.append(CycleViewController.self)
+        itemList.append(CALayerViewController.self)
+        itemList.append(XButtonViewController.self)
+        itemList.append(PhotosAlbumViewController.self)
+        itemList.append(PhotosAlbumViewController1.self)
+        itemList.append(PhotosAlbumViewController2.self)
+        itemList.append(AVCaptureViewController.self)
+        itemList.append(ViewAnimateViewController.self)
+        itemList.append(TreeViewController.self)
+        itemList.append(MemoryGraphViewController.self)
+        itemList.append(TimeAlertViewController.self)
+        itemList.append(InsertTableViewController.self)
+        itemList.append(RadarChartViewController.self)
+        itemList.append(CutImageViewController.self)
+        itemList.append(PerformanceMonitorViewController.self)
+        itemList.append(NameSpaceViewController.self)
+        itemList.append(SingletonViewController.self)
+        itemList.append(TouchMoveViewController.self)
+        itemList.append(TaxViewController.self)
+        itemList.append(DownloadListViewController.self)
+        itemList.append(NAvigationBarViewController.self)
+        itemList.append(TempViewController.self)
+        itemList.append(CellDidEndDispalyViewController.self)
 
         itemList = itemList.reversed()
 
@@ -80,21 +82,31 @@ class RootListController: UITableViewController {
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-		cell.textLabel?.text = itemList[indexPath.row]
+		cell.textLabel?.text = NSStringFromClass(itemList[indexPath.row])
 		return cell
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let any = NSClassFromString(itemList[indexPath.row]) as? UIViewController.Type {
-            let vc = any.init()
-            
-//            let tration = CATransition()
-//            tration.duration = 1
-//            tration.type = kCATransitionFade
-//            navigationController?.view.layer.add(tration, forKey: "animation")
-            
-            navigationController?.pushViewController(vc, animated: true);
+//        if (itemList[indexPath.row]).isKind(UIViewController.Type) {
+//
+//        }
+        if let c = itemList[indexPath.row] as? UIViewController.Type {
+            navigationController?.pushViewController(c.init(), animated: true);
         }
+//        if let vc = itemList[indexPath.row].init() as? UIViewController {
+//            navigationController?.pushViewController(vc, animated: true);
+//        }
+        
+//        if let any = NSClassFromString(itemList[indexPath.row]) as? UIViewController.Type {
+//            let vc = any.init()
+//
+////            let tration = CATransition()
+////            tration.duration = 1
+////            tration.type = kCATransitionFade
+////            navigationController?.view.layer.add(tration, forKey: "animation")
+//
+//            navigationController?.pushViewController(vc, animated: true);
+//        }
 	}
 
 }

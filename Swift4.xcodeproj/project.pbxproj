@@ -11,6 +11,9 @@
 		5676269F22E160FC00D9AABF /* DownloadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5676269E22E160FC00D9AABF /* DownloadListViewController.swift */; };
 		567626A122E1614300D9AABF /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567626A022E1614300D9AABF /* DownloadManager.swift */; };
 		5676274822E1971D00D9AABF /* ZFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5676274722E1971D00D9AABF /* ZFileManager.swift */; };
+		567DE321250090420034A287 /* CellDidEndDispalyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567DE320250090420034A287 /* CellDidEndDispalyViewController.swift */; };
+		56911F9D24F79A0F00ABF44B /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56911F9C24F79A0F00ABF44B /* TempViewController.swift */; };
+		56911F9F24F79A3500ABF44B /* XCRMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56911F9E24F79A3500ABF44B /* XCRMoreButton.swift */; };
 		56B6B5AC21E3568E00A1A7E4 /* TaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B6B5AB21E3568E00A1A7E4 /* TaxViewController.swift */; };
 		56ECC3CF22E58BBE003C128A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ECC3CE22E58BBE003C128A /* UIViewExtension.swift */; };
 		56FA85FE21DF438E004BBC5B /* TouchMoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA85FD21DF438E004BBC5B /* TouchMoveViewController.swift */; };
@@ -133,6 +136,9 @@
 		5676269E22E160FC00D9AABF /* DownloadListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadListViewController.swift; sourceTree = "<group>"; };
 		567626A022E1614300D9AABF /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		5676274722E1971D00D9AABF /* ZFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZFileManager.swift; sourceTree = "<group>"; };
+		567DE320250090420034A287 /* CellDidEndDispalyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDidEndDispalyViewController.swift; sourceTree = "<group>"; };
+		56911F9C24F79A0F00ABF44B /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
+		56911F9E24F79A3500ABF44B /* XCRMoreButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCRMoreButton.swift; sourceTree = "<group>"; };
 		56B6B5AB21E3568E00A1A7E4 /* TaxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxViewController.swift; sourceTree = "<group>"; };
 		56ECC3CE22E58BBE003C128A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		56FA85FD21DF438E004BBC5B /* TouchMoveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchMoveViewController.swift; sourceTree = "<group>"; };
@@ -321,6 +327,23 @@
 				5676274722E1971D00D9AABF /* ZFileManager.swift */,
 			);
 			path = Download;
+			sourceTree = "<group>";
+		};
+		567DE31F250090330034A287 /* CellDidEndDispaly */ = {
+			isa = PBXGroup;
+			children = (
+				567DE320250090420034A287 /* CellDidEndDispalyViewController.swift */,
+			);
+			path = CellDidEndDispaly;
+			sourceTree = "<group>";
+		};
+		56911F9B24F799F900ABF44B /* TempViewController */ = {
+			isa = PBXGroup;
+			children = (
+				56911F9C24F79A0F00ABF44B /* TempViewController.swift */,
+				56911F9E24F79A3500ABF44B /* XCRMoreButton.swift */,
+			);
+			path = TempViewController;
 			sourceTree = "<group>";
 		};
 		56B6B5AA21E3568300A1A7E4 /* Tax */ = {
@@ -822,6 +845,8 @@
 		ADE78A0E1CF7FBF000573D7F /* Cleasses */ = {
 			isa = PBXGroup;
 			children = (
+				567DE31F250090330034A287 /* CellDidEndDispaly */,
+				56911F9B24F799F900ABF44B /* TempViewController */,
 				5615002F23725D8D00DBB98E /* NavBar */,
 				5676269D22E160D500D9AABF /* Download */,
 				56B6B5AA21E3568300A1A7E4 /* Tax */,
@@ -1017,7 +1042,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Swift4/Pods-Swift4-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Swift4/Pods-Swift4-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
@@ -1058,7 +1083,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift4/Pods-Swift4-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swift4/Pods-Swift4-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1117,6 +1142,7 @@
 				AD8E3B351D48B73800A8C43F /* AVPlayerViewController.swift in Sources */,
 				60F860FD2041442F0069B818 /* ViewAnimateViewController.swift in Sources */,
 				AD2A7E3A1DBA030C0074BBC8 /* PhotoBrowerViewController.swift in Sources */,
+				567DE321250090420034A287 /* CellDidEndDispalyViewController.swift in Sources */,
 				608AB7A2200346F2007569E2 /* YYTextRunDelegate.m in Sources */,
 				ADE78A0B1CF7FB2000573D7F /* ViewController.swift in Sources */,
 				ADDC5FE91F53F06D00086E80 /* RegularViewController.swift in Sources */,
@@ -1150,10 +1176,12 @@
 				608AB79C200346F2007569E2 /* YYTextMagnifier.m in Sources */,
 				ADAA2CD21E13BF0B00E8D2A6 /* StretchView.swift in Sources */,
 				AD6FA57B1F16213F009E46B3 /* XCRPhotosAlbumViewCell.swift in Sources */,
+				56911F9F24F79A3500ABF44B /* XCRMoreButton.swift in Sources */,
 				6078C59520B7FC1E00C529B3 /* MemoryGraphViewController.swift in Sources */,
 				608AB7AC200346F2007569E2 /* YYTextView.m in Sources */,
 				ADAA2CD01E13BEDF00E8D2A6 /* StretchViewController.swift in Sources */,
 				60BDE03B1F78EEE200922AA2 /* CycleViewController.swift in Sources */,
+				56911F9D24F79A0F00ABF44B /* TempViewController.swift in Sources */,
 				608AB7A8200346F2007569E2 /* YYTextTransaction.m in Sources */,
 				ADE78A111CF7FC0C00573D7F /* RootListController.swift in Sources */,
 				608AB7A0200346F2007569E2 /* YYTextParser.m in Sources */,
@@ -1313,7 +1341,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift3/Public/Swift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "arm64 arm64e";
+				VALID_ARCHS = "arm64 arm64e x86_64";
 			};
 			name = Debug;
 		};
@@ -1337,7 +1365,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift3/Public/Swift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "arm64 arm64e";
+				VALID_ARCHS = "arm64 arm64e x86_64";
 			};
 			name = Release;
 		};
