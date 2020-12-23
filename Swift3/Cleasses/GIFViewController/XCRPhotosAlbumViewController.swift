@@ -311,6 +311,8 @@ class XCRPhotosAlbumViewController: UIViewController, UITableViewDelegate, UITab
 			self.photoDeniedView.snp.makeConstraints({ (make) in
 				make.edges.equalTo(self.view)
 			})
+        default:
+            break
 		}
 	}
 

@@ -88,6 +88,8 @@ class PhotosAlbumViewController1: UIViewController {
             })
         case .denied, .restricted:
             break
+        default:
+            break
         }
 
         let pan = UIPanGestureRecognizer.init()

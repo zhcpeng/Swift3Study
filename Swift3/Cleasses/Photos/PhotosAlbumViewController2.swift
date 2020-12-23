@@ -90,7 +90,10 @@ class PhotosAlbumViewController2: UIViewController {
             })
         case .denied, .restricted:
             break
+        default:
+            break
         }
+        
 
         let pan = UIPanGestureRecognizer.init()
         pan.addTarget(self, action: #selector(panGesture(_ :)))

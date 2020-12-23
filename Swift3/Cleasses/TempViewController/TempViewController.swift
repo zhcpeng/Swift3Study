@@ -32,6 +32,8 @@ class TempViewController: UIViewController {
         bt3.frame = CGRect(x: 50, y: 250, width: 200, height: 50);
         self.view.addSubview(bt3)
         
+        bt3.touchExtendInset = UIEdgeInsets(top: -10, left: -10, bottom: -10, right: -10)
+        
         self.view.addSubview(bt1)
         bt1.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
