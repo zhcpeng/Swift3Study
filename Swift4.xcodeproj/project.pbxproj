@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		561500312372602A00DBB98E /* NAvigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561500302372602A00DBB98E /* NAvigationBarViewController.swift */; };
+		56757E2B259332E8009B01D3 /* CopyImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56757E2A259332E8009B01D3 /* CopyImageViewController.swift */; };
+		56757E2F25933655009B01D3 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56757E2E25933655009B01D3 /* ImageManager.swift */; };
+		56757E4725935406009B01D3 /* LocalImageBrowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56757E4625935406009B01D3 /* LocalImageBrowerViewController.swift */; };
+		5675800325947481009B01D3 /* PrivateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5675800225947481009B01D3 /* PrivateListViewController.swift */; };
 		5676269F22E160FC00D9AABF /* DownloadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5676269E22E160FC00D9AABF /* DownloadListViewController.swift */; };
 		567626A122E1614300D9AABF /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567626A022E1614300D9AABF /* DownloadManager.swift */; };
 		5676274822E1971D00D9AABF /* ZFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5676274722E1971D00D9AABF /* ZFileManager.swift */; };
@@ -121,7 +125,6 @@
 		ADE789FF1CF7F3D300573D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE789FE1CF7F3D300573D7F /* Assets.xcassets */; };
 		ADE78A021CF7F3D300573D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE78A001CF7F3D300573D7F /* LaunchScreen.storyboard */; };
 		ADE78A0B1CF7FB2000573D7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE78A091CF7FB2000573D7F /* ViewController.swift */; };
-		ADE78A0C1CF7FB2000573D7F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE78A0A1CF7FB2000573D7F /* ViewController.xib */; };
 		ADE78A111CF7FC0C00573D7F /* RootListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE78A101CF7FC0C00573D7F /* RootListController.swift */; };
 		ADEA6E301EFBD52F00DFCC12 /* UIVideoCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEA6E2F1EFBD52F00DFCC12 /* UIVideoCameraViewController.swift */; };
 		ADEBC0461D2F48A000E12074 /* XCRGradientColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBC0451D2F48A000E12074 /* XCRGradientColorView.swift */; };
@@ -135,6 +138,10 @@
 		0A6B42CE9D23BED5E7FA744D /* Pods-Swift3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift3/Pods-Swift3.debug.xcconfig"; sourceTree = "<group>"; };
 		3E9956F811B9179BE7014C5D /* Pods_Swift3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561500302372602A00DBB98E /* NAvigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAvigationBarViewController.swift; sourceTree = "<group>"; };
+		56757E2A259332E8009B01D3 /* CopyImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyImageViewController.swift; sourceTree = "<group>"; };
+		56757E2E25933655009B01D3 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		56757E4625935406009B01D3 /* LocalImageBrowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalImageBrowerViewController.swift; sourceTree = "<group>"; };
+		5675800225947481009B01D3 /* PrivateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateListViewController.swift; sourceTree = "<group>"; };
 		5676269E22E160FC00D9AABF /* DownloadListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadListViewController.swift; sourceTree = "<group>"; };
 		567626A022E1614300D9AABF /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		5676274722E1971D00D9AABF /* ZFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZFileManager.swift; sourceTree = "<group>"; };
@@ -282,7 +289,6 @@
 		ADE78A011CF7F3D300573D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADE78A031CF7F3D300573D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADE78A091CF7FB2000573D7F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ADE78A0A1CF7FB2000573D7F /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		ADE78A101CF7FC0C00573D7F /* RootListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootListController.swift; sourceTree = "<group>"; };
 		ADEA6E2F1EFBD52F00DFCC12 /* UIVideoCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVideoCameraViewController.swift; sourceTree = "<group>"; };
 		ADEBC0451D2F48A000E12074 /* XCRGradientColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCRGradientColorView.swift; sourceTree = "<group>"; };
@@ -321,6 +327,23 @@
 				561500302372602A00DBB98E /* NAvigationBarViewController.swift */,
 			);
 			path = NavBar;
+			sourceTree = "<group>";
+		};
+		56757E29259332C2009B01D3 /* CopyImage */ = {
+			isa = PBXGroup;
+			children = (
+				56757E2A259332E8009B01D3 /* CopyImageViewController.swift */,
+				56757E2E25933655009B01D3 /* ImageManager.swift */,
+			);
+			path = CopyImage;
+			sourceTree = "<group>";
+		};
+		56757E45259353F3009B01D3 /* LocalImageBrower */ = {
+			isa = PBXGroup;
+			children = (
+				56757E4625935406009B01D3 /* LocalImageBrowerViewController.swift */,
+			);
+			path = LocalImageBrower;
 			sourceTree = "<group>";
 		};
 		5676269D22E160D500D9AABF /* Download */ = {
@@ -851,7 +874,6 @@
 			children = (
 				ADE789FC1CF7F3D300573D7F /* AppDelegate.swift */,
 				ADE78A091CF7FB2000573D7F /* ViewController.swift */,
-				ADE78A0A1CF7FB2000573D7F /* ViewController.xib */,
 				56D27896252087060065A2C5 /* Common */,
 				AD314B201CFE7D56003593F7 /* Public */,
 				ADE78A0E1CF7FBF000573D7F /* Cleasses */,
@@ -866,6 +888,8 @@
 		ADE78A0E1CF7FBF000573D7F /* Cleasses */ = {
 			isa = PBXGroup;
 			children = (
+				56757E45259353F3009B01D3 /* LocalImageBrower */,
+				56757E29259332C2009B01D3 /* CopyImage */,
 				56AF6FBE2502363C0009B60C /* Security */,
 				567DE31F250090330034A287 /* CellDidEndDispaly */,
 				56911F9B24F799F900ABF44B /* TempViewController */,
@@ -922,6 +946,7 @@
 			isa = PBXGroup;
 			children = (
 				ADE78A101CF7FC0C00573D7F /* RootListController.swift */,
+				5675800225947481009B01D3 /* PrivateListViewController.swift */,
 			);
 			path = RootList;
 			sourceTree = "<group>";
@@ -1015,7 +1040,6 @@
 				AD1A86CF1D7FB2B9000F8743 /* 05.jpg in Resources */,
 				ADEBC04B1D2F4DD400E12074 /* GradientColorViewController.xib in Resources */,
 				60419D6620EE2C2F0032497C /* cutimage@3x.png in Resources */,
-				ADE78A0C1CF7FB2000573D7F /* ViewController.xib in Resources */,
 				ADE78A021CF7F3D300573D7F /* LaunchScreen.storyboard in Resources */,
 				ADEBC04D1D2F4DEC00E12074 /* 15.jpg in Resources */,
 				60419D6520EE2C2F0032497C /* backimage@3x.png in Resources */,
@@ -1116,6 +1140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6089A4D321084ECA0062913B /* BSBacktraceLogger.m in Sources */,
+				5675800325947481009B01D3 /* PrivateListViewController.swift in Sources */,
 				60B193EC1FF230B500107F2F /* PhotosAlbumViewController2.swift in Sources */,
 				608AB7AA200346F2007569E2 /* YYTextWeakProxy.m in Sources */,
 				AD6FA57C1F16213F009E46B3 /* XCRPhotosAlbumViewController.swift in Sources */,
@@ -1156,6 +1181,7 @@
 				ADCDA3861E6CFE3D00E60A29 /* UITransition.swift in Sources */,
 				606E1F1C1FEA5004009A0EB8 /* PhotosAlbumViewController.swift in Sources */,
 				600C038C212D317500CE4064 /* SingletonViewController.swift in Sources */,
+				56757E2B259332E8009B01D3 /* CopyImageViewController.swift in Sources */,
 				6089A4D0210845860062913B /* PerformanceMonitor.swift in Sources */,
 				56ECC3CF22E58BBE003C128A /* UIViewExtension.swift in Sources */,
 				AD1A86C91D7FA79E000F8743 /* OrientationViewController.swift in Sources */,
@@ -1207,6 +1233,7 @@
 				60BDE03B1F78EEE200922AA2 /* CycleViewController.swift in Sources */,
 				56911F9D24F79A0F00ABF44B /* TempViewController.swift in Sources */,
 				608AB7A8200346F2007569E2 /* YYTextTransaction.m in Sources */,
+				56757E4725935406009B01D3 /* LocalImageBrowerViewController.swift in Sources */,
 				ADE78A111CF7FC0C00573D7F /* RootListController.swift in Sources */,
 				608AB7A0200346F2007569E2 /* YYTextParser.m in Sources */,
 				608AB7A5200346F2007569E2 /* UIPasteboard+YYText.m in Sources */,
@@ -1216,6 +1243,7 @@
 				AD9DD6C71DADE644003F2634 /* CallPhoneViewController.swift in Sources */,
 				56B6B5AC21E3568E00A1A7E4 /* TaxViewController.swift in Sources */,
 				6089A4CE2108269C0062913B /* PerformanceMonitor.m in Sources */,
+				56757E2F25933655009B01D3 /* ImageManager.swift in Sources */,
 				608AB7A4200346F2007569E2 /* NSParagraphStyle+YYText.m in Sources */,
 				608AB7A9200346F2007569E2 /* YYTextUtilities.m in Sources */,
 				6089A4C9210812AA0062913B /* PerformanceMonitorViewController.swift in Sources */,

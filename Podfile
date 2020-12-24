@@ -1,11 +1,11 @@
 target 'Swift4’ do
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '14.0'
 use_frameworks!
 
 pod 'Alamofire'
-pod 'SDWebImage', '~>3.7'
-pod 'ReactiveCocoa', '~> 9.0'
+pod 'SDWebImage'
+pod 'ReactiveCocoa'
 pod 'SnapKit'
 pod 'YYModel'
 pod 'SwiftyJSON'

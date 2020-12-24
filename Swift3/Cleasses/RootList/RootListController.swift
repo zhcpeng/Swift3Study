@@ -55,10 +55,14 @@ class RootListController: UITableViewController {
         itemList.append(SingletonViewController.self)
         itemList.append(TouchMoveViewController.self)
         itemList.append(TaxViewController.self)
-        itemList.append(DownloadListViewController.self)
         itemList.append(NAvigationBarViewController.self)
         itemList.append(TempViewController.self)
         itemList.append(CellDidEndDispalyViewController.self)
+        
+        
+//        itemList.append(DownloadListViewController.self)
+//        itemList.append(LocalImageBrowerViewController.self)
+//        itemList.append(CopyImageViewController.self)
 
         itemList = itemList.reversed()
 

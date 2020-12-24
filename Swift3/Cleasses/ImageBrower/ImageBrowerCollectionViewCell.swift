@@ -29,7 +29,7 @@ class ImageBrowerCollectionViewCell: UICollectionViewCell, UIScrollViewDelegate 
         scrollView.isMultipleTouchEnabled = true
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
-        scrollView.maximumZoomScale = 2
+        scrollView.maximumZoomScale = 3
         scrollView.minimumZoomScale = 1
         scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         scrollView.delaysContentTouches = false
