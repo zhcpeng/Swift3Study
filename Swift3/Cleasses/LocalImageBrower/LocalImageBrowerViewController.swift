@@ -33,9 +33,15 @@ class LocalImageBrowerViewController: UIViewController, UICollectionViewDelegate
         return collectionView
     }()
     
+    private lazy var deleteButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
+        button.setTitle("Delete", for: .normal)
+        button.setTitleColor(UIColor.blue, for: .normal)
+        return button
+    }()
     
-    
-    private var currentIndex: Int = Int.max
+    private var currentIndex: Int = 0
     
     private var rotating: Bool = false
     
@@ -46,7 +52,7 @@ class LocalImageBrowerViewController: UIViewController, UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: deleteButton)
         
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
@@ -58,6 +64,8 @@ class LocalImageBrowerViewController: UIViewController, UICollectionViewDelegate
         }
         try? itemList = FileManager.default.contentsOfDirectory(atPath: paths)
         if !itemList.isEmpty {
+//            itemList.sort()
+            itemList = itemList.sorted().reversed()
             print("load success")
             collectionView.reloadData()
         }
@@ -83,12 +91,6 @@ class LocalImageBrowerViewController: UIViewController, UICollectionViewDelegate
         print("\(#function)")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     // MARK: - UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return view.frame.size
@@ -101,7 +103,6 @@ class LocalImageBrowerViewController: UIViewController, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageBrowerCollectionViewCell", for: indexPath) as! ImageBrowerCollectionViewCell
-//        cell.image = image
         
         let path = paths + "/" + itemList[indexPath.row]
         let url = URL(fileURLWithPath: path)
@@ -109,15 +110,13 @@ class LocalImageBrowerViewController: UIViewController, UICollectionViewDelegate
             cell.image = image
         }
         
-        
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard currentIndex != indexPath.item, rotating == false else { return }
         guard let imageCell = cell as? ImageBrowerCollectionViewCell else { return }
-        //            imageCell.image = result
+
         let path = paths + "/" + itemList[indexPath.row]
         let url = URL(fileURLWithPath: path)
         if let data = try? Data(contentsOf: url, options: []), let image = UIImage(data: data){
@@ -129,6 +128,20 @@ class LocalImageBrowerViewController: UIViewController, UICollectionViewDelegate
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         currentIndex = Int(scrollView.contentOffset.x / scrollView.frame.width)
         print("end display: \(currentIndex)")
+    }
+    
+    @objc func deleteAction() {
+        let path = paths + "/" + itemList[currentIndex]
+        if FileManager.default.fileExists(atPath: path) {
+            try? FileManager.default.removeItem(atPath: path)
+            
+            itemList.remove(at: currentIndex)
+            collectionView.performBatchUpdates {
+                self.collectionView.deleteItems(at: [IndexPath(item: currentIndex, section: 0)])
+            } completion: { (_) in
+                self.collectionView.reloadData()
+            }
+        }
     }
 
 }

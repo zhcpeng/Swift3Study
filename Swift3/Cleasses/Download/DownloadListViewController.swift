@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import UserNotifications
 
 class DownloadListViewController: UIViewController {
     
@@ -73,7 +74,7 @@ class DownloadListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.automaticallyAdjustsScrollViewInsets = false
+//        self.automaticallyAdjustsScrollViewInsets = false
         commonUI()
         
         ZFileManager.shared.updateFileSuccess = { [weak self]() in
@@ -134,16 +135,27 @@ class DownloadListViewController: UIViewController {
     }
     
     func sendLocalNotification(_ msg: String) {
-        UIApplication.shared.cancelAllLocalNotifications()
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
-        let localNotification = UILocalNotification()
-        localNotification.applicationIconBadgeNumber = 1
-        localNotification.fireDate = Date(timeIntervalSinceNow: 3)
-        localNotification.timeZone = TimeZone.current
-        localNotification.soundName = UILocalNotificationDefaultSoundName
-        localNotification.alertBody = msg
+        let content = UNMutableNotificationContent()
+        content.badge = NSNumber(value: 1)
+        content.title = msg
+        content.sound = UNNotificationSound.default
         
-        UIApplication.shared.scheduleLocalNotification(localNotification)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: msg, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+
+        
+//        UIApplication.shared.cancelAllLocalNotifications()
+//        let localNotification = UILocalNotification()
+//        localNotification.applicationIconBadgeNumber = 1
+//        localNotification.fireDate = Date(timeIntervalSinceNow: 3)
+//        localNotification.timeZone = TimeZone.current
+//        localNotification.soundName = UILocalNotificationDefaultSoundName
+//        localNotification.alertBody = msg
+//        UIApplication.shared.scheduleLocalNotification(localNotification)
     }
     
     private func commonUI() {
@@ -154,7 +166,8 @@ class DownloadListViewController: UIViewController {
         self.view.addSubview(tableView)
         topView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
-            make.top.equalToSuperview().offset(64)
+//            make.top.equalToSuperview().offset(self.view.safeAreaInsets.top)
+            make.top.equalToSuperview().offset(44 + 44)
             make.height.equalTo(130)
         }
         progress.snp.makeConstraints { (make) in

@@ -58,6 +58,7 @@ class RootListController: UITableViewController {
         itemList.append(NAvigationBarViewController.self)
         itemList.append(TempViewController.self)
         itemList.append(CellDidEndDispalyViewController.self)
+//        itemList.append(KuGouViewController.self)
         
         
 //        itemList.append(DownloadListViewController.self)

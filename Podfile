@@ -22,6 +22,9 @@ pod 'GPUImage'
 pod 'MBProgressHUD'
 
 
+pod 'CocoaDebug', :configurations => ['Debug']
+
+
 #pod 'GodEye'
 
 end
